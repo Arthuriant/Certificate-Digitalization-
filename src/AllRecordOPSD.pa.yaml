@@ -25,6 +25,7 @@ Screens:
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
             Height: =70
@@ -35,13 +36,20 @@ Screens:
       - SearchAllOPSD:
           Control: Classic/TextInput
           Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
+            BorderColor: =RGBA(0, 18, 107, 0.35)
+            BorderThickness: =1
             Default: =
+            FocusedBorderColor: =RGBA(0, 18, 107, 1)
+            FocusedBorderThickness: =2
             Font: =Font.'Open Sans'
-            Height: =41
             HintText: ="Search..."
             HoverBorderColor: =RGBA(0, 18, 107, 1)
-            HoverFill: =RGBA(186, 202, 226, 1)
+            HoverFill: =RGBA(240, 244, 252, 1)
+            PaddingLeft: =16
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
             Width: =258
             X: =1095
             Y: =105
@@ -61,17 +69,18 @@ Screens:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(240, 240, 240, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Height: =768
-            Width: =70
+            Width: =72
       - TxtDashboard_9:
           Control: Label
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            Color: =If(Mycolor, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
             DisplayMode: =DisplayMode.View
             Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
             Height: =25
             OnSelect: |-
               =UpdateContext({opendashboard:true});
@@ -93,9 +102,10 @@ Screens:
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor2, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            Color: =If(Mycolor2, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
             DisplayMode: =DisplayMode.View
             Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
             Height: =25
             OnSelect: |-
               =UpdateContext({opendashboard: true});
@@ -129,9 +139,10 @@ Screens:
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor1, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            Color: =If(Mycolor1, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
             DisplayMode: =DisplayMode.View
             Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
             Height: =25
             OnSelect: |-
               =UpdateContext({opendashboard:false});
@@ -152,50 +163,91 @@ Screens:
           Control: Image
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Height: =50
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =46
+            HoverFill: =RGBA(255, 236, 179, 1)
             Image: =home
             OnSelect: =Navigate(Dashboard)
-            Width: =50
-            X: =12
-            Y: =102
+            PaddingBottom: =7
+            PaddingLeft: =7
+            PaddingRight: =7
+            PaddingTop: =7
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Width: =46
+            X: =13
+            Y: =104
       - ApprovalIcon_9:
           Control: Image
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Height: =50
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =46
+            HoverFill: =RGBA(255, 236, 179, 1)
             Image: =approval
             OnSelect: =Navigate(MyApprovalSTD04)
-            Width: =50
-            X: =12
-            Y: =354
+            PaddingBottom: =7
+            PaddingLeft: =7
+            PaddingRight: =7
+            PaddingTop: =7
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Width: =46
+            X: =13
+            Y: =356
       - STD04Icon_11:
           Control: Image
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Height: =50
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =46
+            HoverFill: =RGBA(255, 236, 179, 1)
             Image: =valve
             OnSelect: =Navigate(AllRecordStd04)
-            Width: =50
-            X: =12
-            Y: =179
+            PaddingBottom: =7
+            PaddingLeft: =7
+            PaddingRight: =7
+            PaddingTop: =7
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Width: =46
+            X: =13
+            Y: =181
       - OPSDIcon_11:
           Control: Image
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Height: =50
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =46
+            HoverFill: =RGBA(255, 236, 179, 1)
             Image: ='high-pressure'
             OnSelect: =Navigate(AllRecordOPSD)
-            Width: =50
-            X: =12
-            Y: =263
+            PaddingBottom: =7
+            PaddingLeft: =7
+            PaddingRight: =7
+            PaddingTop: =7
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Width: =46
+            X: =13
+            Y: =265
       - TxtOPSD_11:
           Control: Label
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor2, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            Color: =If(Mycolor2, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
             DisplayMode: =DisplayMode.View
             Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
             Height: =25
             OnSelect: |-
               =UpdateContext({opendashboard: true});
@@ -228,9 +280,9 @@ Screens:
           Control: Classic/Icon
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
             Height: =70
-            HoverColor: =ColorFade(Self.Color, 50%)
+            HoverColor: =RGBA(255, 196, 0, 1)
             Icon: =Icon.BackArrow
             OnSelect: =Navigate(LoginPage)
             PaddingBottom: =20
@@ -243,8 +295,10 @@ Screens:
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisplayMode: =DisplayMode.View
             Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
             Height: =25
             OnSelect: |-
               =UpdateContext({opendashboard:true});
@@ -256,7 +310,7 @@ Screens:
               Set(Mycolor1,false);
               Set(Mycolor2,false);
               Set(Mycolor3,false)
-            Size: =9
+            Size: =8
             Text: ="Log Out"
             Width: =70
             Y: =743
@@ -264,10 +318,10 @@ Screens:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(1, 20, 221, 1)
-            Height: =4
-            Width: =70
-            Y: =333
+            Fill: =RGBA(255, 196, 0, 1)
+            Height: =72
+            Width: =4
+            Y: =265
       - GalleryAllOPSD:
           Control: Gallery
           Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
@@ -298,6 +352,7 @@ Screens:
                       )
                   )
               )
+            TemplateFill: =If(ThisItem.IsSelected, RGBA(232, 238, 252, 1), RGBA(255, 255, 255, 0.94))
             TemplateSize: =58
             Width: =1288
             X: =72
@@ -325,11 +380,11 @@ Screens:
                 Control: Rectangle
                 Properties:
                   BorderColor: =RGBA(0, 18, 107, 1)
-                  Fill: =RGBA(255, 255, 255, 1)
-                  Height: =5
+                  Fill: =RGBA(222, 228, 240, 1)
+                  Height: =1
                   OnSelect: =Select(Parent)
                   Width: =Parent.TemplateWidth
-                  Y: =46
+                  Y: =Parent.TemplateHeight - 1
             - Rectangle5_3:
                 Control: Rectangle
                 Properties:
@@ -396,22 +451,23 @@ Screens:
             - Result_3:
                 Control: Label
                 Properties:
+                  Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
-                  Color: =If(ThisItem.'Final Result'.Value = "PASSED", Color.Green, Color.Red)
+                  Color: =If(ThisItem.'Final Result'.Value = "PASSED", RGBA(16, 124, 16, 1), RGBA(196, 43, 28, 1))
+                  Fill: =If(ThisItem.'Final Result'.Value = "PASSED", RGBA(223, 246, 221, 1), RGBA(253, 231, 233, 1))
                   Font: =Font.'Open Sans'
-                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  FontWeight: =FontWeight.Semibold
+                  Height: =26
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =11
+                  Size: =10
                   Text: =ThisItem.'Final Result'.Value
-                  VerticalAlign: =VerticalAlign.Top
                   Width: =103
                   X: =999
-                  Y: =13
+                  Y: =11
             - InspName_11:
                 Control: Label
                 Properties:
@@ -463,17 +519,19 @@ Screens:
             - Status_4:
                 Control: Label
                 Properties:
+                  Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
-                  Color: =If(ThisItem.'Verification MSV' = "Verify", Color.Green, Color.Red)
+                  Color: =If(ThisItem.'Verification MSV' = "Verify", RGBA(16, 124, 16, 1), RGBA(196, 43, 28, 1))
+                  Fill: =If(ThisItem.'Verification MSV' = "Verify", RGBA(223, 246, 221, 1), RGBA(253, 231, 233, 1))
                   Font: =Font.'Open Sans'
-                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  FontWeight: =FontWeight.Semibold
+                  Height: =26
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =11
+                  Size: =10
                   Text: |-
                     =Switch(
                         ThisItem.'Verification MSV',
@@ -483,10 +541,9 @@ Screens:
                         "N",
                         ThisItem.'Verification MSV'// Jika tidak cocok dengan kondisi di atas, gunakan nilai default
                     )
-                  VerticalAlign: =VerticalAlign.Top
                   Width: =38
                   X: =1129
-                  Y: =13
+                  Y: =11
             - InspName_12:
                 Control: Label
                 Properties:
@@ -509,7 +566,7 @@ Screens:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Height: =36
             Width: =1288
             X: =72
@@ -519,7 +576,7 @@ Screens:
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
             Height: =33
@@ -533,7 +590,7 @@ Screens:
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
             Height: =33
@@ -547,7 +604,7 @@ Screens:
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
             Height: =33
@@ -561,7 +618,7 @@ Screens:
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
             Height: =33
@@ -575,7 +632,7 @@ Screens:
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
             Height: =33
@@ -589,7 +646,7 @@ Screens:
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
             Height: =33
@@ -603,7 +660,7 @@ Screens:
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
             Height: =33
@@ -617,7 +674,7 @@ Screens:
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
             Height: =33
@@ -631,7 +688,7 @@ Screens:
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
             Height: =33
@@ -644,7 +701,7 @@ Screens:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(166, 166, 166, 0.7)
+            Fill: =RGBA(0, 18, 107, 0.45)
             Height: =768
             Visible: =detailOPSD
             Width: =1366
@@ -652,7 +709,7 @@ Screens:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(242, 242, 242, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             Height: =674
             Visible: =detailOPSD
             Width: =1223
@@ -662,7 +719,7 @@ Screens:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Height: =44
             Visible: =detailOPSD
             Width: =1188
@@ -699,7 +756,7 @@ Screens:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Height: =3
             Visible: =false
             Width: =1147
@@ -1280,7 +1337,7 @@ Screens:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Height: =3
             Visible: =false
             Width: =1147
@@ -1290,7 +1347,7 @@ Screens:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(166, 166, 166, 0.7)
+            Fill: =RGBA(0, 18, 107, 0.45)
             Height: =768
             Visible: =certOPSD
             Width: =1366
@@ -1298,7 +1355,7 @@ Screens:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(242, 242, 242, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             Height: =674
             Visible: =certOPSD
             Width: =1223
@@ -1308,7 +1365,7 @@ Screens:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Height: =44
             Visible: =certOPSD
             Width: =1188
@@ -1318,7 +1375,7 @@ Screens:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Height: =3
             Visible: =false
             Width: =1147
@@ -1399,7 +1456,7 @@ Screens:
                   Align: =Align.Center
                   BorderColor: =RGBA(0, 18, 107, 1)
                   Color: =RGBA(255, 255, 255, 1)
-                  Fill: =RGBA(1, 20, 221, 1)
+                  Fill: =RGBA(0, 18, 107, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =FontWeight.Bold
                   Height: =41
@@ -1412,7 +1469,7 @@ Screens:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(1, 20, 221, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Height: =3
             Visible: =false
             Width: =1147
