@@ -1,0 +1,19 @@
+App:
+  Properties:
+    OnStart: |+
+      =Set(
+          imyrole,
+          LookUp(
+              CDS_Users,
+              Email = User().Email
+          ).Role
+      );
+    StartScreen: |-
+      =If(
+          IsBlank(
+              LookUp(CDS_Users, Email = User().Email).Title
+          ),
+          Dashboard,
+          LoginPage
+      )
+    Theme: =PowerAppsTheme

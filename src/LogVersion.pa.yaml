@@ -1,0 +1,73 @@
+Screens:
+  LogVersion:
+    Properties:
+      Fill: =RGBA(219, 219, 219, 1)
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    Children:
+      - WELCOME!_3:
+          Control: Label
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            DisabledBorderColor: =RGBA(74, 74, 74, 1)
+            DisabledColor: =RGBA(74, 74, 74, 1)
+            Font: =Font.'Lato Black'
+            FontWeight: =FontWeight.Semibold
+            Height: =69
+            Size: =40
+            Text: ="Log Version"
+            Width: =Parent.Width
+            Y: =16
+      - Login to your account_1:
+          Control: Label
+          Properties:
+            AutoHeight: =true
+            BorderColor: =RGBA(0, 18, 107, 1)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Semibold
+            Height: =609
+            Size: =15
+            Text: |-
+              ="Ver 2.0 - Feb 24
+                       Add a search feature, OPSD Verification Data
+              Ver 1.0 - Nov 23
+                       Release Application"
+            Width: =1300
+            X: =35
+            Y: =96
+      - Login as Admin_1:
+          Control: Classic/Button
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(5, 20, 100, 1)
+            Font: =Font.'Lato Black'
+            Height: =27
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |+
+              =If(
+                  imyrole.Value = "Admin",
+                  Navigate(Dashboard),
+                  Notify("You do not have permission to sign in.", NotificationType.Error)
+              )
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =11
+            RadiusBottomRight: =11
+            RadiusTopLeft: =11
+            RadiusTopRight: =11
+            Size: =14
+            Text: ="Close"
+            Tooltip: =
+            Width: =110
+            X: =1240
+            Y: =725

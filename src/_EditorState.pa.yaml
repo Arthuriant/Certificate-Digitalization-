@@ -1,0 +1,11 @@
+EditorState:
+  ScreensOrder:
+    - LoginPage
+    - LogVersion
+    - Dashboard
+    - MyApprovalSTD04
+    - MyApprovalOPSD
+    - AllRecordStd04
+    - AllRecordOPSD
+  ComponentDefinitionsOrder:
+    - SPListItemAttachmentsViewer_2

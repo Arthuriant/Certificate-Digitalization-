@@ -1,0 +1,2883 @@
+Screens:
+  AllRecordStd04:
+    Properties:
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      OnVisible: =Set(refreshOtomatis, true)
+    Children:
+      - Image4_5:
+          Control: Image
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =768
+            Image: ='Background WEC (3)'
+            Width: =1366
+      - slb logo_3:
+          Control: Image
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =120
+            Image: =SLB_Logo_Positive_RGB_General
+            PaddingBottom: =15
+            PaddingRight: =25
+            Width: =120
+            X: =1246
+      - Label1_1:
+          Control: Label
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =70
+            Size: =20
+            Text: ="⁠ING TLM WCEF Certificate Digitalization System"
+            Width: =Parent.Width
+            Y: =18
+      - SearchbarSTD04:
+          Control: Classic/TextInput
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Default: =
+            Font: =Font.'Open Sans'
+            Height: =41
+            HintText: ="Search..."
+            HoverBorderColor: =RGBA(0, 18, 107, 1)
+            HoverFill: =RGBA(186, 202, 226, 1)
+            Width: =258
+            X: =1095
+            Y: =105
+      - Rectangle3_7:
+          Control: Rectangle
+          Group: ControlPanel
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(240, 240, 240, 1)
+            Height: =768
+            Width: =70
+      - TxtDashboard_4:
+          Control: Label
+          Group: ControlPanel
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(Mycolor, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Open Sans'
+            Height: =25
+            OnSelect: |-
+              =UpdateContext({opendashboard:true});
+              UpdateContext({openadduser:false});
+              UpdateContext({openaddlink:false});
+              UpdateContext({opensupport:false});
+              UpdateContext({linkdata: false});
+              Set(Mycolor,true);
+              Set(Mycolor1,false);
+              Set(Mycolor2,false);
+              Set(Mycolor3,false)
+            Size: =8
+            Text: ="Dashboard"
+            Width: =70
+            X: =2
+            Y: =140
+      - TxtSTD04_4:
+          Control: Label
+          Group: ControlPanel
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(Mycolor2, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Open Sans'
+            Height: =25
+            OnSelect: |-
+              =UpdateContext({opendashboard: true});
+              UpdateContext({openadduser: false});
+              UpdateContext({openaddlink: true});
+              UpdateContext({opensupport: false});
+              UpdateContext({linkdata: false});
+              Set(
+                  Mycolor,
+                  false
+              );
+              Set(
+                  Mycolor1,
+                  false
+              );
+              Set(
+                  Mycolor2,
+                  true
+              );
+              Set(
+                  Mycolor3,
+                  false
+              )
+            Size: =8
+            Text: ="STD-04"
+            Width: =70
+            X: =2
+            Y: =223
+      - TxtMyApproval_4:
+          Control: Label
+          Group: ControlPanel
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(Mycolor1, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Open Sans'
+            Height: =25
+            OnSelect: |-
+              =UpdateContext({opendashboard:false});
+              UpdateContext({openadduser:true});
+              UpdateContext({openaddlink:false});
+              UpdateContext({opensupport:false});
+              UpdateContext({linkdata: false});
+              Set(Mycolor,false);
+              Set(Mycolor1,true);
+              Set(Mycolor2,false);
+              Set(Mycolor3,false)
+            Size: =8
+            Text: ="MyApproval"
+            Width: =70
+            X: =2
+            Y: =400
+      - DashboardIcon_4:
+          Control: Image
+          Group: ControlPanel
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =50
+            Image: =home
+            OnSelect: =Navigate(Dashboard)
+            Width: =50
+            X: =12
+            Y: =102
+      - ApprovalIcon_4:
+          Control: Image
+          Group: ControlPanel
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =50
+            Image: =approval
+            OnSelect: =Navigate(MyApprovalSTD04)
+            Width: =50
+            X: =12
+            Y: =354
+      - STD04Icon_4:
+          Control: Image
+          Group: ControlPanel
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =50
+            Image: =valve
+            OnSelect: =Navigate(AllRecordStd04)
+            Width: =50
+            X: =12
+            Y: =179
+      - OPSDIcon_4:
+          Control: Image
+          Group: ControlPanel
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =50
+            Image: ='high-pressure'
+            OnSelect: =Navigate(AllRecordOPSD)
+            Width: =50
+            X: =12
+            Y: =263
+      - TxtOPSD_4:
+          Control: Label
+          Group: ControlPanel
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(Mycolor2, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Open Sans'
+            Height: =25
+            OnSelect: |-
+              =UpdateContext({opendashboard: true});
+              UpdateContext({openadduser: false});
+              UpdateContext({openaddlink: true});
+              UpdateContext({opensupport: false});
+              UpdateContext({linkdata: false});
+              Set(
+                  Mycolor,
+                  false
+              );
+              Set(
+                  Mycolor1,
+                  false
+              );
+              Set(
+                  Mycolor2,
+                  true
+              );
+              Set(
+                  Mycolor3,
+                  false
+              )
+            Size: =8
+            Text: ="OPSD"
+            Width: =70
+            X: =2
+            Y: =313
+      - Label1_5:
+          Control: Label
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =15
+            Text: ="Standard-04 List"
+            Width: =248
+            X: =72
+            Y: =102
+      - Rectangle2_2:
+          Control: Rectangle
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =4
+            Width: =70
+            Y: =244
+      - LogOut_8:
+          Control: Classic/Icon
+          Group: ControlPanel
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            Height: =70
+            HoverColor: =ColorFade(Self.Color, 50%)
+            Icon: =Icon.BackArrow
+            OnSelect: =Navigate(LoginPage)
+            PaddingBottom: =20
+            PaddingLeft: =18
+            PaddingRight: =18
+            Width: =70
+            Y: =698
+      - TextDashboard_8:
+          Control: Label
+          Group: ControlPanel
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Open Sans'
+            Height: =25
+            OnSelect: |-
+              =UpdateContext({opendashboard:true});
+              UpdateContext({openadduser:false});
+              UpdateContext({openaddlink:false});
+              UpdateContext({opensupport:false});
+              UpdateContext({linkdata: false});
+              Set(Mycolor,true);
+              Set(Mycolor1,false);
+              Set(Mycolor2,false);
+              Set(Mycolor3,false)
+            Size: =9
+            Text: ="Log Out"
+            Width: =70
+            Y: =743
+      - Container1:
+          Control: GroupContainer
+          Variant: ManualLayout
+          Properties:
+            Height: =57
+            Width: =961
+            X: =70
+            Y: =97
+          Children:
+            - TabItems:
+                Control: Gallery
+                Variant: Horizontal
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Height: =58
+                  Items: =CDS_WEC.Title
+                  OnSelect: |-
+                    =UpdateContext({SelectedEquipment: ThisItem.Title})
+                  TemplateFill: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(240, 240, 240, 1))
+                  TemplateSize: =185
+                  Width: =769
+                  X: =192
+                Children:
+                  - Button3_2:
+                      Control: Classic/Button
+                      Group: Group1
+                      Properties:
+                        BorderColor: =ColorFade(Self.Fill, -15%)
+                        BorderThickness: =0
+                        Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(240, 240, 240, 1))
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =37
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        OnSelect: =Select(Parent)
+                        PressedBorderColor: =Self.Fill
+                        PressedColor: =Self.Fill
+                        PressedFill: =Self.Color
+                        RadiusBottomLeft: =7
+                        RadiusBottomRight: =7
+                        RadiusTopLeft: =7
+                        RadiusTopRight: =7
+                        Text: =""
+                        Width: =184
+                  - Label6_2:
+                      Control: Label
+                      Group: Group1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: |+
+                          =If(ThisItem.IsSelected, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =37
+                        OnSelect: =Select(Parent)
+                        Size: =14
+                        Text: =ThisItem.Title
+                        Width: =184
+                  - Rectangle4_2:
+                      Control: Rectangle
+                      Group: Group1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =If(ThisItem.IsSelected, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 0))
+                        Height: =6
+                        OnSelect: =Select(Parent)
+                        Width: =184
+                        Y: =37
+      - GallerySTD04:
+          Control: Gallery
+          Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
+          Group: GrSTD04
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            DelayItemLoading: =false
+            Height: =560
+            Items: |-
+              =Sort(Filter(
+                  If(
+                      SelectedEquipment = "All Record",
+                      'WEC STD-04 Certification',// Tampilkan semua data jika "All Record" dipilih
+                      Sort(Filter(
+                          'WEC STD-04 Certification',
+                          'Tested Equipment' = SelectedEquipment
+                      ), ID, SortOrder.Descending)
+                  ),
+                  /*
+                      Sort(Filter(
+                          'WEC STD-04 Certification',
+                          'Tested Equipment' = SelectedEquipment
+                      ), ID, SortOrder.Descending),
+                  */
+                  Or(
+                      StartsWith(
+                          'FA / Serial Number',
+                          SearchbarSTD04.Text
+                      ),
+                      StartsWith(
+                          'Inspector Name',
+                          SearchbarSTD04.Text
+                      ),
+                      StartsWith(
+                          'Unit Description',
+                          SearchbarSTD04.Text
+                      ),
+                      StartsWith(
+                          'Pressure Gauge Tag Number',
+                          SearchbarSTD04.Text
+                      ),
+                      StartsWith(
+                          'PRV Tag Number',
+                          SearchbarSTD04.Text
+                      ),
+                      StartsWith(
+                          'BT_Label on Body',
+                          SearchbarSTD04.Text
+                      ),
+                      StartsWith(
+                          ID,
+                          SearchbarSTD04.Text
+                      )
+                      //StartsWith(ID, SearchIDSTD04.Text)
+                  )
+              ), ID, SortOrder.Descending)
+            TemplateSize: =43
+            Width: =1293
+            X: =73
+            Y: =197
+          Children:
+            - ID_1:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =10
+                  Text: =ThisItem.ID
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =54
+                  Y: =13
+            - Separator4_1:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =5
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =46
+            - Rectangle5_1:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(0, 18, 107, 1)
+                  Height: =Parent.TemplateHeight - Separator4_1.Height
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.IsSelected
+                  Width: =4
+            - Date_1:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =10
+                  Text: =Text(ThisItem.'Inspection Date', "mmm dd,yyyy")
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =110
+                  X: =62
+                  Y: =13
+            - InspName_5:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =10
+                  Text: =ThisItem.'Inspector Name'
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =129
+                  X: =166
+                  Y: =13
+            - TagNumber_1:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =10
+                  Text: "=If(\r\n    ThisItem.'Tested Equipment' = \"Pressure Gauge\", ThisItem.'Pressure Gauge Tag Number',\r\n    ThisItem.'Tested Equipment' = \"PRV (Pressure Relief Valve)\", ThisItem.'PRV Tag Number',\r\n    ThisItem.'Tested Equipment' = \"Body Inspection\", ThisItem.'BT_Label on Body'\r\n)\r\n    "
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =235
+                  X: =740
+                  Y: =13
+            - Result_1:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =If(ThisItem.Result.Value = "PASSED", Color.Green, Color.Red)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =11
+                  Text: =ThisItem.Result.Value
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =91
+                  X: =992
+                  Y: =13
+            - InspName_7:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =11
+                  Text: |-
+                    =Switch(
+                        ThisItem.'Verification MSV',
+                        "Verify",
+                        "Y",
+                        "Not-Verify",
+                        "N",
+                        ThisItem.'Verification MSV'// Jika tidak cocok dengan kondisi di atas, gunakan nilai default
+                    )
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =55
+                  X: =1090
+                  Y: =13
+            - InspName_6:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =10
+                  Text: |-
+                    =Switch(
+                        ThisItem.'Tested Equipment',
+                        "Pressure Gauge",
+                        "P. Gauge",
+                        "PRV (Pressure Relief Valve)",
+                        "PRV",
+                        "Body Inspection",
+                        "Body Test",
+                        ThisItem.'Tested Equipment'// Jika tidak cocok dengan kondisi di atas, gunakan nilai default
+                    )
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =98
+                  X: =613
+                  Y: =13
+            - Icon4_2:
+                Control: Classic/Icon
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(0, 18, 107, 1)
+                  DisplayMode: |+
+                    =If(
+                        ThisItem.'Verification MSV' = "Not-Verify",
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
+                    )
+                  Height: =27
+                  Icon: =Icon.DocumentPDF
+                  OnSelect: |-
+                    =UpdateContext({selectID: ThisItem.ID, showCert: true})
+                  Width: =27
+                  X: =1244
+                  Y: =10
+            - Icon2:
+                Control: Classic/Icon
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(0, 18, 107, 1)
+                  Height: =27
+                  Icon: =Icon.View
+                  OnSelect: |-
+                    =If(
+                        GallerySTD04.Selected.'Tested Equipment' = "Pressure Gauge",
+                        UpdateContext({selectID: ThisItem.ID, showPGPU: true}),
+                        If(
+                            GallerySTD04.Selected.'Tested Equipment' = "PRV (Pressure Relief Valve)",
+                            UpdateContext({selectID: GallerySTD04.Selected.ID, showPRVPU: true}),
+                            If(
+                                GallerySTD04.Selected.'Tested Equipment' = "Body Inspection",
+                                UpdateContext({selectID: GallerySTD04.Selected.ID, showBodyPU: true})
+                            )
+                        )
+                    )
+                  Width: =27
+                  X: =1185
+                  Y: =10
+            - InspName_8:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =10
+                  Text: =ThisItem.'FA / Serial Number'
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =134
+                  X: =300
+                  Y: =13
+            - InspName_9:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =10
+                  Text: =ThisItem.'Maintenance Supervisor Detail'
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =167
+                  X: =435
+                  Y: =13
+            - Icon4:
+                Control: Classic/Icon
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(255, 0, 0, 0.8)
+                  DisplayMode: |
+                    =If(
+                        Not(
+                            IsEmpty(
+                                Filter(
+                                    ThisItem.Attachments,
+                                    EndsWith(Lower(DisplayName), ".pdf")
+                                )
+                            )
+                        ),
+                        DisplayMode.Disabled,   // ada PDF → ikon disabled
+                        DisplayMode.Edit        // tidak ada PDF → ikon aktif
+                    )
+                  Height: =10
+                  Icon: =Icon.Blocked
+                  OnSelect: =Select(Parent)
+                  Width: =10
+                  X: =1231
+                  Y: =12
+      - Rectangle6_1:
+          Control: Rectangle
+          Group: GrSTD04
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =35
+            Width: =1287
+            X: =73
+            Y: =151
+      - LabelHeader_7:
+          Control: Label
+          Group: GrSTD04
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            Size: =15
+            Text: ="Test Equip."
+            Width: =121
+            X: =683
+            Y: =154
+      - LabelHeader_21:
+          Control: Label
+          Group: GrSTD04
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            Size: =15
+            Text: ="Verif"
+            Width: =66
+            X: =1160
+            Y: =154
+      - LabelID_1:
+          Control: Label
+          Group: GrSTD04
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            Size: =15
+            Text: ="ID"
+            Width: =49
+            X: =80
+            Y: =154
+      - LabelHeader_8:
+          Control: Label
+          Group: GrSTD04
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            Size: =15
+            Text: ="Date"
+            Width: =94
+            X: =129
+            Y: =154
+      - LabelHeader_9:
+          Control: Label
+          Group: GrSTD04
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =32
+            Size: =15
+            Text: ="Verificator"
+            Width: =129
+            X: =237
+            Y: =154
+      - LabelHeader_10:
+          Control: Label
+          Group: GrSTD04
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            Size: =15
+            Text: ="Tag Number"
+            Width: =244
+            X: =808
+            Y: =154
+      - LabelHeader_11:
+          Control: Label
+          Group: GrSTD04
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            Size: =15
+            Text: ="Result"
+            Width: =98
+            X: =1060
+            Y: =153
+      - LabelHeader_12:
+          Control: Label
+          Group: GrSTD04
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            Size: =15
+            Text: ="Action"
+            Width: =117
+            X: =1240
+            Y: =154
+      - LabelHeader_22:
+          Control: Label
+          Group: GrSTD04
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            Size: =15
+            Text: ="SN / FA No."
+            Width: =129
+            X: =370
+            Y: =154
+      - LabelHeader_23:
+          Control: Label
+          Group: GrSTD04
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =29
+            Size: =15
+            Text: ="MSV Name"
+            Width: =177
+            X: =501
+            Y: =155
+      - BGPopup_7:
+          Control: Rectangle
+          Group: GrShowCert_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(166, 166, 166, 0.7)
+            Height: =768
+            Visible: =showCert
+            Width: =1366
+      - BGPopup_1:
+          Control: Rectangle
+          Group: GrPopUpPG_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(166, 166, 166, 0.7)
+            Height: =768
+            Visible: =showPGPU
+            Width: =1366
+      - BGDetails_1:
+          Control: Rectangle
+          Group: GrPopUpPG_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(242, 242, 242, 1)
+            Height: =674
+            Visible: =showPGPU
+            Width: =1223
+            X: =81
+            Y: =55
+      - BGJudulDetails_1:
+          Control: Rectangle
+          Group: GrPopUpPG_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =44
+            Visible: =showPGPU
+            Width: =1188
+            X: =97
+            Y: =69
+      - JudulDetails_1:
+          Control: Label
+          Group: GrPopUpPG_1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            Size: =18
+            Text: ="Detail Verification Pressure Gauge"
+            Visible: =showPGPU
+            Width: =1188
+            X: =97
+            Y: =69
+      - Icon3_1:
+          Control: Classic/Icon
+          Group: GrPopUpPG_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =41
+            Icon: =Icon.CancelBadge
+            OnSelect: =UpdateContext({showPGPU:false})
+            Visible: =showPGPU
+            Width: =56
+            X: =1228
+            Y: =72
+      - Rectangle4_17:
+          Control: Rectangle
+          Group: GrPopUpPG_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =3
+            Visible: =false
+            Width: =1147
+            X: =119
+            Y: =313
+      - showPGPU:
+          Control: Gallery
+          Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
+          Group: GrPopUpPG_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =606
+            Items: =Filter('WEC STD-04 Certification', ID = selectID)
+            ShowScrollbar: =false
+            TemplateSize: =598
+            Visible: =showPGPU
+            Width: =1169
+            X: =99
+            Y: =123
+          Children:
+            - Title2_6:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =14
+                  Text: =ThisItem.Title
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Parent.TemplateWidth - 86
+                  X: =16
+                  Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1_1.Size * 1.8)) / 2
+            - ShowPicturesPG_3:
+                Control: Gallery
+                Variant: BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Height: =215
+                  Items: =GallerySTD04.Selected.Attachments
+                  TemplateSize: =219
+                  Width: =1095
+                  X: =57
+                  Y: =375
+                Children:
+                  - Image1_3:
+                      Control: Image
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Height: =200
+                        Image: =LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.AbsoluteUri)
+                        ImagePosition: =ImagePosition.Fill
+                        OnSelect: =Select(Parent)
+                        PaddingLeft: =2
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        RadiusBottomLeft: =8
+                        RadiusBottomRight: =8
+                        RadiusTopLeft: =8
+                        RadiusTopRight: =8
+                        Width: =200
+                        X: =5
+                        Y: =5
+            - Subtitle1_1:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.ID
+                  VerticalAlign: =VerticalAlign.Top
+                  Visible: =false
+                  Width: =Title2_6.Width
+                  X: =Title2_6.X
+                  Y: =Title2_6.Y + Title2_6.Height
+            - NextArrow2_3:
+                Control: Classic/Icon
+                Properties:
+                  AccessibleLabel: =Self.Tooltip
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(166, 166, 166, 1)
+                  Height: =50
+                  Icon: =Icon.ChevronRight
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =16
+                  PaddingLeft: =16
+                  PaddingRight: =16
+                  PaddingTop: =16
+                  Tooltip: ="View item details"
+                  Width: =50
+                  X: =Parent.TemplateWidth - Self.Width - 12
+                  Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            - Separator2_6:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - Rectangle2_13:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(0, 18, 107, 1)
+                  Height: =Parent.TemplateHeight - Separator2_6.Height
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.IsSelected
+                  Width: =4
+            - Label2_131:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Date"
+                  Width: =115
+                  X: =16
+                  Y: =44
+            - Label2_132:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & Text(LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Inspection Date'), "mmm dd, yyyy")
+                  Width: =285
+                  X: =131
+                  Y: =44
+            - Label2_160:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Inspector"
+                  Width: =115
+                  X: =16
+                  Y: =72
+            - Label2_161:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Inspector Name')
+                  Width: =285
+                  X: =131
+                  Y: =72
+            - Label2_135:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="FA Number"
+                  Width: =115
+                  X: =416
+                  Y: =44
+            - Label2_157:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'FA / Serial Number')
+                  Width: =285
+                  X: =531
+                  Y: =44
+            - Label2_162:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Tag Number"
+                  Width: =115
+                  X: =419
+                  Y: =72
+            - Label2_163:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Pressure Gauge Tag Number')
+                  Width: =285
+                  X: =534
+                  Y: =72
+            - Label2_158:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Location"
+                  Width: =115
+                  X: =819
+                  Y: =44
+            - Label2_159:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Inspection Location / District'.Value)
+                  Width: =189
+                  X: =934
+                  Y: =44
+            - Label2_164:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Division"
+                  Width: =115
+                  X: =819
+                  Y: =72
+            - Label2_165:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.Division.Value)
+                  Width: =189
+                  X: =934
+                  Y: =72
+            - Label2_167:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Manufacturer"
+                  Width: =127
+                  X: =16
+                  Y: =153
+            - Label2_168:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Master Gauge Manufacturer')
+                  Width: =222
+                  X: =143
+                  Y: =153
+            - Label2_166:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =22
+                  OnSelect: =Select(Parent)
+                  Text: ="Master Gauge Detail"
+                  Underline: =true
+                  Width: =Parent.Width
+                  Y: =120
+            - Label2_173:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="ID Number"
+                  Width: =127
+                  X: =16
+                  Y: =181
+            - Label2_174:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Certification / ID Number of Master Gauge')
+                  Width: =222
+                  X: =143
+                  Y: =181
+            - Label2_171:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Range"
+                  Width: =127
+                  X: =419
+                  Y: =165
+            - Label2_172:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Range (psi)')
+                  Width: =222
+                  X: =546
+                  Y: =165
+            - Label2_169:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Cal. Date"
+                  Width: =127
+                  X: =816
+                  Y: =153
+            - Label2_170:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & Text(LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Calibration Date'), "mmm dd, yyyy")
+                  Width: =222
+                  X: =943
+                  Y: =153
+            - Label2_175:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Expired Date"
+                  Width: =127
+                  X: =816
+                  Y: =181
+            - Label2_176:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & Text(LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Expired Date'), "mmm dd, yyyy")
+                  Width: =222
+                  X: =943
+                  Y: =181
+            - Label2_177:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =22
+                  OnSelect: =Select(Parent)
+                  Text: ="Inspection Detail"
+                  Underline: =true
+                  Width: =Parent.Width
+                  Y: =233
+            - Label2_178:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Thread O.D"
+                  Width: =127
+                  X: =16
+                  Y: =266
+            - Label2_179:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Thread O.D (inch)')
+                  Width: =222
+                  X: =161
+                  Y: =266
+            - Label2_180:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Direction Fitting"
+                  Width: =145
+                  X: =401
+                  Y: =266
+            - Label2_181:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Direction Fitting')
+                  Width: =222
+                  X: =546
+                  Y: =266
+            - Label2_182:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Max. Pressure Rating"
+                  Width: =181
+                  X: =816
+                  Y: =266
+            - Label2_183:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Max Pressure Rating (psi)') & " psi"
+                  Width: =164
+                  X: =997
+                  Y: =266
+            - Label2_184:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Actual Pressure Reading"
+                  Width: =215
+                  X: =16
+                  Y: =294
+            - Label2_185:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Actual Pressure Reading (psi)') & " psi"
+                  Width: =123
+                  X: =231
+                  Y: =294
+            - Label2_186:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Master Pressure Reading"
+                  Width: =215
+                  X: =401
+                  Y: =294
+            - Label2_187:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Master Pressure Reading (psi)') & " psi"
+                  Width: =123
+                  X: =616
+                  Y: =294
+            - Label2_188:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Delta Reading"
+                  Width: =178
+                  X: =819
+                  Y: =294
+            - Label2_189:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Delta Reading') & " psi"
+                  Width: =123
+                  X: =1000
+                  Y: =294
+            - Label2_191:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =35
+                  OnSelect: =Select(Parent)
+                  Text: ="Result :"
+                  Width: =79
+                  X: =385
+                  Y: =340
+            - Label2_190:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =38
+                  OnSelect: =Select(Parent)
+                  Size: =25
+                  Text: =LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.Result.Value)
+                  Width: =256
+                  X: =468
+                  Y: =337
+            - Label2_126:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =32
+                  OnSelect: =Select(Parent)
+                  Size: =17
+                  Text: |-
+                    ="Item ID #" & ThisItem.ID
+                  Underline: =true
+                  Width: =Parent.Width
+      - Rectangle4_18:
+          Control: Rectangle
+          Group: GrPopUpPG_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =3
+            Visible: =false
+            Width: =1147
+            X: =121
+            Y: =203
+      - BGDetails_7:
+          Control: Rectangle
+          Group: GrShowCert_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(242, 242, 242, 1)
+            Height: =674
+            Visible: =showCert
+            Width: =1223
+            X: =81
+            Y: =55
+      - BGJudulDetails_7:
+          Control: Rectangle
+          Group: GrShowCert_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =44
+            Visible: =showCert
+            Width: =1188
+            X: =97
+            Y: =69
+      - Rectangle4_19:
+          Control: Rectangle
+          Group: GrShowCert_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =3
+            Visible: =false
+            Width: =1147
+            X: =119
+            Y: =313
+      - showCert:
+          Control: Gallery
+          Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
+          Group: GrShowCert_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =644
+            Items: =Filter('WEC STD-04 Certification', ID = selectID)
+            ShowScrollbar: =false
+            TemplateSize: =644
+            Visible: =showCert
+            Width: =1185
+            X: =99
+            Y: =72
+          Children:
+            - Title2_7:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =14
+                  Text: =ThisItem.Title
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Parent.TemplateWidth - 86
+                  X: =16
+            - Subtitle1_7:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.ID
+                  VerticalAlign: =VerticalAlign.Top
+                  Visible: =false
+                  Width: =Title2_7.Width
+                  X: =Title2_7.X
+                  Y: =19.4
+            - Separator2_7:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - Rectangle2_14:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(0, 18, 107, 1)
+                  Height: =Parent.TemplateHeight - Separator2_7.Height
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.IsSelected
+                  Width: =4
+            - Label2_192:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(255, 255, 255, 1)
+                  Fill: =RGBA(1, 20, 221, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =41
+                  OnSelect: =Select(Parent)
+                  Size: =17
+                  Text: |-
+                    ="Certificate of Verification | Item ID #" & ThisItem.ID
+                  Width: =Parent.Width
+      - Rectangle4_20:
+          Control: Rectangle
+          Group: GrShowCert_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =3
+            Visible: =false
+            Width: =1147
+            X: =121
+            Y: =203
+      - Icon3_7:
+          Control: Classic/Icon
+          Group: GrShowCert_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =38
+            Icon: =Icon.CancelBadge
+            OnSelect: =UpdateContext({showCert:false})
+            Visible: =showCert
+            Width: =38
+            X: =1240
+            Y: =72
+      - SPListItemAttachmentsViewer_7:
+          Control: CanvasComponent
+          ComponentName: SPListItemAttachmentsViewer_2
+          Group: GrShowCert_1
+          Properties:
+            BackgroundColor: =RGBA(220, 225, 225, 1)
+            Border: =false
+            Height: =596
+            Items: |+
+              =Filter(
+                  GallerySTD04.Selected.Attachments,
+                  Lower(Right(DisplayName, 4)) = ".pdf"
+              )
+            TextColor: =Color.Black
+            Visible: =showCert
+            Width: =1185
+            WrapCount: =1
+            X: =99
+            Y: =113
+      - BGPopup_8:
+          Control: Rectangle
+          Group: GrPopUpPRV_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(166, 166, 166, 0.7)
+            Height: =768
+            Visible: =showPRVPU
+            Width: =1366
+      - BGDetails_8:
+          Control: Rectangle
+          Group: GrPopUpPRV_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(242, 242, 242, 1)
+            Height: =674
+            Visible: =showPRVPU
+            Width: =1223
+            X: =81
+            Y: =55
+      - BGJudulDetails_8:
+          Control: Rectangle
+          Group: GrPopUpPRV_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =44
+            Visible: =showPRVPU
+            Width: =1188
+            X: =97
+            Y: =69
+      - JudulDetails_5:
+          Control: Label
+          Group: GrPopUpPRV_1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            Size: =18
+            Text: ="Detail Verification Pressure Relief Valve (PRV)"
+            Visible: =showPRVPU
+            Width: =1188
+            X: =97
+            Y: =69
+      - Icon3_8:
+          Control: Classic/Icon
+          Group: GrPopUpPRV_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =41
+            Icon: =Icon.CancelBadge
+            OnSelect: =UpdateContext({showPRVPU:false})
+            Visible: =showPRVPU
+            Width: =56
+            X: =1228
+            Y: =72
+      - Rectangle4_21:
+          Control: Rectangle
+          Group: GrPopUpPRV_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =3
+            Visible: =false
+            Width: =1147
+            X: =119
+            Y: =313
+      - showPRVPU:
+          Control: Gallery
+          Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
+          Group: GrPopUpPRV_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =606
+            Items: =Filter('WEC STD-04 Certification', ID = selectID)
+            ShowScrollbar: =false
+            TemplateSize: =598
+            Visible: =showPRVPU
+            Width: =1169
+            X: =99
+            Y: =123
+          Children:
+            - Title2_8:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =14
+                  Text: =ThisItem.Title
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Parent.TemplateWidth - 86
+                  X: =16
+                  Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1_8.Size * 1.8)) / 2
+            - ShowPicturesPG_4:
+                Control: Gallery
+                Variant: BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Height: =215
+                  Items: =GallerySTD04.Selected.Attachments
+                  TemplateSize: =219
+                  Width: =1095
+                  X: =37
+                  Y: =361
+                Children:
+                  - Image1_4:
+                      Control: Image
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Height: =200
+                        Image: =LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.AbsoluteUri)
+                        ImagePosition: =ImagePosition.Fill
+                        OnSelect: =Select(Parent)
+                        PaddingLeft: =2
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        RadiusBottomLeft: =8
+                        RadiusBottomRight: =8
+                        RadiusTopLeft: =8
+                        RadiusTopRight: =8
+                        Width: =200
+                        X: =5
+                        Y: =5
+            - Subtitle1_8:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.ID
+                  VerticalAlign: =VerticalAlign.Top
+                  Visible: =false
+                  Width: =Title2_8.Width
+                  X: =Title2_8.X
+                  Y: =Title2_8.Y + Title2_8.Height
+            - NextArrow2_4:
+                Control: Classic/Icon
+                Properties:
+                  AccessibleLabel: =Self.Tooltip
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(166, 166, 166, 1)
+                  Height: =50
+                  Icon: =Icon.ChevronRight
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =16
+                  PaddingLeft: =16
+                  PaddingRight: =16
+                  PaddingTop: =16
+                  Tooltip: ="View item details"
+                  Width: =50
+                  X: =Parent.TemplateWidth - Self.Width - 12
+                  Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            - Separator2_8:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - Rectangle2_15:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(0, 18, 107, 1)
+                  Height: =Parent.TemplateHeight - Separator2_8.Height
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.IsSelected
+                  Width: =4
+            - Label2_194:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Date"
+                  Width: =115
+                  X: =16
+                  Y: =44
+            - Label2_195:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & Text(LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Inspection Date'), "mmm dd, yyyy")
+                  Width: =285
+                  X: =131
+                  Y: =44
+            - Label2_200:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Inspector"
+                  Width: =115
+                  X: =16
+                  Y: =72
+            - Label2_201:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Inspector Name')
+                  Width: =285
+                  X: =131
+                  Y: =72
+            - Label2_196:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="FA Number"
+                  Width: =115
+                  X: =416
+                  Y: =44
+            - Label2_197:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'FA / Serial Number')
+                  Width: =285
+                  X: =531
+                  Y: =44
+            - Label2_202:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Tag Number"
+                  Width: =115
+                  X: =419
+                  Y: =72
+            - Label2_203:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'PRV Tag Number')
+                  Width: =285
+                  X: =534
+                  Y: =72
+            - Label2_198:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Location"
+                  Width: =115
+                  X: =819
+                  Y: =44
+            - Label2_199:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Inspection Location / District'.Value)
+                  Width: =189
+                  X: =934
+                  Y: =44
+            - Label2_204:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Division"
+                  Width: =115
+                  X: =819
+                  Y: =72
+            - Label2_205:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.Division.Value)
+                  Width: =189
+                  X: =934
+                  Y: =72
+            - Label2_207:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Manufacturer"
+                  Width: =127
+                  X: =16
+                  Y: =153
+            - Label2_208:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Master Gauge Manufacturer')
+                  Width: =222
+                  X: =143
+                  Y: =153
+            - Label2_206:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =22
+                  OnSelect: =Select(Parent)
+                  Text: ="Master Gauge Detail"
+                  Underline: =true
+                  Width: =Parent.Width
+                  Y: =120
+            - Label2_213:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="ID Number"
+                  Width: =127
+                  X: =16
+                  Y: =181
+            - Label2_214:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Certification / ID Number of Master Gauge')
+                  Width: =222
+                  X: =143
+                  Y: =181
+            - Label2_211:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Range"
+                  Width: =127
+                  X: =419
+                  Y: =165
+            - Label2_212:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Range (psi)')
+                  Width: =222
+                  X: =546
+                  Y: =165
+            - Label2_209:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Insp. Date"
+                  Width: =127
+                  X: =816
+                  Y: =153
+            - Label2_210:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & Text(LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Calibration Date'), "mmm dd, yyyy")
+                  Width: =222
+                  X: =943
+                  Y: =153
+            - Label2_215:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Expired Date"
+                  Width: =127
+                  X: =816
+                  Y: =181
+            - Label2_216:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & Text(LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Expired Date'), "mmm dd, yyyy")
+                  Width: =222
+                  X: =943
+                  Y: =181
+            - Label2_217:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =22
+                  OnSelect: =Select(Parent)
+                  Text: ="Inspection Detail"
+                  Underline: =true
+                  Width: =Parent.Width
+                  Y: =233
+            - Label2_218:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Pressure Setting"
+                  Width: =145
+                  X: =16
+                  Y: =266
+            - Label2_219:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Pressure Setting PRV (psi)') & " psi"
+                  Width: =222
+                  X: =161
+                  Y: =266
+            - Label2_220:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Pop Pressure"
+                  Width: =145
+                  X: =401
+                  Y: =266
+            - Label2_221:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Pop Pressure (psi)') & " psi"
+                  Width: =222
+                  X: =546
+                  Y: =266
+            - Label2_222:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Delta Reading"
+                  Width: =181
+                  X: =816
+                  Y: =266
+            - Label2_223:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Delta Reading') & " %"
+                  Width: =164
+                  X: =997
+                  Y: =266
+            - Label2_225:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =35
+                  OnSelect: =Select(Parent)
+                  Text: ="Result :"
+                  Width: =79
+                  X: =385
+                  Y: =312
+            - Label2_224:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =38
+                  OnSelect: =Select(Parent)
+                  Size: =25
+                  Text: =LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.Result.Value)
+                  Width: =256
+                  X: =468
+                  Y: =309
+            - Label2_193:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =32
+                  OnSelect: =Select(Parent)
+                  Size: =17
+                  Text: |-
+                    ="Item ID #" & selectID
+                  Underline: =true
+                  Width: =Parent.Width
+      - Rectangle4_22:
+          Control: Rectangle
+          Group: GrPopUpPRV_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =3
+            Visible: =false
+            Width: =1147
+            X: =121
+            Y: =203
+      - BGPopup_9:
+          Control: Rectangle
+          Group: GrPopUpBT_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(166, 166, 166, 0.7)
+            Height: =768
+            Visible: =showBodyPU
+            Width: =1366
+      - BGDetails_9:
+          Control: Rectangle
+          Group: GrPopUpBT_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(242, 242, 242, 1)
+            Height: =674
+            Visible: =showBodyPU
+            Width: =1223
+            X: =81
+            Y: =55
+      - BGJudulDetails_9:
+          Control: Rectangle
+          Group: GrPopUpBT_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =44
+            Visible: =showBodyPU
+            Width: =1188
+            X: =97
+            Y: =69
+      - JudulDetails_6:
+          Control: Label
+          Group: GrPopUpBT_1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            Size: =18
+            Text: ="Detail Verification Body Inspection"
+            Visible: =showBodyPU
+            Width: =1188
+            X: =97
+            Y: =69
+      - Icon3_9:
+          Control: Classic/Icon
+          Group: GrPopUpBT_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =41
+            Icon: =Icon.CancelBadge
+            OnSelect: =UpdateContext({showBodyPU:false})
+            Visible: =showBodyPU
+            Width: =56
+            X: =1228
+            Y: =72
+      - Rectangle4_23:
+          Control: Rectangle
+          Group: GrPopUpBT_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =3
+            Visible: =false
+            Width: =1147
+            X: =119
+            Y: =313
+      - showBodyPU:
+          Control: Gallery
+          Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
+          Group: GrPopUpBT_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =606
+            Items: =Filter('WEC STD-04 Certification', ID = selectID)
+            ShowScrollbar: =false
+            TemplateSize: =598
+            Visible: =showBodyPU
+            Width: =1169
+            X: =99
+            Y: =123
+          Children:
+            - Title2_9:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =14
+                  Text: =ThisItem.Title
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Parent.TemplateWidth - 86
+                  X: =16
+                  Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1_9.Size * 1.8)) / 2
+            - ShowPicturesPG_5:
+                Control: Gallery
+                Variant: BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Height: =215
+                  Items: =GallerySTD04.Selected.Attachments
+                  TemplateSize: =219
+                  Width: =1095
+                  X: =37
+                  Y: =361
+                Children:
+                  - Image1_5:
+                      Control: Image
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Height: =200
+                        Image: =ThisItem.AbsoluteUri
+                        ImagePosition: =ImagePosition.Fill
+                        OnSelect: =Select(Parent)
+                        PaddingLeft: =2
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        RadiusBottomLeft: =8
+                        RadiusBottomRight: =8
+                        RadiusTopLeft: =8
+                        RadiusTopRight: =8
+                        Width: =200
+                        X: =5
+                        Y: =5
+            - Subtitle1_9:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.ID
+                  VerticalAlign: =VerticalAlign.Top
+                  Visible: =false
+                  Width: =Title2_9.Width
+                  X: =Title2_9.X
+                  Y: =Title2_9.Y + Title2_9.Height
+            - Separator2_9:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - Rectangle2_16:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(0, 18, 107, 1)
+                  Height: =Parent.TemplateHeight - Separator2_9.Height
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.IsSelected
+                  Width: =4
+            - Label2_227:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Date"
+                  Width: =115
+                  X: =16
+                  Y: =44
+            - Label2_228:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & Text(LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Inspection Date'), "mmm dd, yyyy")
+                  Width: =285
+                  X: =131
+                  Y: =44
+            - Label2_233:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Inspector"
+                  Width: =115
+                  X: =16
+                  Y: =72
+            - Label2_234:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Inspector Name')
+                  Width: =285
+                  X: =131
+                  Y: =72
+            - Label2_229:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="FA Number"
+                  Width: =115
+                  X: =416
+                  Y: =44
+            - Label2_230:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'FA / Serial Number')
+                  Width: =285
+                  X: =531
+                  Y: =44
+            - Label2_235:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Label on Body"
+                  Width: =127
+                  X: =404
+                  Y: =72
+            - Label2_236:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'BT_Label on Body')
+                  Width: =285
+                  X: =531
+                  Y: =72
+            - Label2_231:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Location"
+                  Width: =115
+                  X: =819
+                  Y: =44
+            - Label2_232:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Inspection Location / District'.Value)
+                  Width: =189
+                  X: =934
+                  Y: =44
+            - Label2_237:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Division"
+                  Width: =115
+                  X: =819
+                  Y: =72
+            - Label2_238:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.Division.Value)
+                  Width: =189
+                  X: =934
+                  Y: =72
+            - Label2_240:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Manufacturer"
+                  Width: =127
+                  X: =16
+                  Y: =153
+            - Label2_241:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Master Gauge Manufacturer')
+                  Width: =222
+                  X: =143
+                  Y: =153
+            - Label2_239:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =22
+                  OnSelect: =Select(Parent)
+                  Text: ="Master Gauge Detail"
+                  Underline: =true
+                  Width: =Parent.Width
+                  Y: =120
+            - Label2_246:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="ID Number"
+                  Width: =127
+                  X: =16
+                  Y: =181
+            - Label2_247:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Certification / ID Number of Master Gauge')
+                  Width: =222
+                  X: =143
+                  Y: =181
+            - Label2_242:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Range"
+                  Width: =127
+                  X: =404
+                  Y: =153
+            - Label2_243:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Range (psi)')
+                  Width: =222
+                  X: =531
+                  Y: =153
+            - Label2_244:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Insp. Date"
+                  Width: =127
+                  X: =816
+                  Y: =153
+            - Label2_245:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & Text(LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Calibration Date'), "mmm dd, yyyy")
+                  Width: =222
+                  X: =943
+                  Y: =153
+            - Label2_250:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Expired Date"
+                  Width: =127
+                  X: =816
+                  Y: =181
+            - Label2_251:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & Text(LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'Expired Date'), "mmm dd, yyyy")
+                  Width: =222
+                  X: =943
+                  Y: =181
+            - Label2_252:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =22
+                  OnSelect: =Select(Parent)
+                  Text: ="Inspection Detail"
+                  Underline: =true
+                  Width: =Parent.Width
+                  Y: =233
+            - Label2_255:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Repair Order No"
+                  Width: =145
+                  X: =401
+                  Y: =266
+            - Label2_256:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'BT_Repair Order Number')
+                  Width: =222
+                  X: =546
+                  Y: =266
+            - Label2_257:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Body No."
+                  Width: =181
+                  X: =816
+                  Y: =266
+            - Label2_258:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'BT_Body Number')
+                  Width: =164
+                  X: =997
+                  Y: =266
+            - Label2_260:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =35
+                  OnSelect: =Select(Parent)
+                  Text: ="Result :"
+                  Width: =79
+                  X: =385
+                  Y: =315
+            - Label2_259:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =38
+                  OnSelect: =Select(Parent)
+                  Size: =25
+                  Text: =LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.Result.Value)
+                  Width: =256
+                  X: =468
+                  Y: =312
+            - Label2_226:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =32
+                  OnSelect: =Select(Parent)
+                  Size: =17
+                  Text: |-
+                    ="Item ID #" & selectID
+                  Underline: =true
+                  Width: =Parent.Width
+            - Label2_248:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Inspector Did Test Before"
+                  Width: =222
+                  X: =404
+                  Y: =181
+            - Label2_249:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'BT_Inspection Did Test Before')
+                  Width: =125
+                  X: =626
+                  Y: =181
+            - Label2_253:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Test Pressure "
+                  Width: =127
+                  X: =16
+                  Y: =266
+            - Label2_254:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('WEC STD-04 Certification', ID = selectID, ThisItem.'BT_Test Pressure (PSI)') & " psi"
+                  Width: =222
+                  X: =143
+                  Y: =266
+      - Rectangle4_24:
+          Control: Rectangle
+          Group: GrPopUpBT_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =3
+            Visible: =false
+            Width: =1147
+            X: =121
+            Y: =203
+      - TimerAllSTD:
+          Control: Timer
+          Properties:
+            AutoStart: =refreshOtomatis
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Duration: =1000
+            Fill: =RGBA(56, 96, 178, 1)
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnTimerEnd: |-
+              =//Refresh Dataset
+              Refresh('WEC STD-04 Certification')
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Repeat: =true
+            Visible: =false
+            X: =1200
+            Y: =713

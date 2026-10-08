@@ -1,0 +1,1756 @@
+Screens:
+  MyApprovalOPSD:
+    Properties:
+      Fill: =
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      OnVisible: |+
+        =Set(automaticRefresh2, true);
+    Children:
+      - Image4_6:
+          Control: Image
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =768
+            Image: ='Background WEC (3)'
+            Width: =1366
+      - Label1_6:
+          Control: Label
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =15
+            Text: ="My Approval OPSD"
+            Width: =338
+            X: =141
+            Y: =99
+      - SearchDataOPSD:
+          Control: Classic/TextInput
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Default: =""
+            Font: =Font.'Open Sans'
+            HintText: ="Search Data ..."
+            HoverBorderColor: =RGBA(0, 18, 107, 1)
+            HoverFill: =RGBA(186, 202, 226, 1)
+            Width: =287
+            X: =983
+            Y: =106
+      - slb logo_7:
+          Control: Image
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =120
+            Image: =SLB_Logo_Positive_RGB_General
+            PaddingBottom: =15
+            PaddingRight: =25
+            Width: =120
+            X: =1246
+      - GalleryMyApproval_OPSD:
+          Control: Gallery
+          Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
+          Group: Group6_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =577
+            Items: |-
+              =Filter(
+                  If(
+                      SelectedEquipment = "Not-Verify",// Memeriksa tab yang dipilih
+                      Sort(Filter(
+                          'TLM OPSD Verification',
+                          'Verification MSV' = "Not-Verify"  && 'MSV Email' = User().Email // Filter untuk data yang belum diverifikasi
+                      ), ID, SortOrder.Descending),
+                      If(
+                          SelectedEquipment = "Verify",// Jika tab "Verify" dipilih
+                          Sort(Filter(
+                              'TLM OPSD Verification',
+                              'Verification MSV' = "Verify"  && 'MSV Email' = User().Email// Filter untuk data yang sudah diverifikasi
+                          ), ID, SortOrder.Descending),
+                          Blank()// Kosongkan jika tab tidak dipilih
+                      )
+                  ),
+                  Or(
+                      StartsWith('Serial Number', SearchDataOPSD.Text),
+                      StartsWith('Verificator Name', SearchDataOPSD.Text),
+                      StartsWith('Verification Date', SearchDataOPSD.Text),
+                      StartsWith('Serial Number', SearchDataOPSD.Text),
+                      StartsWith('Installed at (FA Number)', SearchDataOPSD.Text),
+                      StartsWith(ID, SearchDataOPSD.Text)
+                  )
+              )
+            TemplateSize: =58
+            Width: =1219
+            X: =141
+            Y: =191
+          Children:
+            - ID_2:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.ID
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =40
+                  Y: =13
+            - Separator4_2:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =5
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =46
+            - Rectangle5_2:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(0, 18, 107, 1)
+                  Height: =Parent.TemplateHeight - Separator4_2.Height
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.IsSelected
+                  Width: =4
+            - Date_2:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =Text(ThisItem.'Verification Date', "mmm dd,yyyy")
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =110
+                  X: =56
+                  Y: =13
+            - InspName_3:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.'Verificator Name'
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =203
+                  X: =166
+                  Y: =13
+            - TagNumber_2:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.'Serial Number'
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =137
+                  X: =376
+                  Y: =13
+            - Result_2:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =If(ThisItem.'Final Result'.Value = "PASSED", Color.Green, Color.Red)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.'Final Result'.Value
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =103
+                  X: =675
+                  Y: =13
+            - Status_2:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =If(ThisItem.'Verification MSV' = "Verify", Color.Green, Color.Red)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =If(ThisItem.'Verification MSV' = "Verify", "Verified", "Not-Verify")
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =93
+                  X: =847
+                  Y: =13
+            - BtnApproveNow_2:
+                Control: Classic/Button
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  DisplayMode: |-
+                    =If(
+                        ThisItem.'Verification MSV' = "Not-Verify",
+                        DisplayMode.Edit,
+                        DisplayMode.Disabled
+                    )
+                  Fill: |-
+                    =If(
+                        ThisItem.'Verification MSV' = "Not-Verify",
+                        Color.Green,
+                        Color.Gray
+                    )
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Lighter
+                  Height: =20
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                  OnSelect: |-
+                    =OPSDFlowInApp.Run(
+                        ThisItem.ID,
+                        VerMSV.Text
+                    );
+
+
+                    Notify("Approved Successfully", NotificationType.Success);
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  Size: =10
+                  Text: |-
+                    =If(
+                            ThisItem.'Verification MSV' = "Not-Verify",
+                            "Approve Now",
+                            "Approved"
+                        )
+                  Width: =100
+                  X: =959
+                  Y: =13
+            - InspName_4:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.'Installed at (FA Number)'
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =133
+                  X: =536
+                  Y: =13
+            - BtnDetails_1:
+                Control: Classic/Button
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  DisplayMode: |-
+                    =If(
+                        GalleryMyApproval_OPSD.Selected.'Verification MSV' = "Not-Verify",
+                        DisplayMode.Edit,
+                        DisplayMode.Disabled
+                    )
+                  Fill: =RGBA(97, 97, 88, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Lighter
+                  Height: =20
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                  OnSelect: |-
+                    =UpdateContext({selectID: ThisItem.ID, showOPSDdetail: true})
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  Size: =10
+                  Text: ="Details"
+                  Width: =60
+                  X: =1071
+                  Y: =13
+            - Icon4_1:
+                Control: Classic/Icon
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(0, 18, 107, 1)
+                  DisplayMode: |-
+                    =If(
+                        GalleryMyApproval_OPSD.Selected.'Verification MSV' = "Not-Verify",
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
+                    )
+                  Height: =33
+                  Icon: =Icon.DocumentPDF
+                  OnSelect: |-
+                    =UpdateContext({selectID: ThisItem.ID, showCertificateOPSD: true})
+                  Width: =29
+                  X: =1142
+                  Y: =5
+      - Label1_7:
+          Control: Label
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =70
+            Size: =20
+            Text: ="⁠ING TLM WCEF Certificate Digitalization System"
+            Width: =Parent.Width
+            Y: =18
+      - Rectangle6_2:
+          Control: Rectangle
+          Group: Group6_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =36
+            Width: =1219
+            X: =141
+            Y: =151
+      - LabelID_2:
+          Control: Label
+          Group: Group6_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =33
+            Size: =15
+            Text: ="ID"
+            Width: =49
+            X: =148
+            Y: =152
+      - LabelHeader_14:
+          Control: Label
+          Group: Group6_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =33
+            Size: =15
+            Text: ="Date"
+            Width: =94
+            X: =190
+            Y: =152
+      - LabelHeader_15:
+          Control: Label
+          Group: Group6_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =33
+            Size: =15
+            Text: ="Verificator Name"
+            Width: =194
+            X: =302
+            Y: =151
+      - LabelHeader_16:
+          Control: Label
+          Group: Group6_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =33
+            Size: =15
+            Text: ="Serial Number"
+            Width: =163
+            X: =510
+            Y: =151
+      - LabelHeader_17:
+          Control: Label
+          Group: Group6_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =33
+            Size: =15
+            Text: ="Result"
+            Width: =114
+            X: =811
+            Y: =151
+      - LabelHeader_18:
+          Control: Label
+          Group: Group6_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =33
+            Size: =15
+            Text: ="Status"
+            Width: =90
+            X: =988
+            Y: =152
+      - LabelHeader_19:
+          Control: Label
+          Group: Group6_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =33
+            Size: =15
+            Text: ="Action"
+            Width: =120
+            X: =1104
+            Y: =152
+      - VerMSV:
+          Control: Classic/TextInput
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Default: ="Verify"
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =RGBA(0, 18, 107, 1)
+            HoverFill: =RGBA(186, 202, 226, 1)
+            Visible: =false
+            X: =760
+      - Icon1_2:
+          Control: Classic/Icon
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =30
+            Icon: =Icon.Reload
+            OnSelect: |-
+              =Refresh('TLM OPSD Verification');
+
+              //Turn off automatic refresh
+              Set(automaticRefresh2, false);
+              //Reset timer
+              Reset(TimerGalleryOPSD);
+              //Turn on automatic refresh
+              Set(automaticRefresh2, true);
+            Width: =32
+            X: =1304
+            Y: =112
+      - TimerGalleryOPSD:
+          Control: Timer
+          Properties:
+            AutoStart: =automaticRefresh
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Duration: =5000
+            Fill: =RGBA(56, 96, 178, 1)
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnTimerEnd: |-
+              =//Refresh Dataset
+              Refresh('TLM OPSD Verification')
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Repeat: =true
+            Visible: =false
+            X: =1200
+            Y: =713
+      - LabelHeader_20:
+          Control: Label
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =33
+            Size: =15
+            Text: ="FA Number"
+            Width: =138
+            X: =673
+            Y: =152
+      - Rectangle3_4:
+          Control: Rectangle
+          Group: GroupSideBar_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(166, 166, 166, 1)
+            Height: =768
+            Width: =2
+            X: =70
+      - TxtSTD04_7:
+          Control: Label
+          Group: GroupSideBar_1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(Mycolor2, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Open Sans'
+            Height: =25
+            OnSelect: |-
+              =UpdateContext({opendashboard: true});
+              UpdateContext({openadduser: false});
+              UpdateContext({openaddlink: true});
+              UpdateContext({opensupport: false});
+              UpdateContext({linkdata: false});
+              Set(
+                  Mycolor,
+                  false
+              );
+              Set(
+                  Mycolor1,
+                  false
+              );
+              Set(
+                  Mycolor2,
+                  true
+              );
+              Set(
+                  Mycolor3,
+                  false
+              )
+            Size: =8
+            Text: ="STD-04"
+            Width: =70
+            X: =71
+            Y: =366
+      - STD04Icon_7:
+          Control: Image
+          Group: GroupSideBar_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =50
+            Image: =valve
+            OnSelect: =Navigate(MyApprovalSTD04)
+            Width: =50
+            X: =81
+            Y: =322
+      - OPSDIcon_7:
+          Control: Image
+          Group: GroupSideBar_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =50
+            Image: ='high-pressure'
+            OnSelect: =Navigate(MyApprovalOPSD)
+            Width: =50
+            X: =81
+            Y: =406
+      - TxtOPSD_7:
+          Control: Label
+          Group: GroupSideBar_1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(Mycolor2, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Open Sans'
+            Height: =25
+            OnSelect: |-
+              =UpdateContext({opendashboard: true});
+              UpdateContext({openadduser: false});
+              UpdateContext({openaddlink: true});
+              UpdateContext({opensupport: false});
+              UpdateContext({linkdata: false});
+              Set(
+                  Mycolor,
+                  false
+              );
+              Set(
+                  Mycolor1,
+                  false
+              );
+              Set(
+                  Mycolor2,
+                  true
+              );
+              Set(
+                  Mycolor3,
+                  false
+              )
+            Size: =8
+            Text: ="OPSD"
+            Width: =70
+            X: =71
+            Y: =456
+      - Rectangle3_9:
+          Control: Rectangle
+          Group: GroupSideBar_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(166, 166, 166, 1)
+            Height: =768
+            Width: =2
+            X: =137
+      - Rectangle2_6:
+          Control: Rectangle
+          Group: GroupSideBar_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =4
+            Width: =65
+            X: =73
+            Y: =480
+      - TabVerif_1:
+          Control: Gallery
+          Variant: Horizontal
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =58
+            Items: =CDS_WEC.Verification
+            OnSelect: |-
+              =UpdateContext({SelectedEquipment: ThisItem.Verification})
+            ShowScrollbar: =false
+            TemplateFill: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(240, 240, 240, 1))
+            TemplateSize: =185
+            Width: =383
+            X: =479
+            Y: =90
+          Children:
+            - Button3_4:
+                Control: Classic/Button
+                Group: Group1_2
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderThickness: =0
+                  Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(240, 240, 240, 1))
+                  DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                  DisabledColor: =RGBA(0, 0, 0, 0)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Font: =Font.'Open Sans'
+                  Height: =37
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                  OnSelect: =Select(Parent)
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  RadiusBottomLeft: =7
+                  RadiusBottomRight: =7
+                  RadiusTopLeft: =7
+                  RadiusTopRight: =7
+                  Text: =""
+                  Width: =184
+            - Label6_4:
+                Control: Label
+                Group: Group1_2
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: |+
+                    =If(ThisItem.IsSelected, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =37
+                  OnSelect: =Select(Parent)
+                  Size: =14
+                  Text: =ThisItem.Verification
+                  Width: =184
+            - Rectangle4_4:
+                Control: Rectangle
+                Group: Group1_2
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =If(ThisItem.IsSelected, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 0))
+                  Height: =6
+                  OnSelect: =Select(Parent)
+                  Width: =184
+                  Y: =37
+      - Rectangle3_10:
+          Control: Rectangle
+          Group: ControlPanel_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(240, 240, 240, 1)
+            Height: =768
+            Width: =70
+      - TxtDashboard_6:
+          Control: Label
+          Group: ControlPanel_1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(Mycolor, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Open Sans'
+            Height: =25
+            OnSelect: |-
+              =UpdateContext({opendashboard:true});
+              UpdateContext({openadduser:false});
+              UpdateContext({openaddlink:false});
+              UpdateContext({opensupport:false});
+              UpdateContext({linkdata: false});
+              Set(Mycolor,true);
+              Set(Mycolor1,false);
+              Set(Mycolor2,false);
+              Set(Mycolor3,false)
+            Size: =8
+            Text: ="Dashboard"
+            Width: =70
+            X: =2
+            Y: =140
+      - TxtSTD04_8:
+          Control: Label
+          Group: ControlPanel_1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(Mycolor2, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Open Sans'
+            Height: =25
+            OnSelect: |-
+              =UpdateContext({opendashboard: true});
+              UpdateContext({openadduser: false});
+              UpdateContext({openaddlink: true});
+              UpdateContext({opensupport: false});
+              UpdateContext({linkdata: false});
+              Set(
+                  Mycolor,
+                  false
+              );
+              Set(
+                  Mycolor1,
+                  false
+              );
+              Set(
+                  Mycolor2,
+                  true
+              );
+              Set(
+                  Mycolor3,
+                  false
+              )
+            Size: =8
+            Text: ="STD-04"
+            Width: =70
+            X: =2
+            Y: =223
+      - TxtMyApproval_6:
+          Control: Label
+          Group: ControlPanel_1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(Mycolor1, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Open Sans'
+            Height: =25
+            OnSelect: |-
+              =UpdateContext({opendashboard:false});
+              UpdateContext({openadduser:true});
+              UpdateContext({openaddlink:false});
+              UpdateContext({opensupport:false});
+              UpdateContext({linkdata: false});
+              Set(Mycolor,false);
+              Set(Mycolor1,true);
+              Set(Mycolor2,false);
+              Set(Mycolor3,false)
+            Size: =8
+            Text: ="MyApproval"
+            Width: =70
+            X: =2
+            Y: =400
+      - DashboardIcon_6:
+          Control: Image
+          Group: ControlPanel_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =50
+            Image: =home
+            OnSelect: =Navigate(Dashboard)
+            Width: =50
+            X: =12
+            Y: =102
+      - ApprovalIcon_6:
+          Control: Image
+          Group: ControlPanel_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =50
+            Image: =approval
+            OnSelect: =Navigate(MyApprovalSTD04)
+            Width: =50
+            X: =12
+            Y: =354
+      - STD04Icon_8:
+          Control: Image
+          Group: ControlPanel_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =50
+            Image: =valve
+            OnSelect: =Navigate(AllRecordStd04)
+            Width: =50
+            X: =12
+            Y: =179
+      - OPSDIcon_8:
+          Control: Image
+          Group: ControlPanel_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =50
+            Image: ='high-pressure'
+            OnSelect: =Navigate(AllRecordOPSD)
+            Width: =50
+            X: =12
+            Y: =263
+      - TxtOPSD_8:
+          Control: Label
+          Group: ControlPanel_1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(Mycolor2, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Open Sans'
+            Height: =25
+            OnSelect: |-
+              =UpdateContext({opendashboard: true});
+              UpdateContext({openadduser: false});
+              UpdateContext({openaddlink: true});
+              UpdateContext({opensupport: false});
+              UpdateContext({linkdata: false});
+              Set(
+                  Mycolor,
+                  false
+              );
+              Set(
+                  Mycolor1,
+                  false
+              );
+              Set(
+                  Mycolor2,
+                  true
+              );
+              Set(
+                  Mycolor3,
+                  false
+              )
+            Size: =8
+            Text: ="OPSD"
+            Width: =70
+            X: =2
+            Y: =313
+      - LogOut_10:
+          Control: Classic/Icon
+          Group: ControlPanel_1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            Height: =70
+            HoverColor: =ColorFade(Self.Color, 50%)
+            Icon: =Icon.BackArrow
+            OnSelect: =Navigate(LoginPage)
+            PaddingBottom: =20
+            PaddingLeft: =18
+            PaddingRight: =18
+            Width: =70
+            Y: =698
+      - TextDashboard_10:
+          Control: Label
+          Group: ControlPanel_1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Open Sans'
+            Height: =25
+            OnSelect: |-
+              =UpdateContext({opendashboard:true});
+              UpdateContext({openadduser:false});
+              UpdateContext({openaddlink:false});
+              UpdateContext({opensupport:false});
+              UpdateContext({linkdata: false});
+              Set(Mycolor,true);
+              Set(Mycolor1,false);
+              Set(Mycolor2,false);
+              Set(Mycolor3,false)
+            Size: =9
+            Text: ="Log Out"
+            Width: =70
+            Y: =743
+      - Rectangle2_7:
+          Control: Rectangle
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =4
+            Width: =70
+            Y: =423
+      - BGPopup_5:
+          Control: Rectangle
+          Group: GrPopUpOPSD
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(166, 166, 166, 0.7)
+            Height: =768
+            Visible: =showOPSDdetail
+            Width: =1366
+      - BGDetails_5:
+          Control: Rectangle
+          Group: GrPopUpOPSD
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(242, 242, 242, 1)
+            Height: =674
+            Visible: =showOPSDdetail
+            Width: =1223
+            X: =81
+            Y: =55
+      - BGJudulDetails_5:
+          Control: Rectangle
+          Group: GrPopUpOPSD
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =44
+            Visible: =showOPSDdetail
+            Width: =1188
+            X: =97
+            Y: =69
+      - JudulDetails_4:
+          Control: Label
+          Group: GrPopUpOPSD
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            Size: =18
+            Text: ="Detail Verification OPSD"
+            Visible: =showOPSDdetail
+            Width: =1188
+            X: =97
+            Y: =69
+      - Icon3_5:
+          Control: Classic/Icon
+          Group: GrPopUpOPSD
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =41
+            Icon: =Icon.CancelBadge
+            OnSelect: =UpdateContext({showOPSDdetail:false})
+            Visible: =showOPSDdetail
+            Width: =56
+            X: =1228
+            Y: =72
+      - Rectangle4_13:
+          Control: Rectangle
+          Group: GrPopUpOPSD
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =3
+            Visible: =false
+            Width: =1147
+            X: =119
+            Y: =313
+      - showOPSDdetail:
+          Control: Gallery
+          Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
+          Group: GrPopUpOPSD
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =606
+            Items: =Filter('TLM OPSD Verification', ID = selectID)
+            ShowScrollbar: =false
+            TemplateSize: =598
+            Visible: =showOPSDdetail
+            Width: =1169
+            X: =99
+            Y: =123
+          Children:
+            - Title2_4:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =14
+                  Text: =ThisItem.Title
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Parent.TemplateWidth - 86
+                  X: =16
+                  Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1_5.Size * 1.8)) / 2
+            - Subtitle1_5:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.ID
+                  VerticalAlign: =VerticalAlign.Top
+                  Visible: =false
+                  Width: =Title2_4.Width
+                  X: =Title2_4.X
+                  Y: =Title2_4.Y + Title2_4.Height
+            - Separator2_4:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - Rectangle2_11:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(0, 18, 107, 1)
+                  Height: =Parent.TemplateHeight - Separator2_4.Height
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.IsSelected
+                  Width: =4
+            - Label2_110:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Date"
+                  Width: =115
+                  X: =16
+                  Y: =44
+            - Label2_111:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & Text(GalleryMyApproval_OPSD.Selected.'Verification Date', "mmm dd, yyyy")
+                  Width: =285
+                  X: =131
+                  Y: =44
+            - Label2_116:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Verificator"
+                  Width: =115
+                  X: =16
+                  Y: =72
+            - Label2_117:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & GalleryMyApproval_OPSD.Selected.'Verificator Name'
+                  Width: =285
+                  X: =131
+                  Y: =72
+            - Label2_112:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Serial Number"
+                  Width: =130
+                  X: =401
+                  Y: =44
+            - Label2_113:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & GalleryMyApproval_OPSD.Selected.'Serial Number'
+                  Width: =285
+                  X: =531
+                  Y: =44
+            - Label2_118:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =48
+                  OnSelect: =Select(Parent)
+                  Text: ="Installed at (FA Number)"
+                  Width: =133
+                  X: =401
+                  Y: =72
+            - Label2_119:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & GalleryMyApproval_OPSD.Selected.'Installed at (FA Number)'
+                  Width: =285
+                  X: =534
+                  Y: =72
+            - Label2_114:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Location"
+                  Width: =115
+                  X: =819
+                  Y: =44
+            - Label2_115:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & GalleryMyApproval_OPSD.Selected.'Inspection Location'
+                  Width: =189
+                  X: =934
+                  Y: =44
+            - Label2_120:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Model"
+                  Width: =115
+                  X: =819
+                  Y: =72
+            - Label2_121:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('TLM OPSD Verification', ID = ThisItem.ID, Model.Value)
+                  Width: =189
+                  X: =934
+                  Y: =72
+            - Label2_123:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Brand"
+                  Width: =127
+                  X: =16
+                  Y: =174
+            - Label2_124:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('TLM OPSD Verification', ID = ThisItem.ID, 'Instrument Brand')
+                  Width: =222
+                  X: =143
+                  Y: =174
+            - Label2_122:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =26
+                  OnSelect: =Select(Parent)
+                  Text: ="Instrument Device Detail"
+                  Underline: =true
+                  Width: =1169
+                  Y: =141
+            - Label2_129:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Model"
+                  Width: =127
+                  X: =808
+                  Y: =174
+            - Label2_130:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('TLM OPSD Verification', ID = ThisItem.ID, 'Instrument Model')
+                  Width: =222
+                  X: =935
+                  Y: =174
+            - Label2_127:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =26
+                  OnSelect: =Select(Parent)
+                  Text: ="Next Calibration Date"
+                  Width: =195
+                  X: =365
+                  Y: =176
+            - Label2_128:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & Text(LookUp('TLM OPSD Verification', ID = ThisItem.ID, 'Instrument Next Calibration Date'), "mmm dd, yyyy")
+                  Width: =156
+                  X: =568
+                  Y: =174
+            - Label2_133:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =22
+                  OnSelect: =Select(Parent)
+                  Text: ="Pressure Reading Confirmation"
+                  Underline: =true
+                  Width: =Parent.Width
+                  Y: =219
+            - Label2_134:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  Text: ="Step Test"
+                  X: =331
+                  Y: =251
+            - Label2_147:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =35
+                  OnSelect: =Select(Parent)
+                  Text: ="Result :"
+                  Width: =79
+                  X: =422
+                  Y: =461
+            - Label2_146:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =38
+                  OnSelect: =Select(Parent)
+                  Size: =25
+                  Text: =GalleryMyApproval_OPSD.Selected.'Final Result'.Value
+                  Width: =256
+                  X: =505
+                  Y: =458
+            - Label2_109:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =32
+                  OnSelect: =Select(Parent)
+                  Size: =17
+                  Text: |-
+                    ="Item ID #" & ThisItem.ID
+                  Underline: =true
+                  Width: =Parent.Width
+            - Label2_148:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: ="Range"
+                  Width: =115
+                  X: =819
+                  Y: =100
+            - Label2_149:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =28
+                  OnSelect: =Select(Parent)
+                  Text: |-
+                    =": " & LookUp('TLM OPSD Verification', ID = ThisItem.ID, Range)
+                  Width: =189
+                  X: =934
+                  Y: =100
+            - Label2_136:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  Text: ="Reading"
+                  X: =481
+                  Y: =251
+            - Label2_137:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  Text: ="Result"
+                  X: =633
+                  Y: =250
+            - Label2_138:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  Text: ="0 psi"
+                  X: =331
+                  Y: =279
+            - Label2_139:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  Text: ="3750 psi"
+                  X: =331
+                  Y: =309
+            - Label2_140:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  Text: ="7500 psi"
+                  X: =331
+                  Y: =339
+            - Label2_141:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  Text: ="11250 psi"
+                  X: =331
+                  Y: =369
+            - Label2_142:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  Text: ="15000 psi"
+                  X: =331
+                  Y: =399
+            - Label2_143:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  Text: =LookUp('TLM OPSD Verification', ID = ThisItem.ID, 'Step Test 0 psi') & " psi"
+                  X: =481
+                  Y: =279
+            - Label2_144:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  Text: =LookUp('TLM OPSD Verification', ID = ThisItem.ID, 'Step Test 3750 psi') & " psi"
+                  X: =481
+                  Y: =309
+            - Label2_145:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  Text: =LookUp('TLM OPSD Verification', ID = ThisItem.ID, 'Step Test 7500 psi') & " psi"
+                  X: =481
+                  Y: =339
+            - Label2_150:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  Text: =LookUp('TLM OPSD Verification', ID = ThisItem.ID, 'Step Test 11250 psi') & " psi"
+                  X: =481
+                  Y: =369
+            - Label2_151:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  OnSelect: =Select(Parent)
+                  Text: =LookUp('TLM OPSD Verification', ID = ThisItem.ID, 'Step Test 15000 psi') & " psi"
+                  X: =481
+                  Y: =399
+            - Label2_152:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  Italic: =true
+                  OnSelect: =Select(Parent)
+                  Text: =LookUp('TLM OPSD Verification', ID = ThisItem.ID, 'ResST 0 psi')
+                  X: =633
+                  Y: =279
+            - Label2_153:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  Italic: =true
+                  OnSelect: =Select(Parent)
+                  Text: =LookUp('TLM OPSD Verification', ID = ThisItem.ID, 'ResST 3750 psi')
+                  X: =633
+                  Y: =309
+            - Label2_154:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  Italic: =true
+                  OnSelect: =Select(Parent)
+                  Text: =LookUp('TLM OPSD Verification', ID = ThisItem.ID, 'ResST 7500 psi')
+                  X: =633
+                  Y: =339
+            - Label2_155:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  Italic: =true
+                  OnSelect: =Select(Parent)
+                  Text: =LookUp('TLM OPSD Verification', ID = ThisItem.ID, 'ResST 11250 psi')
+                  X: =633
+                  Y: =369
+            - Label2_156:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  Italic: =true
+                  OnSelect: =Select(Parent)
+                  Text: =LookUp('TLM OPSD Verification', ID = ThisItem.ID, 'ResST 15000 psi')
+                  X: =633
+                  Y: =399
+      - Rectangle4_14:
+          Control: Rectangle
+          Group: GrPopUpOPSD
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =3
+            Visible: =false
+            Width: =1147
+            X: =121
+            Y: =203
+      - BGPopup_6:
+          Control: Rectangle
+          Group: GrShowCertOPSD
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(166, 166, 166, 0.7)
+            Height: =768
+            Visible: =showCertificateOPSD
+            Width: =1366
+      - BGDetails_6:
+          Control: Rectangle
+          Group: GrShowCertOPSD
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(242, 242, 242, 1)
+            Height: =674
+            Visible: =showCertificateOPSD
+            Width: =1223
+            X: =81
+            Y: =55
+      - BGJudulDetails_6:
+          Control: Rectangle
+          Group: GrShowCertOPSD
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =44
+            Visible: =showCertificateOPSD
+            Width: =1188
+            X: =97
+            Y: =69
+      - Rectangle4_15:
+          Control: Rectangle
+          Group: GrShowCertOPSD
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =3
+            Visible: =false
+            Width: =1147
+            X: =119
+            Y: =313
+      - showCertificateOPSD:
+          Control: Gallery
+          Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
+          Group: GrShowCertOPSD
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =644
+            Items: =Filter('TLM OPSD Verification', ID = selectID)
+            ShowScrollbar: =false
+            TemplateSize: =644
+            Visible: =showCertificateOPSD
+            Width: =1185
+            X: =99
+            Y: =72
+          Children:
+            - Title2_5:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =14
+                  Text: =ThisItem.Title
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Parent.TemplateWidth - 86
+                  X: =16
+            - Subtitle1_6:
+                Control: Label
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.ID
+                  VerticalAlign: =VerticalAlign.Top
+                  Visible: =false
+                  Width: =Title2_5.Width
+                  X: =Title2_5.X
+                  Y: =19.4
+            - Separator2_5:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - Rectangle2_12:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(0, 18, 107, 1)
+                  Height: =Parent.TemplateHeight - Separator2_5.Height
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.IsSelected
+                  Width: =4
+            - Label2_125:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(255, 255, 255, 1)
+                  Fill: =RGBA(1, 20, 221, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =41
+                  OnSelect: =Select(Parent)
+                  Size: =17
+                  Text: |-
+                    ="Certificate of Verification | Item ID #" & ThisItem.ID
+                  Width: =Parent.Width
+      - Rectangle4_16:
+          Control: Rectangle
+          Group: GrShowCertOPSD
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(1, 20, 221, 1)
+            Height: =3
+            Visible: =false
+            Width: =1147
+            X: =121
+            Y: =203
+      - Icon3_6:
+          Control: Classic/Icon
+          Group: GrShowCertOPSD
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =38
+            Icon: =Icon.CancelBadge
+            OnSelect: =UpdateContext({showCertificateOPSD:false})
+            Visible: =showCertificateOPSD
+            Width: =38
+            X: =1240
+            Y: =72
+      - SPListItemAttachmentsViewer_6:
+          Control: CanvasComponent
+          ComponentName: SPListItemAttachmentsViewer_2
+          Group: GrShowCertOPSD
+          Properties:
+            BackgroundColor: =RGBA(220, 225, 225, 1)
+            Border: =false
+            Height: =596
+            Items: |+
+              =Filter(
+                  GalleryMyApproval_OPSD.Selected.Attachments,
+                  Lower(Right(DisplayName, 4)) = ".pdf"
+              )
+            TextColor: =Color.Black
+            Visible: =showCertificateOPSD
+            Width: =1185
+            WrapCount: =1
+            X: =99
+            Y: =113
