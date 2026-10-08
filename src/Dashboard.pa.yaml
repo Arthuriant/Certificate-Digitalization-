@@ -24,23 +24,21 @@ Screens:
             X: =1246
       - Rectangle3_12:
           Control: Rectangle
-          Group: ControlPanel_3
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(240, 240, 240, 1)
+            Fill: =RGBA(0, 18, 107, 1)
             Height: =768
-            Width: =70
-            X: =2
+            Width: =72
       - TxtDashboard_8:
           Control: Label
-          Group: ControlPanel_3
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            Color: =If(Mycolor, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
             DisplayMode: =DisplayMode.View
             Font: =Font.'Open Sans'
-            Height: =25
+            FontWeight: =FontWeight.Semibold
+            Height: =20
             OnSelect: |-
               =UpdateContext({opendashboard:true});
               UpdateContext({openadduser:false});
@@ -54,18 +52,18 @@ Screens:
             Size: =8
             Text: ="Dashboard"
             Width: =70
-            X: =2
-            Y: =140
+            X: =1
+            Y: =144
       - TxtSTD04_10:
           Control: Label
-          Group: ControlPanel_3
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor2, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            Color: =If(Mycolor2, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
             DisplayMode: =DisplayMode.View
             Font: =Font.'Open Sans'
-            Height: =25
+            FontWeight: =FontWeight.Semibold
+            Height: =20
             OnSelect: |-
               =UpdateContext({opendashboard: true});
               UpdateContext({openadduser: false});
@@ -91,18 +89,18 @@ Screens:
             Size: =8
             Text: ="STD-04"
             Width: =70
-            X: =2
-            Y: =223
+            X: =1
+            Y: =224
       - TxtMyApproval_8:
           Control: Label
-          Group: ControlPanel_3
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor1, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            Color: =If(Mycolor1, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
             DisplayMode: =DisplayMode.View
             Font: =Font.'Open Sans'
-            Height: =25
+            FontWeight: =FontWeight.Semibold
+            Height: =20
             OnSelect: |-
               =UpdateContext({opendashboard:false});
               UpdateContext({openadduser:true});
@@ -116,62 +114,98 @@ Screens:
             Size: =8
             Text: ="MyApproval"
             Width: =70
-            X: =2
-            Y: =400
+            X: =1
+            Y: =384
       - DashboardIcon_8:
           Control: Image
-          Group: ControlPanel_3
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Height: =50
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =46
+            HoverFill: =RGBA(255, 236, 179, 1)
             Image: =home
             OnSelect: =Navigate(Dashboard)
-            Width: =50
-            X: =12
-            Y: =102
+            PaddingBottom: =7
+            PaddingLeft: =7
+            PaddingRight: =7
+            PaddingTop: =7
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Width: =46
+            X: =13
+            Y: =96
       - ApprovalIcon_8:
           Control: Image
-          Group: ControlPanel_3
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Height: =50
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =46
+            HoverFill: =RGBA(255, 236, 179, 1)
             Image: =approval
             OnSelect: =Navigate(MyApprovalSTD04)
-            Width: =50
-            X: =12
-            Y: =354
+            PaddingBottom: =7
+            PaddingLeft: =7
+            PaddingRight: =7
+            PaddingTop: =7
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Width: =46
+            X: =13
+            Y: =336
       - STD04Icon_10:
           Control: Image
-          Group: ControlPanel_3
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Height: =50
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =46
+            HoverFill: =RGBA(255, 236, 179, 1)
             Image: =valve
             OnSelect: =Navigate(AllRecordStd04)
-            Width: =50
-            X: =12
-            Y: =179
+            PaddingBottom: =7
+            PaddingLeft: =7
+            PaddingRight: =7
+            PaddingTop: =7
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Width: =46
+            X: =13
+            Y: =176
       - OPSDIcon_10:
           Control: Image
-          Group: ControlPanel_3
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Height: =50
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =46
+            HoverFill: =RGBA(255, 236, 179, 1)
             Image: ='high-pressure'
             OnSelect: =Navigate(AllRecordOPSD)
-            Width: =50
-            X: =12
-            Y: =263
+            PaddingBottom: =7
+            PaddingLeft: =7
+            PaddingRight: =7
+            PaddingTop: =7
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Width: =46
+            X: =13
+            Y: =256
       - TxtOPSD_10:
           Control: Label
-          Group: ControlPanel_3
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor2, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            Color: =If(Mycolor2, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
             DisplayMode: =DisplayMode.View
             Font: =Font.'Open Sans'
-            Height: =25
+            FontWeight: =FontWeight.Semibold
+            Height: =20
             OnSelect: |-
               =UpdateContext({opendashboard: true});
               UpdateContext({openadduser: false});
@@ -197,16 +231,15 @@ Screens:
             Size: =8
             Text: ="OPSD"
             Width: =70
-            X: =2
-            Y: =313
+            X: =1
+            Y: =304
       - LogOut_12:
           Control: Classic/Icon
-          Group: ControlPanel_3
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
             Height: =70
-            HoverColor: =ColorFade(Self.Color, 50%)
+            HoverColor: =RGBA(255, 196, 0, 1)
             Icon: =Icon.BackArrow
             OnSelect: =Navigate(LoginPage)
             PaddingBottom: =20
@@ -216,12 +249,13 @@ Screens:
             Y: =698
       - TextDashboard_12:
           Control: Label
-          Group: ControlPanel_3
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisplayMode: =DisplayMode.View
             Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
             Height: =25
             OnSelect: |-
               =UpdateContext({opendashboard:true});
@@ -233,32 +267,46 @@ Screens:
               Set(Mycolor1,false);
               Set(Mycolor2,false);
               Set(Mycolor3,false)
-            Size: =9
+            Size: =8
             Text: ="Log Out"
             Width: =70
             Y: =743
+      - conDashHeroCard:
+          Control: GroupContainer
+          Variant: ManualLayout
+          Properties:
+            DropShadow: =DropShadow.Semibold
+            Fill: =RGBA(255, 255, 255, 0.88)
+            Height: =320
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Width: =1070
+            X: =183
+            Y: =200
       - Header_1:
           Control: Label
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
-            Height: =236
-            Size: =35
+            Height: =72
+            Size: =34
             Text: ="Hi " & User().FullName & " ! "
-            Width: =1294
-            X: =72
-            Y: =189
+            Width: =1030
+            X: =203
+            Y: =232
       - IconSupport_5:
           Control: Classic/Icon
-          Group: Group3
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor3, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
-            Fill: =If(Mycolor3, RGBA(255, 255, 255, 1), RGBA(240, 240, 240, 1))
+            Color: =If(Mycolor3, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
+            Fill: =If(Mycolor3, RGBA(255, 255, 255, 0.15), RGBA(0, 0, 0, 0))
             Height: =70
-            HoverColor: =ColorFade(Self.Color, 50%)
+            HoverColor: =RGBA(255, 196, 0, 1)
             Icon: =Icon.Support
             OnSelect: |-
               =UpdateContext({opendashboard:true});
@@ -276,14 +324,14 @@ Screens:
             Y: =628
       - TextFeedback_5:
           Control: Label
-          Group: Group3
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor3, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
+            Color: =If(Mycolor3, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
             DisplayMode: =DisplayMode.View
             Font: =Font.'Open Sans'
-            Height: =25
+            FontWeight: =FontWeight.Semibold
+            Height: =20
             OnSelect: |-
               =UpdateContext({opendashboard:true});
               UpdateContext({openadduser:false});
@@ -297,22 +345,32 @@ Screens:
             Size: =8
             Text: ="Feedback"
             Width: =70
+            X: =1
             Y: =673
+      - rectDashAccent:
+          Control: Rectangle
+          Properties:
+            Fill: =RGBA(255, 196, 0, 1)
+            Height: =4
+            Width: =80
+            X: =678
+            Y: =312
       - Header_3:
           Control: Label
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(32, 40, 70, 1)
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
-            Height: =236
-            Size: =35
+            Height: =150
+            Size: =26
             Text: |-
               ="Welcome to
               ⁠ING TLM WCEF Certificate Digitalization System"
-            Width: =1296
-            X: =70
-            Y: =271
+            Width: =1030
+            X: =203
+            Y: =330
       - FeedbackSupport_2:
           Control: GroupContainer
           Variant: ManualLayout
@@ -327,7 +385,6 @@ Screens:
           Children:
             - Image13_28:
                 Control: Image
-                Group: Group6_3
                 Properties:
                   BorderColor: =RGBA(0, 18, 107, 1)
                   DisplayMode: =DisplayMode.View
@@ -336,20 +393,19 @@ Screens:
                   Image: =
                   PaddingRight: =0.00
                   PaddingTop: =0.00
-                  RadiusBottomLeft: =40
-                  RadiusBottomRight: =40
-                  RadiusTopLeft: =40
-                  RadiusTopRight: =40
+                  RadiusBottomLeft: =24
+                  RadiusBottomRight: =24
+                  RadiusTopLeft: =24
+                  RadiusTopRight: =24
                   Visible: =opensupport
                   Width: =1099.25
                   X: =143.38
                   Y: =209
             - Icon1_10:
                 Control: Classic/Icon
-                Group: Group6_3
                 Properties:
                   BorderColor: =RGBA(0, 18, 107, 1)
-                  Color: =RGBA(0, 20, 220, 1)
+                  Color: =RGBA(0, 18, 107, 1)
                   Height: =45
                   Icon: =Icon.BackArrow
                   OnSelect: |-
@@ -369,7 +425,6 @@ Screens:
                   Y: =231
             - Button3_22:
                 Control: Classic/Button
-                Group: Group6_3
                 Properties:
                   BorderColor: =ColorFade(Self.Fill, -15%)
                   BorderThickness: =0
@@ -384,12 +439,12 @@ Screens:
                         DisplayMode.Disabled,
                         DisplayMode.Edit
                     )
-                  Fill: =RGBA(0, 20, 220, 1)
+                  Fill: =RGBA(0, 18, 107, 1)
                   Font: =Font.'Open Sans'
                   Height: =57
                   HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
                   HoverColor: =RGBA(255, 255, 255, 1)
-                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                  HoverFill: =RGBA(0, 40, 170, 1)
                   OnSelect: |-
                     =UpdateContext({feedbackemail:false});
                     Office365Outlook.SendEmailV2("fherdyanto@slb.com",inputSubject_5.Text,inputBody_5.Text,{Importance: "High", Cc:"MSinatrya@slb.com"});
@@ -399,8 +454,12 @@ Screens:
                   PaddingRight: =5.00
                   PaddingTop: =5.00
                   PressedBorderColor: =Self.Fill
-                  PressedColor: =Self.Fill
-                  PressedFill: =Self.Color
+                  PressedColor: =RGBA(255, 255, 255, 1)
+                  PressedFill: =RGBA(0, 10, 70, 1)
+                  RadiusBottomLeft: =12
+                  RadiusBottomRight: =12
+                  RadiusTopLeft: =12
+                  RadiusTopRight: =12
                   Size: =16.01
                   Text: |-
                     ="Send 📩"
@@ -410,10 +469,10 @@ Screens:
                   Y: =456
             - Label2_12:
                 Control: Label
-                Group: Group6_3
                 Properties:
                   Align: =Align.Center
                   BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(0, 18, 107, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =FontWeight.Semibold
                   Height: =39
@@ -426,28 +485,34 @@ Screens:
                   Y: =231
             - inputSubject_5:
                 Control: Classic/TextInput
-                Group: Group6_3
                 Properties:
-                  BorderColor: =RGBA(0, 20, 220, 1)
+                  BorderColor: =RGBA(0, 18, 107, 0.35)
                   BorderThickness: =1
                   Default: ="Feedback TLM Digitalization System | [Enter your title]"
+                  FocusedBorderColor: =RGBA(0, 18, 107, 1)
+                  FocusedBorderThickness: =2
                   Font: =Font.'Open Sans'
                   HintText: ="Subject"
                   HoverBorderColor: =RGBA(0, 18, 107, 1)
                   HoverFill: =RGBA(186, 202, 226, 1)
                   PaddingRight: =5.56
                   PaddingTop: =5.56
+                  RadiusBottomLeft: =10
+                  RadiusBottomRight: =10
+                  RadiusTopLeft: =10
+                  RadiusTopRight: =10
                   Size: =15.56
                   Width: =913
                   X: =231
                   Y: =292
             - inputBody_5:
                 Control: Classic/TextInput
-                Group: Group6_3
                 Properties:
-                  BorderColor: =RGBA(0, 20, 220, 1)
+                  BorderColor: =RGBA(0, 18, 107, 0.35)
                   BorderThickness: =1
                   Default: =""
+                  FocusedBorderColor: =RGBA(0, 18, 107, 1)
+                  FocusedBorderThickness: =2
                   Font: =Font.'Open Sans'
                   Height: =91
                   HintText: ="Input Your Feedback"
@@ -455,6 +520,10 @@ Screens:
                   HoverFill: =RGBA(186, 202, 226, 1)
                   PaddingRight: =5.56
                   PaddingTop: =5.56
+                  RadiusBottomLeft: =10
+                  RadiusBottomRight: =10
+                  RadiusTopLeft: =10
+                  RadiusTopRight: =10
                   Size: =15.56
                   Width: =913
                   X: =231
@@ -463,16 +532,16 @@ Screens:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(1, 20, 221, 1)
-            Height: =4
-            Width: =70
-            Y: =161
+            Fill: =RGBA(255, 196, 0, 1)
+            Height: =70
+            Width: =4
+            Y: =92
       - Header_4:
           Control: Label
           Properties:
             Align: =Align.Right
             BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(1, 20, 221, 1)
+            Color: =RGBA(0, 18, 107, 1)
             Font: =Font.Lato
             FontWeight: =FontWeight.Semibold
             Height: =25

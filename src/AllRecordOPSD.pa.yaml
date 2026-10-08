@@ -59,7 +59,6 @@ Screens:
             Y: =105
       - Rectangle3_13:
           Control: Rectangle
-          Group: ControlPanel_4
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(240, 240, 240, 1)
@@ -67,7 +66,6 @@ Screens:
             Width: =70
       - TxtDashboard_9:
           Control: Label
-          Group: ControlPanel_4
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -92,7 +90,6 @@ Screens:
             Y: =140
       - TxtSTD04_11:
           Control: Label
-          Group: ControlPanel_4
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -129,7 +126,6 @@ Screens:
             Y: =223
       - TxtMyApproval_9:
           Control: Label
-          Group: ControlPanel_4
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -154,7 +150,6 @@ Screens:
             Y: =400
       - DashboardIcon_9:
           Control: Image
-          Group: ControlPanel_4
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =50
@@ -165,7 +160,6 @@ Screens:
             Y: =102
       - ApprovalIcon_9:
           Control: Image
-          Group: ControlPanel_4
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =50
@@ -176,7 +170,6 @@ Screens:
             Y: =354
       - STD04Icon_11:
           Control: Image
-          Group: ControlPanel_4
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =50
@@ -187,7 +180,6 @@ Screens:
             Y: =179
       - OPSDIcon_11:
           Control: Image
-          Group: ControlPanel_4
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =50
@@ -198,7 +190,6 @@ Screens:
             Y: =263
       - TxtOPSD_11:
           Control: Label
-          Group: ControlPanel_4
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -235,7 +226,6 @@ Screens:
             Y: =313
       - LogOut_13:
           Control: Classic/Icon
-          Group: ControlPanel_4
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(0, 0, 0, 1)
@@ -250,7 +240,6 @@ Screens:
             Y: =698
       - TextDashboard_13:
           Control: Label
-          Group: ControlPanel_4
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -282,7 +271,6 @@ Screens:
       - GalleryAllOPSD:
           Control: Gallery
           Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
-          Group: GrAllOPSD
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =577
@@ -519,7 +507,6 @@ Screens:
                   Y: =13
       - Rectangle6_3:
           Control: Rectangle
-          Group: GrAllOPSD
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -529,7 +516,6 @@ Screens:
             Y: =151
       - LabelID_3:
           Control: Label
-          Group: GrAllOPSD
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -544,7 +530,6 @@ Screens:
             Y: =152
       - LabelHeader_24:
           Control: Label
-          Group: GrAllOPSD
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -559,7 +544,6 @@ Screens:
             Y: =152
       - LabelHeader_25:
           Control: Label
-          Group: GrAllOPSD
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -574,7 +558,6 @@ Screens:
             Y: =152
       - LabelHeader_26:
           Control: Label
-          Group: GrAllOPSD
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -589,7 +572,6 @@ Screens:
             Y: =152
       - LabelHeader_27:
           Control: Label
-          Group: GrAllOPSD
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -604,7 +586,6 @@ Screens:
             Y: =152
       - LabelHeader_29:
           Control: Label
-          Group: GrAllOPSD
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -661,7 +642,6 @@ Screens:
             Y: =152
       - BGPopup_10:
           Control: Rectangle
-          Group: GrPopUpAllOPSD
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(166, 166, 166, 0.7)
@@ -670,7 +650,6 @@ Screens:
             Width: =1366
       - BGDetails_10:
           Control: Rectangle
-          Group: GrPopUpAllOPSD
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(242, 242, 242, 1)
@@ -681,7 +660,6 @@ Screens:
             Y: =55
       - BGJudulDetails_10:
           Control: Rectangle
-          Group: GrPopUpAllOPSD
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -692,7 +670,6 @@ Screens:
             Y: =69
       - JudulDetails_7:
           Control: Label
-          Group: GrPopUpAllOPSD
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -708,7 +685,6 @@ Screens:
             Y: =69
       - Icon3_10:
           Control: Classic/Icon
-          Group: GrPopUpAllOPSD
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -721,7 +697,6 @@ Screens:
             Y: =72
       - Rectangle4_25:
           Control: Rectangle
-          Group: GrPopUpAllOPSD
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -733,7 +708,6 @@ Screens:
       - detailOPSD:
           Control: Gallery
           Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
-          Group: GrPopUpAllOPSD
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =606
@@ -1304,7 +1278,6 @@ Screens:
                   Y: =399
       - Rectangle4_26:
           Control: Rectangle
-          Group: GrPopUpAllOPSD
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -1315,7 +1288,6 @@ Screens:
             Y: =203
       - BGPopup_11:
           Control: Rectangle
-          Group: GrShowCertOPSD_1
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(166, 166, 166, 0.7)
@@ -1324,7 +1296,6 @@ Screens:
             Width: =1366
       - BGDetails_11:
           Control: Rectangle
-          Group: GrShowCertOPSD_1
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(242, 242, 242, 1)
@@ -1335,7 +1306,6 @@ Screens:
             Y: =55
       - BGJudulDetails_11:
           Control: Rectangle
-          Group: GrShowCertOPSD_1
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -1346,7 +1316,6 @@ Screens:
             Y: =69
       - Rectangle4_27:
           Control: Rectangle
-          Group: GrShowCertOPSD_1
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -1358,7 +1327,6 @@ Screens:
       - showCertificateOPSD_1:
           Control: Gallery
           Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
-          Group: GrShowCertOPSD_1
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =644
@@ -1442,7 +1410,6 @@ Screens:
                   Width: =Parent.Width
       - Rectangle4_28:
           Control: Rectangle
-          Group: GrShowCertOPSD_1
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -1453,7 +1420,6 @@ Screens:
             Y: =203
       - Icon3_11:
           Control: Classic/Icon
-          Group: GrShowCertOPSD_1
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -1467,12 +1433,11 @@ Screens:
       - SPListItemAttachmentsViewer_8:
           Control: CanvasComponent
           ComponentName: SPListItemAttachmentsViewer_2
-          Group: GrShowCertOPSD_1
           Properties:
             BackgroundColor: =RGBA(220, 225, 225, 1)
             Border: =false
             Height: =596
-            Items: |+
+            Items: |
               =Filter(
                   GalleryAllOPSD.Selected.Attachments,
                   Lower(Right(DisplayName, 4)) = ".pdf"

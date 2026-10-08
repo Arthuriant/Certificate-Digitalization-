@@ -26,7 +26,6 @@ Screens:
             Y: =99
       - Rectangle3:
           Control: Rectangle
-          Group: GroupSideBar
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(166, 166, 166, 1)
@@ -35,7 +34,6 @@ Screens:
             X: =70
       - TxtSTD04_1:
           Control: Label
-          Group: GroupSideBar
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -72,7 +70,6 @@ Screens:
             Y: =366
       - STD04Icon_1:
           Control: Image
-          Group: GroupSideBar
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =50
@@ -83,7 +80,6 @@ Screens:
             Y: =322
       - TxtOPSD_1:
           Control: Label
-          Group: GroupSideBar
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -120,7 +116,6 @@ Screens:
             Y: =456
       - Rectangle3_2:
           Control: Rectangle
-          Group: GroupSideBar
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(166, 166, 166, 1)
@@ -129,7 +124,6 @@ Screens:
             X: =137
       - Rectangle2_4:
           Control: Rectangle
-          Group: GroupSideBar
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -196,7 +190,6 @@ Screens:
             Y: =713
       - Rectangle3_11:
           Control: Rectangle
-          Group: ControlPanel_2
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(240, 240, 240, 1)
@@ -204,7 +197,6 @@ Screens:
             Width: =70
       - TxtDashboard_7:
           Control: Label
-          Group: ControlPanel_2
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -229,7 +221,6 @@ Screens:
             Y: =140
       - TxtSTD04_9:
           Control: Label
-          Group: ControlPanel_2
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -266,7 +257,6 @@ Screens:
             Y: =223
       - TxtMyApproval_7:
           Control: Label
-          Group: ControlPanel_2
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -291,7 +281,6 @@ Screens:
             Y: =400
       - DashboardIcon_7:
           Control: Image
-          Group: ControlPanel_2
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =50
@@ -302,7 +291,6 @@ Screens:
             Y: =102
       - ApprovalIcon_7:
           Control: Image
-          Group: ControlPanel_2
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =50
@@ -313,7 +301,6 @@ Screens:
             Y: =354
       - STD04Icon_9:
           Control: Image
-          Group: ControlPanel_2
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =50
@@ -324,7 +311,6 @@ Screens:
             Y: =179
       - OPSDIcon_9:
           Control: Image
-          Group: ControlPanel_2
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =50
@@ -335,7 +321,6 @@ Screens:
             Y: =263
       - TxtOPSD_9:
           Control: Label
-          Group: ControlPanel_2
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -372,7 +357,6 @@ Screens:
             Y: =313
       - LogOut_11:
           Control: Classic/Icon
-          Group: ControlPanel_2
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(0, 0, 0, 1)
@@ -387,7 +371,6 @@ Screens:
             Y: =698
       - TextDashboard_11:
           Control: Label
-          Group: ControlPanel_2
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -419,7 +402,6 @@ Screens:
       - GalleryMyApproval:
           Control: Gallery
           Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
-          Group: Group6
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =577
@@ -698,7 +680,6 @@ Screens:
                   Y: =5
       - Rectangle6_5:
           Control: Rectangle
-          Group: Group6
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -708,7 +689,6 @@ Screens:
             Y: =151
       - LabelID_5:
           Control: Label
-          Group: Group6
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -723,7 +703,6 @@ Screens:
             Y: =152
       - LabelHeader_39:
           Control: Label
-          Group: Group6
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -738,7 +717,6 @@ Screens:
             Y: =152
       - LabelHeader_40:
           Control: Label
-          Group: Group6
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -753,7 +731,6 @@ Screens:
             Y: =151
       - LabelHeader_41:
           Control: Label
-          Group: Group6
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -768,7 +745,6 @@ Screens:
             Y: =151
       - LabelHeader_42:
           Control: Label
-          Group: Group6
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -783,7 +759,6 @@ Screens:
             Y: =151
       - LabelHeader_43:
           Control: Label
-          Group: Group6
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -798,7 +773,6 @@ Screens:
             Y: =152
       - LabelHeader_44:
           Control: Label
-          Group: Group6
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -829,7 +803,6 @@ Screens:
           Children:
             - Button3_6:
                 Control: Classic/Button
-                Group: Group1_4
                 Properties:
                   BorderColor: =ColorFade(Self.Fill, -15%)
                   BorderThickness: =0
@@ -854,11 +827,10 @@ Screens:
                   Width: =184
             - Label6_6:
                 Control: Label
-                Group: Group1_4
                 Properties:
                   Align: =Align.Center
                   BorderColor: =RGBA(0, 18, 107, 1)
-                  Color: |+
+                  Color: |
                     =If(ThisItem.IsSelected, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 1))
                   Font: =Font.'Open Sans'
                   FontWeight: =FontWeight.Bold
@@ -869,7 +841,6 @@ Screens:
                   Width: =184
             - Rectangle4_7:
                 Control: Rectangle
-                Group: Group1_4
                 Properties:
                   BorderColor: =RGBA(0, 18, 107, 1)
                   Fill: =If(ThisItem.IsSelected, RGBA(0, 20, 220, 1), RGBA(0, 0, 0, 0))
@@ -934,7 +905,6 @@ Screens:
             Y: =112
       - BGPopup_3:
           Control: Rectangle
-          Group: GrPopUpPRV
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(166, 166, 166, 0.7)
@@ -943,7 +913,6 @@ Screens:
             Width: =1366
       - BGDetails_3:
           Control: Rectangle
-          Group: GrPopUpPRV
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(242, 242, 242, 1)
@@ -954,7 +923,6 @@ Screens:
             Y: =55
       - BGJudulDetails_3:
           Control: Rectangle
-          Group: GrPopUpPRV
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -965,7 +933,6 @@ Screens:
             Y: =69
       - JudulDetails_2:
           Control: Label
-          Group: GrPopUpPRV
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -981,7 +948,6 @@ Screens:
             Y: =69
       - Icon3_3:
           Control: Classic/Icon
-          Group: GrPopUpPRV
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -994,7 +960,6 @@ Screens:
             Y: =72
       - Rectangle4_9:
           Control: Rectangle
-          Group: GrPopUpPRV
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -1006,7 +971,6 @@ Screens:
       - showPRVDetail:
           Control: Gallery
           Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
-          Group: GrPopUpPRV
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =606
@@ -1510,7 +1474,6 @@ Screens:
                   Width: =Parent.Width
       - Rectangle4_10:
           Control: Rectangle
-          Group: GrPopUpPRV
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -1521,7 +1484,6 @@ Screens:
             Y: =203
       - BGPopup:
           Control: Rectangle
-          Group: GrPopUpPG
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(166, 166, 166, 0.7)
@@ -1530,7 +1492,6 @@ Screens:
             Width: =1366
       - BGDetails:
           Control: Rectangle
-          Group: GrPopUpPG
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(242, 242, 242, 1)
@@ -1541,7 +1502,6 @@ Screens:
             Y: =55
       - BGJudulDetails:
           Control: Rectangle
-          Group: GrPopUpPG
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -1552,7 +1512,6 @@ Screens:
             Y: =69
       - JudulDetails:
           Control: Label
-          Group: GrPopUpPG
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -1568,7 +1527,6 @@ Screens:
             Y: =69
       - Icon3:
           Control: Classic/Icon
-          Group: GrPopUpPG
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -1581,7 +1539,6 @@ Screens:
             Y: =72
       - Rectangle4_5:
           Control: Rectangle
-          Group: GrPopUpPG
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -1593,7 +1550,6 @@ Screens:
       - showPressureGaugeDetail:
           Control: Gallery
           Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
-          Group: GrPopUpPG
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =606
@@ -2166,7 +2122,6 @@ Screens:
                   Width: =Parent.Width
       - Rectangle4_6:
           Control: Rectangle
-          Group: GrPopUpPG
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -2177,7 +2132,6 @@ Screens:
             Y: =203
       - BGPopup_12:
           Control: Rectangle
-          Group: GrPopUpBT_2
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(166, 166, 166, 0.7)
@@ -2186,7 +2140,6 @@ Screens:
             Width: =1366
       - BGDetails_12:
           Control: Rectangle
-          Group: GrPopUpBT_2
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(242, 242, 242, 1)
@@ -2197,7 +2150,6 @@ Screens:
             Y: =55
       - BGJudulDetails_12:
           Control: Rectangle
-          Group: GrPopUpBT_2
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -2208,7 +2160,6 @@ Screens:
             Y: =69
       - JudulDetails_8:
           Control: Label
-          Group: GrPopUpBT_2
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 18, 107, 1)
@@ -2224,7 +2175,6 @@ Screens:
             Y: =69
       - Icon3_12:
           Control: Classic/Icon
-          Group: GrPopUpBT_2
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(255, 255, 255, 1)
@@ -2237,7 +2187,6 @@ Screens:
             Y: =72
       - Rectangle4_29:
           Control: Rectangle
-          Group: GrPopUpBT_2
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -2248,7 +2197,6 @@ Screens:
             Y: =313
       - Rectangle4_30:
           Control: Rectangle
-          Group: GrPopUpBT_2
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(1, 20, 221, 1)
@@ -2260,7 +2208,6 @@ Screens:
       - showBodyDetail:
           Control: Gallery
           Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
-          Group: GrPopUpBT_2
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
             Height: =606

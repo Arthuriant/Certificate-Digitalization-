@@ -1,6 +1,6 @@
 App:
   Properties:
-    OnStart: |+
+    OnStart: |
       =Set(
           imyrole,
           LookUp(
