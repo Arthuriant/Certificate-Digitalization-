@@ -459,8 +459,6 @@ Screens:
                         RadiusTopLeft: =18
                         RadiusTopRight: =18
                         Text: =""
-                        Width: =160
-                        X: =0
                         Y: =6
                   - lblStdTab:
                       Control: Label
@@ -478,10 +476,8 @@ Screens:
                         Size: =11
                         Text: =ThisItem.Title
                         Tooltip: =ThisItem.Title
-                        VerticalAlign: =VerticalAlign.Middle
                         Width: =160
                         Wrap: =false
-                        X: =0
                         Y: =6
       - lblStdCount:
           Control: Label

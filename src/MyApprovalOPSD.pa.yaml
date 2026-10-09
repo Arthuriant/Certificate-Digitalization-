@@ -532,8 +532,6 @@ Screens:
                   RadiusTopLeft: =18
                   RadiusTopRight: =18
                   Text: =""
-                  Width: =160
-                  X: =0
                   Y: =6
             - lblApvOpsdTab:
                 Control: Label
@@ -551,10 +549,8 @@ Screens:
                   Size: =11
                   Text: =ThisItem.Verification
                   Tooltip: =ThisItem.Verification
-                  VerticalAlign: =VerticalAlign.Middle
                   Width: =160
                   Wrap: =false
-                  X: =0
                   Y: =6
       - lblApvOpsdCount:
           Control: Label
