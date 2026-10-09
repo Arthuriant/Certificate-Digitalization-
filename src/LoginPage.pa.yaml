@@ -10,6 +10,28 @@ Screens:
             Height: =768
             Image: ='MicrosoftTeams-image (1)'
             Width: =1366
+      - rectLoginOverlay:
+          Control: Rectangle
+          Properties:
+            Fill: =RGBA(0, 18, 107, 0.35)
+            Height: =768
+            Width: =1366
+      - conLoginCard:
+          Control: GroupContainer
+          Variant: ManualLayout
+          Properties:
+            BorderColor: =RGBA(255, 255, 255, 0.45)
+            BorderThickness: =1
+            DropShadow: =DropShadow.Bold
+            Fill: =RGBA(255, 255, 255, 0.14)
+            Height: =350
+            RadiusBottomLeft: =28
+            RadiusBottomRight: =28
+            RadiusTopLeft: =28
+            RadiusTopRight: =28
+            Width: =600
+            X: =383
+            Y: =190
       - WELCOME!:
           Control: Label
           Properties:
@@ -98,28 +120,6 @@ Screens:
               ="Release Version : 2.1.c"
             Width: =1352
             Y: =737
-      - rectLoginOverlay:
-          Control: Rectangle
-          Properties:
-            Fill: =RGBA(0, 18, 107, 0.35)
-            Height: =768
-            Width: =1366
-      - conLoginCard:
-          Control: GroupContainer
-          Variant: ManualLayout
-          Properties:
-            BorderColor: =RGBA(255, 255, 255, 0.45)
-            BorderThickness: =1
-            DropShadow: =DropShadow.Bold
-            Fill: =RGBA(255, 255, 255, 0.14)
-            Height: =350
-            RadiusBottomLeft: =28
-            RadiusBottomRight: =28
-            RadiusTopLeft: =28
-            RadiusTopRight: =28
-            Width: =600
-            X: =383
-            Y: =190
       - rectLoginAccent:
           Control: Rectangle
           Properties:
