@@ -421,6 +421,7 @@ Screens:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
+            DropShadow: =DropShadow.None
             Height: =48
             Width: =780
             X: =224
@@ -439,7 +440,7 @@ Screens:
                   TemplatePadding: =0
                   TemplateSize: =170
                   Width: =780
-                  Y: =100
+                  Y: =0
                 Children:
                   - Button3_2:
                       Control: Classic/Button
