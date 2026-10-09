@@ -13,55 +13,842 @@ Screens:
             Height: =768
             Image: ='Background WEC (3)'
             Width: =1366
-      - Label1_6:
+      - rectApvOpsdSideBg:
+          Control: Rectangle
+          Properties:
+            BorderThickness: =0
+            Fill: =RGBA(0, 18, 107, 1)
+            Height: =768
+            Width: =200
+            X: =0
+            Y: =0
+      - conApvOpsdSideBrand:
+          Control: GroupContainer
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =0
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =60
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Width: =168
+            X: =16
+            Y: =16
+          Children: []
+      - imgApvOpsdSideLogo:
+          Control: Image
+          Properties:
+            Height: =52
+            Image: =SLB_Logo_Positive_RGB_General
+            ImagePosition: =ImagePosition.Fit
+            Width: =152
+            X: =24
+            Y: =20
+      - lblApvOpsdSideApp:
           Control: Label
           Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 0.75)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =36
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: ="Certificate Digitalization System"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =168
+            Wrap: =true
+            X: =16
+            Y: =84
+      - lblApvOpsdSideMenu:
+          Control: Label
+          Properties:
+            Align: =Align.Left
+            Color: =RGBA(255, 255, 255, 0.5)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =18
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =8
+            Text: ="MENU"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =150
+            X: =24
+            Y: =136
+      - btnApvOpsdNavDashboard:
+          Control: Classic/Button
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 0.85)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.08)
+            OnSelect: =Navigate(Dashboard, ScreenTransition.None)
+            PaddingLeft: =56
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(255, 255, 255, 0.22)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =11
+            Text: ="Dashboard"
+            Tooltip: ="Dashboard"
+            Width: =176
+            X: =12
+            Y: =160
+      - imgApvOpsdNavDashboard:
+          Control: Image
+          Properties:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =30
+            HoverFill: =RGBA(255, 236, 179, 1)
+            Image: =home
+            OnSelect: =Navigate(Dashboard, ScreenTransition.None)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =30
+            X: =28
+            Y: =167
+      - btnApvOpsdNavSTD:
+          Control: Classic/Button
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 0.85)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.08)
+            OnSelect: =Navigate(AllRecordStd04, ScreenTransition.None)
+            PaddingLeft: =56
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(255, 255, 255, 0.22)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =11
+            Text: ="STD-04 Records"
+            Tooltip: ="STD-04 Records"
+            Width: =176
+            X: =12
+            Y: =212
+      - imgApvOpsdNavSTD:
+          Control: Image
+          Properties:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =30
+            HoverFill: =RGBA(255, 236, 179, 1)
+            Image: =valve
+            OnSelect: =Navigate(AllRecordStd04, ScreenTransition.None)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =30
+            X: =28
+            Y: =219
+      - btnApvOpsdNavOPSD:
+          Control: Classic/Button
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 0.85)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.08)
+            OnSelect: =Navigate(AllRecordOPSD, ScreenTransition.None)
+            PaddingLeft: =56
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(255, 255, 255, 0.22)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =11
+            Text: ="OPSD Records"
+            Tooltip: ="OPSD Records"
+            Width: =176
+            X: =12
+            Y: =264
+      - imgApvOpsdNavOPSD:
+          Control: Image
+          Properties:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =30
+            HoverFill: =RGBA(255, 236, 179, 1)
+            Image: ='high-pressure'
+            OnSelect: =Navigate(AllRecordOPSD, ScreenTransition.None)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =30
+            X: =28
+            Y: =271
+      - btnApvOpsdNavApv:
+          Control: Classic/Button
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            Color: =RGBA(255, 196, 0, 1)
+            Fill: =RGBA(255, 255, 255, 0.14)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 196, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.18)
+            OnSelect: =Navigate(MyApprovalSTD04, ScreenTransition.None)
+            PaddingLeft: =56
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(255, 255, 255, 0.22)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =11
+            Text: ="My Approval"
+            Tooltip: ="My Approval"
+            Width: =176
+            X: =12
+            Y: =316
+      - imgApvOpsdNavApv:
+          Control: Image
+          Properties:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =30
+            HoverFill: =RGBA(255, 236, 179, 1)
+            Image: =approval
+            OnSelect: =Navigate(MyApprovalSTD04, ScreenTransition.None)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =30
+            X: =28
+            Y: =323
+      - rectApvOpsdNavActive:
+          Control: Rectangle
+          Properties:
+            BorderThickness: =0
+            Fill: =RGBA(255, 196, 0, 1)
+            Height: =24
+            Width: =4
+            X: =12
+            Y: =326
+      - rectApvOpsdSideDivider:
+          Control: Rectangle
+          Properties:
+            BorderThickness: =0
+            Fill: =RGBA(255, 255, 255, 0.15)
+            Height: =1
+            Width: =168
+            X: =16
+            Y: =628
+      - btnApvOpsdSideFeedback:
+          Control: Classic/Button
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 0.85)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 196, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.08)
+            OnSelect: '=Navigate(Dashboard, ScreenTransition.None, {opensupport: true})'
+            PaddingLeft: =56
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(255, 255, 255, 0.16)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =11
+            Text: ="Feedback"
+            Tooltip: ="Feedback"
+            Width: =176
+            X: =12
+            Y: =640
+      - icoApvOpsdSideFeedback:
+          Control: Classic/Icon
+          Properties:
+            Color: =RGBA(255, 255, 255, 0.85)
+            Height: =24
+            HoverColor: =RGBA(255, 196, 0, 1)
+            Icon: =Icon.Support
+            OnSelect: '=Navigate(Dashboard, ScreenTransition.None, {opensupport: true})'
+            Tooltip: ="Feedback"
+            Width: =24
+            X: =30
+            Y: =650
+      - btnApvOpsdSideLogOut:
+          Control: Classic/Button
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 0.85)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 196, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.08)
+            OnSelect: =Navigate(LoginPage, ScreenTransition.None)
+            PaddingLeft: =56
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(255, 255, 255, 0.16)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =11
+            Text: ="Log Out"
+            Tooltip: ="Log Out"
+            Width: =176
+            X: =12
+            Y: =692
+      - icoApvOpsdSideLogOut:
+          Control: Classic/Icon
+          Properties:
+            Color: =RGBA(255, 255, 255, 0.85)
+            Height: =24
+            HoverColor: =RGBA(255, 196, 0, 1)
+            Icon: =Icon.Leave
+            OnSelect: =Navigate(LoginPage, ScreenTransition.None)
+            Tooltip: ="Log Out"
+            Width: =24
+            X: =30
+            Y: =702
+      - lblApvOpsdSideVersion:
+          Control: Label
+          Properties:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 0.5)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            Height: =18
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =8
+            Text: ="Release Version 2.1.c"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =168
+            X: =16
+            Y: =744
+      - conApvOpsdHeader:
+          Control: GroupContainer
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =0
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 0.94)
+            Height: =72
+            RadiusBottomLeft: =16
+            RadiusBottomRight: =16
+            RadiusTopLeft: =16
+            RadiusTopRight: =16
+            Width: =1118
+            X: =224
+            Y: =16
+          Children: []
+      - lblApvOpsdTitle:
+          Control: Label
+          Properties:
+            Align: =Align.Left
             Color: =RGBA(0, 18, 107, 1)
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
-            Height: =50
-            Size: =15
-            Text: ="My Approval OPSD"
-            Width: =338
-            X: =141
-            Y: =99
+            Height: =34
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: ="My Approval · OPSD"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =700
+            X: =248
+            Y: =24
+      - lblApvOpsdSubtitle:
+          Control: Label
+          Properties:
+            Align: =Align.Left
+            Color: =RGBA(96, 106, 130, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            Height: =20
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="ING TLM WCEF Certificate Digitalization System"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =700
+            X: =248
+            Y: =58
       - SearchDataOPSD:
           Control: Classic/TextInput
           Properties:
-            BorderColor: =RGBA(0, 18, 107, 0.35)
+            BorderColor: =RGBA(0, 18, 107, 0.25)
             BorderThickness: =1
             Default: =""
+            DelayOutput: =true
+            Fill: =RGBA(255, 255, 255, 1)
             FocusedBorderColor: =RGBA(0, 18, 107, 1)
             FocusedBorderThickness: =2
             Font: =Font.'Open Sans'
+            Height: =36
             HintText: ="Search Data ..."
             HoverBorderColor: =RGBA(0, 18, 107, 1)
             HoverFill: =RGBA(240, 244, 252, 1)
             PaddingLeft: =16
-            RadiusBottomLeft: =20
-            RadiusBottomRight: =20
-            RadiusTopLeft: =20
-            RadiusTopRight: =20
-            Width: =287
-            X: =983
-            Y: =106
-      - slb logo_7:
-          Control: Image
+            RadiusBottomLeft: =18
+            RadiusBottomRight: =18
+            RadiusTopLeft: =18
+            RadiusTopRight: =18
+            Size: =11
+            Width: =280
+            X: =1038
+            Y: =34
+      - Icon1_2:
+          Control: Classic/Icon
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Height: =120
-            Image: =SLB_Logo_Positive_RGB_General
-            PaddingBottom: =15
-            PaddingRight: =25
-            Width: =120
-            X: =1246
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =32
+            HoverColor: =RGBA(0, 40, 170, 1)
+            Icon: =Icon.Reload
+            OnSelect: |-
+              =Refresh('TLM OPSD Verification');
+
+              //Turn off automatic refresh
+              Set(automaticRefresh2, false);
+              //Reset timer
+              Reset(TimerGalleryOPSD);
+              //Turn on automatic refresh
+              Set(automaticRefresh2, true);
+            PaddingBottom: =4
+            PaddingLeft: =4
+            PaddingRight: =4
+            PaddingTop: =4
+            Tooltip: ="Refresh data"
+            Width: =32
+            X: =994
+            Y: =36
+      - btnApvOpsdSwSTD:
+          Control: Classic/Button
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 0.2)
+            BorderThickness: =1
+            Color: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(255, 255, 255, 0.92)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =36
+            HoverBorderColor: =RGBA(0, 18, 107, 0.4)
+            HoverColor: =RGBA(0, 18, 107, 1)
+            HoverFill: =RGBA(255, 243, 204, 1)
+            OnSelect: =Navigate(MyApprovalSTD04, ScreenTransition.None)
+            PressedBorderColor: =RGBA(0, 18, 107, 0.4)
+            PressedColor: =RGBA(0, 18, 107, 1)
+            PressedFill: =RGBA(255, 196, 0, 1)
+            RadiusBottomLeft: =18
+            RadiusBottomRight: =18
+            RadiusTopLeft: =18
+            RadiusTopRight: =18
+            Size: =11
+            Text: ="STD-04"
+            Tooltip: ="My Approval STD-04"
+            Width: =110
+            X: =224
+            Y: =106
+      - btnApvOpsdSwOPSD:
+          Control: Classic/Button
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 0.2)
+            BorderThickness: =1
+            Color: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(255, 196, 0, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =36
+            HoverBorderColor: =RGBA(0, 18, 107, 0.4)
+            HoverColor: =RGBA(0, 18, 107, 1)
+            HoverFill: =RGBA(255, 196, 0, 1)
+            OnSelect: =Navigate(MyApprovalOPSD, ScreenTransition.None)
+            PressedBorderColor: =RGBA(0, 18, 107, 0.4)
+            PressedColor: =RGBA(0, 18, 107, 1)
+            PressedFill: =RGBA(255, 196, 0, 1)
+            RadiusBottomLeft: =18
+            RadiusBottomRight: =18
+            RadiusTopLeft: =18
+            RadiusTopRight: =18
+            Size: =11
+            Text: ="OPSD"
+            Tooltip: ="My Approval OPSD"
+            Width: =110
+            X: =340
+            Y: =106
+      - TabVerif_1:
+          Control: Gallery
+          Variant: Horizontal
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            BorderThickness: =0
+            Height: =48
+            Items: =CDS_WEC.Verification
+            OnSelect: |-
+              =UpdateContext({SelectedEquipment: ThisItem.Verification})
+            ShowScrollbar: =false
+            TemplateFill: =RGBA(0, 0, 0, 0)
+            TemplatePadding: =0
+            TemplateSize: =170
+            Width: =360
+            X: =476
+            Y: =100
+          Children:
+            - Button3_4:
+                Control: Classic/Button
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 0.2)
+                  BorderThickness: =1
+                  Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(255, 255, 255, 0.7))
+                  DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                  DisabledColor: =RGBA(0, 0, 0, 0)
+                  Fill: =If(ThisItem.IsSelected, RGBA(0, 18, 107, 1), RGBA(255, 255, 255, 0.92))
+                  Font: =Font.'Open Sans'
+                  Height: =36
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =If(ThisItem.IsSelected, RGBA(0, 18, 107, 1), RGBA(232, 238, 252, 1))
+                  OnSelect: =Select(Parent)
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =RGBA(0, 18, 107, 1)
+                  RadiusBottomLeft: =18
+                  RadiusBottomRight: =18
+                  RadiusTopLeft: =18
+                  RadiusTopRight: =18
+                  Text: =""
+                  Width: =160
+                  X: =0
+                  Y: =6
+            - Label6_4:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: |-
+                    =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(0, 18, 107, 1))
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =36
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =8
+                  PaddingRight: =8
+                  PaddingTop: =0
+                  Size: =11
+                  Text: =ThisItem.Verification
+                  Width: =160
+                  Wrap: =false
+                  X: =0
+                  Y: =6
+            - Rectangle4_4:
+                Control: Rectangle
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =If(ThisItem.IsSelected, RGBA(0, 18, 107, 1), RGBA(0, 0, 0, 0))
+                  Height: =6
+                  OnSelect: =Select(Parent)
+                  Visible: =false
+                  Width: =184
+                  Y: =37
+      - lblApvOpsdCount:
+          Control: Label
+          Properties:
+            Align: =Align.Right
+            Color: =RGBA(32, 40, 70, 0.85)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Showing " & GalleryMyApproval_OPSD.AllItemsCount & " records"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =300
+            X: =1042
+            Y: =110
+      - conApvOpsdTableCard:
+          Control: GroupContainer
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =0
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =596
+            RadiusBottomLeft: =14
+            RadiusBottomRight: =14
+            RadiusTopLeft: =14
+            RadiusTopRight: =14
+            Width: =1118
+            X: =224
+            Y: =156
+          Children: []
+      - conApvOpsdTableHead:
+          Control: GroupContainer
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =0
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(0, 18, 107, 1)
+            Height: =44
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =14
+            RadiusTopRight: =14
+            Width: =1118
+            X: =224
+            Y: =156
+          Children: []
+      - LabelID_2:
+          Control: Label
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="ID"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =42
+            Wrap: =false
+            X: =236
+            Y: =156
+      - LabelHeader_14:
+          Control: Label
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Date"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =92
+            Wrap: =false
+            X: =286
+            Y: =156
+      - LabelHeader_15:
+          Control: Label
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Verificator Name"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =172
+            Wrap: =false
+            X: =386
+            Y: =156
+      - LabelHeader_16:
+          Control: Label
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Serial Number"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =142
+            Wrap: =false
+            X: =566
+            Y: =156
+      - LabelHeader_20:
+          Control: Label
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="FA Number"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =142
+            Wrap: =false
+            X: =716
+            Y: =156
+      - LabelHeader_17:
+          Control: Label
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Result"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =82
+            Wrap: =false
+            X: =866
+            Y: =156
+      - LabelHeader_18:
+          Control: Label
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Status"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =92
+            Wrap: =false
+            X: =956
+            Y: =156
+      - LabelHeader_19:
+          Control: Label
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Action"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =246
+            Wrap: =false
+            X: =1056
+            Y: =156
       - GalleryMyApproval_OPSD:
           Control: Gallery
           Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Height: =577
+            BorderThickness: =0
+            Height: =538
             Items: |-
               =Filter(
                   If(
@@ -88,30 +875,36 @@ Screens:
                       StartsWith(ID, SearchDataOPSD.Text)
                   )
               )
-            TemplateFill: =If(ThisItem.IsSelected, RGBA(232, 238, 252, 1), RGBA(255, 255, 255, 0.94))
-            TemplateSize: =58
-            Width: =1219
-            X: =141
-            Y: =191
+            ShowScrollbar: =true
+            TemplateFill: =If(ThisItem.IsSelected, RGBA(232, 238, 252, 1), RGBA(255, 255, 255, 1))
+            TemplatePadding: =0
+            TemplateSize: =48
+            Width: =1118
+            X: =224
+            Y: =200
           Children:
             - ID_2:
                 Control: Label
                 Properties:
                   Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(32, 40, 70, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  Height: =24
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =10
                   Text: =ThisItem.ID
-                  VerticalAlign: =VerticalAlign.Top
-                  Width: =40
-                  Y: =13
+                  Tooltip: =Self.Text
+                  VerticalAlign: =VerticalAlign.Middle
+                  Width: =42
+                  Wrap: =false
+                  X: =12
+                  Y: =12
             - Separator4_2:
                 Control: Rectangle
                 Properties:
@@ -133,57 +926,69 @@ Screens:
             - Date_2:
                 Control: Label
                 Properties:
+                  Align: =Align.Left
                   BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(32, 40, 70, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  Height: =24
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =10
                   Text: =Text(ThisItem.'Verification Date', "mmm dd,yyyy")
-                  VerticalAlign: =VerticalAlign.Top
-                  Width: =110
-                  X: =56
-                  Y: =13
+                  Tooltip: =Self.Text
+                  VerticalAlign: =VerticalAlign.Middle
+                  Width: =92
+                  Wrap: =false
+                  X: =62
+                  Y: =12
             - InspName_3:
                 Control: Label
                 Properties:
+                  Align: =Align.Left
                   BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(32, 40, 70, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  Height: =24
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =10
                   Text: =ThisItem.'Verificator Name'
-                  VerticalAlign: =VerticalAlign.Top
-                  Width: =203
-                  X: =166
-                  Y: =13
+                  Tooltip: =Self.Text
+                  VerticalAlign: =VerticalAlign.Middle
+                  Width: =172
+                  Wrap: =false
+                  X: =162
+                  Y: =12
             - TagNumber_2:
                 Control: Label
                 Properties:
+                  Align: =Align.Left
                   BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(32, 40, 70, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  Height: =24
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =10
                   Text: =ThisItem.'Serial Number'
-                  VerticalAlign: =VerticalAlign.Top
-                  Width: =137
-                  X: =376
-                  Y: =13
+                  Tooltip: =Self.Text
+                  VerticalAlign: =VerticalAlign.Middle
+                  Width: =142
+                  Wrap: =false
+                  X: =342
+                  Y: =12
             - Result_2:
                 Control: Label
                 Properties:
@@ -192,18 +997,20 @@ Screens:
                   Color: =If(ThisItem.'Final Result'.Value = "PASSED", RGBA(16, 124, 16, 1), RGBA(196, 43, 28, 1))
                   Fill: =If(ThisItem.'Final Result'.Value = "PASSED", RGBA(223, 246, 221, 1), RGBA(253, 231, 233, 1))
                   Font: =Font.'Open Sans'
-                  FontWeight: =FontWeight.Semibold
-                  Height: =26
+                  FontWeight: =FontWeight.Bold
+                  Height: =24
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =10
+                  Size: =9
                   Text: =ThisItem.'Final Result'.Value
-                  Width: =103
-                  X: =675
-                  Y: =11
+                  VerticalAlign: =VerticalAlign.Middle
+                  Width: =78
+                  Wrap: =false
+                  X: =642
+                  Y: =12
             - Status_2:
                 Control: Label
                 Properties:
@@ -212,18 +1019,20 @@ Screens:
                   Color: =If(ThisItem.'Verification MSV' = "Verify", RGBA(16, 124, 16, 1), RGBA(196, 43, 28, 1))
                   Fill: =If(ThisItem.'Verification MSV' = "Verify", RGBA(223, 246, 221, 1), RGBA(253, 231, 233, 1))
                   Font: =Font.'Open Sans'
-                  FontWeight: =FontWeight.Semibold
-                  Height: =26
+                  FontWeight: =FontWeight.Bold
+                  Height: =24
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =10
+                  Size: =9
                   Text: =If(ThisItem.'Verification MSV' = "Verify", "Verified", "Not-Verify")
-                  Width: =93
-                  X: =847
-                  Y: =11
+                  VerticalAlign: =VerticalAlign.Middle
+                  Width: =88
+                  Wrap: =false
+                  X: =732
+                  Y: =12
             - BtnApproveNow_2:
                 Control: Classic/Button
                 Properties:
@@ -231,6 +1040,8 @@ Screens:
                   BorderThickness: =0
                   Color: =RGBA(255, 255, 255, 1)
                   DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  DisabledColor: =RGBA(130, 138, 156, 1)
+                  DisabledFill: =RGBA(226, 230, 238, 1)
                   DisplayMode: |-
                     =If(
                         ThisItem.'Verification MSV' = "Not-Verify",
@@ -239,7 +1050,8 @@ Screens:
                     )
                   Fill: =If(ThisItem.'Verification MSV' = "Not-Verify", RGBA(16, 124, 16, 1), RGBA(200, 200, 200, 1))
                   Font: =Font.'Open Sans'
-                  Height: =26
+                  FontWeight: =FontWeight.Semibold
+                  Height: =28
                   HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
                   HoverColor: =RGBA(255, 255, 255, 1)
                   HoverFill: =RGBA(12, 98, 12, 1)
@@ -254,38 +1066,42 @@ Screens:
                   PressedBorderColor: =Self.Fill
                   PressedColor: =RGBA(255, 255, 255, 1)
                   PressedFill: =RGBA(0, 10, 70, 1)
-                  RadiusBottomLeft: =13
-                  RadiusBottomRight: =13
-                  RadiusTopLeft: =13
-                  RadiusTopRight: =13
-                  Size: =10
+                  RadiusBottomLeft: =14
+                  RadiusBottomRight: =14
+                  RadiusTopLeft: =14
+                  RadiusTopRight: =14
+                  Size: =9
                   Text: |-
                     =If(
                             ThisItem.'Verification MSV' = "Not-Verify",
                             "Approve Now",
                             "Approved"
                         )
-                  Width: =100
-                  X: =959
+                  Width: =110
+                  X: =840
                   Y: =10
             - InspName_4:
                 Control: Label
                 Properties:
+                  Align: =Align.Left
                   BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(32, 40, 70, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  Height: =24
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =10
                   Text: =ThisItem.'Installed at (FA Number)'
-                  VerticalAlign: =VerticalAlign.Top
-                  Width: =133
-                  X: =536
-                  Y: =13
+                  Tooltip: =Self.Text
+                  VerticalAlign: =VerticalAlign.Middle
+                  Width: =142
+                  Wrap: =false
+                  X: =492
+                  Y: =12
             - BtnDetails_1:
                 Control: Classic/Button
                 Properties:
@@ -293,6 +1109,8 @@ Screens:
                   BorderThickness: =0
                   Color: =RGBA(255, 255, 255, 1)
                   DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  DisabledColor: =RGBA(130, 138, 156, 1)
+                  DisabledFill: =RGBA(226, 230, 238, 1)
                   DisplayMode: |-
                     =If(
                         GalleryMyApproval_OPSD.Selected.'Verification MSV' = "Not-Verify",
@@ -301,7 +1119,8 @@ Screens:
                     )
                   Fill: =RGBA(0, 18, 107, 1)
                   Font: =Font.'Open Sans'
-                  Height: =26
+                  FontWeight: =FontWeight.Semibold
+                  Height: =28
                   HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
                   HoverColor: =RGBA(255, 255, 255, 1)
                   HoverFill: =RGBA(0, 40, 170, 1)
@@ -310,153 +1129,40 @@ Screens:
                   PressedBorderColor: =Self.Fill
                   PressedColor: =RGBA(255, 255, 255, 1)
                   PressedFill: =RGBA(0, 10, 70, 1)
-                  RadiusBottomLeft: =13
-                  RadiusBottomRight: =13
-                  RadiusTopLeft: =13
-                  RadiusTopRight: =13
-                  Size: =10
+                  RadiusBottomLeft: =14
+                  RadiusBottomRight: =14
+                  RadiusTopLeft: =14
+                  RadiusTopRight: =14
+                  Size: =9
                   Text: ="Details"
-                  Width: =60
-                  X: =1071
+                  Width: =76
+                  X: =958
                   Y: =10
             - Icon4_1:
                 Control: Classic/Icon
                 Properties:
                   BorderColor: =RGBA(0, 18, 107, 1)
                   Color: =RGBA(0, 18, 107, 1)
+                  DisabledColor: =RGBA(190, 196, 210, 1)
                   DisplayMode: |-
                     =If(
                         GalleryMyApproval_OPSD.Selected.'Verification MSV' = "Not-Verify",
                         DisplayMode.Disabled,
                         DisplayMode.Edit
                     )
-                  Height: =33
+                  Height: =28
+                  HoverColor: =RGBA(0, 40, 170, 1)
                   Icon: =Icon.DocumentPDF
                   OnSelect: |-
                     =UpdateContext({selectID: ThisItem.ID, showCertificateOPSD: true})
-                  Width: =29
-                  X: =1142
-                  Y: =5
-      - Label1_7:
-          Control: Label
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(0, 18, 107, 1)
-            Font: =Font.Lato
-            FontWeight: =FontWeight.Bold
-            Height: =70
-            Size: =20
-            Text: ="⁠ING TLM WCEF Certificate Digitalization System"
-            Width: =Parent.Width
-            Y: =18
-      - Rectangle6_2:
-          Control: Rectangle
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(0, 18, 107, 1)
-            Height: =36
-            Width: =1219
-            X: =141
-            Y: =151
-      - LabelID_2:
-          Control: Label
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(0, 18, 107, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =33
-            Size: =15
-            Text: ="ID"
-            Width: =49
-            X: =148
-            Y: =152
-      - LabelHeader_14:
-          Control: Label
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(0, 18, 107, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =33
-            Size: =15
-            Text: ="Date"
-            Width: =94
-            X: =190
-            Y: =152
-      - LabelHeader_15:
-          Control: Label
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(0, 18, 107, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =33
-            Size: =15
-            Text: ="Verificator Name"
-            Width: =194
-            X: =302
-            Y: =151
-      - LabelHeader_16:
-          Control: Label
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(0, 18, 107, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =33
-            Size: =15
-            Text: ="Serial Number"
-            Width: =163
-            X: =510
-            Y: =151
-      - LabelHeader_17:
-          Control: Label
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(0, 18, 107, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =33
-            Size: =15
-            Text: ="Result"
-            Width: =114
-            X: =811
-            Y: =151
-      - LabelHeader_18:
-          Control: Label
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(0, 18, 107, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =33
-            Size: =15
-            Text: ="Status"
-            Width: =90
-            X: =988
-            Y: =152
-      - LabelHeader_19:
-          Control: Label
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(0, 18, 107, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =33
-            Size: =15
-            Text: ="Action"
-            Width: =120
-            X: =1104
-            Y: =152
+                  PaddingBottom: =3
+                  PaddingLeft: =3
+                  PaddingRight: =3
+                  PaddingTop: =3
+                  Tooltip: ="Open certificate"
+                  Width: =28
+                  X: =1044
+                  Y: =10
       - VerMSV:
           Control: Classic/TextInput
           Properties:
@@ -467,25 +1173,6 @@ Screens:
             HoverFill: =RGBA(186, 202, 226, 1)
             Visible: =false
             X: =760
-      - Icon1_2:
-          Control: Classic/Icon
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(0, 18, 107, 1)
-            Height: =30
-            Icon: =Icon.Reload
-            OnSelect: |-
-              =Refresh('TLM OPSD Verification');
-
-              //Turn off automatic refresh
-              Set(automaticRefresh2, false);
-              //Reset timer
-              Reset(TimerGalleryOPSD);
-              //Turn on automatic refresh
-              Set(automaticRefresh2, true);
-            Width: =32
-            X: =1304
-            Y: =112
       - TimerGalleryOPSD:
           Control: Timer
           Properties:
@@ -511,485 +1198,48 @@ Screens:
             Visible: =false
             X: =1200
             Y: =713
-      - LabelHeader_20:
-          Control: Label
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(0, 18, 107, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =33
-            Size: =15
-            Text: ="FA Number"
-            Width: =138
-            X: =673
-            Y: =152
-      - Rectangle3_4:
-          Control: Rectangle
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(255, 255, 255, 0.88)
-            Height: =768
-            Width: =66
-            X: =72
-      - TxtSTD04_7:
-          Control: Label
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor2, RGBA(0, 18, 107, 1), RGBA(0, 0, 0, 1))
-            DisplayMode: =DisplayMode.View
-            Font: =Font.'Open Sans'
-            Height: =25
-            OnSelect: |-
-              =UpdateContext({opendashboard: true});
-              UpdateContext({openadduser: false});
-              UpdateContext({openaddlink: true});
-              UpdateContext({opensupport: false});
-              UpdateContext({linkdata: false});
-              Set(
-                  Mycolor,
-                  false
-              );
-              Set(
-                  Mycolor1,
-                  false
-              );
-              Set(
-                  Mycolor2,
-                  true
-              );
-              Set(
-                  Mycolor3,
-                  false
-              )
-            Size: =8
-            Text: ="STD-04"
-            Width: =70
-            X: =71
-            Y: =366
-      - STD04Icon_7:
-          Control: Image
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Height: =50
-            Image: =valve
-            OnSelect: =Navigate(MyApprovalSTD04)
-            Width: =50
-            X: =81
-            Y: =322
-      - OPSDIcon_7:
-          Control: Image
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Height: =50
-            Image: ='high-pressure'
-            OnSelect: =Navigate(MyApprovalOPSD)
-            Width: =50
-            X: =81
-            Y: =406
-      - TxtOPSD_7:
-          Control: Label
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor2, RGBA(0, 18, 107, 1), RGBA(0, 0, 0, 1))
-            DisplayMode: =DisplayMode.View
-            Font: =Font.'Open Sans'
-            Height: =25
-            OnSelect: |-
-              =UpdateContext({opendashboard: true});
-              UpdateContext({openadduser: false});
-              UpdateContext({openaddlink: true});
-              UpdateContext({opensupport: false});
-              UpdateContext({linkdata: false});
-              Set(
-                  Mycolor,
-                  false
-              );
-              Set(
-                  Mycolor1,
-                  false
-              );
-              Set(
-                  Mycolor2,
-                  true
-              );
-              Set(
-                  Mycolor3,
-                  false
-              )
-            Size: =8
-            Text: ="OPSD"
-            Width: =70
-            X: =71
-            Y: =456
-      - Rectangle3_9:
-          Control: Rectangle
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(0, 18, 107, 0.15)
-            Height: =768
-            Width: =1
-            X: =137
-      - Rectangle2_6:
-          Control: Rectangle
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(0, 18, 107, 1)
-            Height: =4
-            Width: =65
-            X: =73
-            Y: =480
-      - TabVerif_1:
-          Control: Gallery
-          Variant: Horizontal
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Height: =58
-            Items: =CDS_WEC.Verification
-            OnSelect: |-
-              =UpdateContext({SelectedEquipment: ThisItem.Verification})
-            ShowScrollbar: =false
-            TemplateFill: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(255, 255, 255, 0.7))
-            TemplateSize: =185
-            Width: =383
-            X: =479
-            Y: =90
-          Children:
-            - Button3_4:
-                Control: Classic/Button
-                Properties:
-                  BorderColor: =ColorFade(Self.Fill, -15%)
-                  BorderThickness: =0
-                  Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(255, 255, 255, 0.7))
-                  DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                  DisabledColor: =RGBA(0, 0, 0, 0)
-                  Fill: =RGBA(0, 0, 0, 0)
-                  Font: =Font.'Open Sans'
-                  Height: =37
-                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
-                  HoverColor: =RGBA(255, 255, 255, 1)
-                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
-                  OnSelect: =Select(Parent)
-                  PressedBorderColor: =Self.Fill
-                  PressedColor: =Self.Fill
-                  PressedFill: =Self.Color
-                  RadiusBottomLeft: =7
-                  RadiusBottomRight: =7
-                  RadiusTopLeft: =7
-                  RadiusTopRight: =7
-                  Text: =""
-                  Width: =184
-            - Label6_4:
-                Control: Label
-                Properties:
-                  Align: =Align.Center
-                  BorderColor: =RGBA(0, 18, 107, 1)
-                  Color: |
-                    =If(ThisItem.IsSelected, RGBA(0, 18, 107, 1), RGBA(0, 0, 0, 1))
-                  Font: =Font.'Open Sans'
-                  FontWeight: =FontWeight.Bold
-                  Height: =37
-                  OnSelect: =Select(Parent)
-                  Size: =14
-                  Text: =ThisItem.Verification
-                  Width: =184
-            - Rectangle4_4:
-                Control: Rectangle
-                Properties:
-                  BorderColor: =RGBA(0, 18, 107, 1)
-                  Fill: =If(ThisItem.IsSelected, RGBA(0, 18, 107, 1), RGBA(0, 0, 0, 0))
-                  Height: =6
-                  OnSelect: =Select(Parent)
-                  Width: =184
-                  Y: =37
-      - Rectangle3_10:
-          Control: Rectangle
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(0, 18, 107, 1)
-            Height: =768
-            Width: =72
-      - TxtDashboard_6:
-          Control: Label
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
-            DisplayMode: =DisplayMode.View
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =25
-            OnSelect: |-
-              =UpdateContext({opendashboard:true});
-              UpdateContext({openadduser:false});
-              UpdateContext({openaddlink:false});
-              UpdateContext({opensupport:false});
-              UpdateContext({linkdata: false});
-              Set(Mycolor,true);
-              Set(Mycolor1,false);
-              Set(Mycolor2,false);
-              Set(Mycolor3,false)
-            Size: =8
-            Text: ="Dashboard"
-            Width: =70
-            X: =2
-            Y: =140
-      - TxtSTD04_8:
-          Control: Label
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor2, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
-            DisplayMode: =DisplayMode.View
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =25
-            OnSelect: |-
-              =UpdateContext({opendashboard: true});
-              UpdateContext({openadduser: false});
-              UpdateContext({openaddlink: true});
-              UpdateContext({opensupport: false});
-              UpdateContext({linkdata: false});
-              Set(
-                  Mycolor,
-                  false
-              );
-              Set(
-                  Mycolor1,
-                  false
-              );
-              Set(
-                  Mycolor2,
-                  true
-              );
-              Set(
-                  Mycolor3,
-                  false
-              )
-            Size: =8
-            Text: ="STD-04"
-            Width: =70
-            X: =2
-            Y: =223
-      - TxtMyApproval_6:
-          Control: Label
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor1, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
-            DisplayMode: =DisplayMode.View
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =25
-            OnSelect: |-
-              =UpdateContext({opendashboard:false});
-              UpdateContext({openadduser:true});
-              UpdateContext({openaddlink:false});
-              UpdateContext({opensupport:false});
-              UpdateContext({linkdata: false});
-              Set(Mycolor,false);
-              Set(Mycolor1,true);
-              Set(Mycolor2,false);
-              Set(Mycolor3,false)
-            Size: =8
-            Text: ="MyApproval"
-            Width: =70
-            X: =2
-            Y: =400
-      - DashboardIcon_6:
-          Control: Image
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =46
-            HoverFill: =RGBA(255, 236, 179, 1)
-            Image: =home
-            OnSelect: =Navigate(Dashboard)
-            PaddingBottom: =7
-            PaddingLeft: =7
-            PaddingRight: =7
-            PaddingTop: =7
-            RadiusBottomLeft: =12
-            RadiusBottomRight: =12
-            RadiusTopLeft: =12
-            RadiusTopRight: =12
-            Width: =46
-            X: =13
-            Y: =104
-      - ApprovalIcon_6:
-          Control: Image
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =46
-            HoverFill: =RGBA(255, 236, 179, 1)
-            Image: =approval
-            OnSelect: =Navigate(MyApprovalSTD04)
-            PaddingBottom: =7
-            PaddingLeft: =7
-            PaddingRight: =7
-            PaddingTop: =7
-            RadiusBottomLeft: =12
-            RadiusBottomRight: =12
-            RadiusTopLeft: =12
-            RadiusTopRight: =12
-            Width: =46
-            X: =13
-            Y: =356
-      - STD04Icon_8:
-          Control: Image
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =46
-            HoverFill: =RGBA(255, 236, 179, 1)
-            Image: =valve
-            OnSelect: =Navigate(AllRecordStd04)
-            PaddingBottom: =7
-            PaddingLeft: =7
-            PaddingRight: =7
-            PaddingTop: =7
-            RadiusBottomLeft: =12
-            RadiusBottomRight: =12
-            RadiusTopLeft: =12
-            RadiusTopRight: =12
-            Width: =46
-            X: =13
-            Y: =181
-      - OPSDIcon_8:
-          Control: Image
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =46
-            HoverFill: =RGBA(255, 236, 179, 1)
-            Image: ='high-pressure'
-            OnSelect: =Navigate(AllRecordOPSD)
-            PaddingBottom: =7
-            PaddingLeft: =7
-            PaddingRight: =7
-            PaddingTop: =7
-            RadiusBottomLeft: =12
-            RadiusBottomRight: =12
-            RadiusTopLeft: =12
-            RadiusTopRight: =12
-            Width: =46
-            X: =13
-            Y: =265
-      - TxtOPSD_8:
-          Control: Label
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor2, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
-            DisplayMode: =DisplayMode.View
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =25
-            OnSelect: |-
-              =UpdateContext({opendashboard: true});
-              UpdateContext({openadduser: false});
-              UpdateContext({openaddlink: true});
-              UpdateContext({opensupport: false});
-              UpdateContext({linkdata: false});
-              Set(
-                  Mycolor,
-                  false
-              );
-              Set(
-                  Mycolor1,
-                  false
-              );
-              Set(
-                  Mycolor2,
-                  true
-              );
-              Set(
-                  Mycolor3,
-                  false
-              )
-            Size: =8
-            Text: ="OPSD"
-            Width: =70
-            X: =2
-            Y: =313
-      - LogOut_10:
-          Control: Classic/Icon
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =70
-            HoverColor: =RGBA(255, 196, 0, 1)
-            Icon: =Icon.BackArrow
-            OnSelect: =Navigate(LoginPage)
-            PaddingBottom: =20
-            PaddingLeft: =18
-            PaddingRight: =18
-            Width: =70
-            Y: =698
-      - TextDashboard_10:
-          Control: Label
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(255, 255, 255, 1)
-            DisplayMode: =DisplayMode.View
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =25
-            OnSelect: |-
-              =UpdateContext({opendashboard:true});
-              UpdateContext({openadduser:false});
-              UpdateContext({openaddlink:false});
-              UpdateContext({opensupport:false});
-              UpdateContext({linkdata: false});
-              Set(Mycolor,true);
-              Set(Mycolor1,false);
-              Set(Mycolor2,false);
-              Set(Mycolor3,false)
-            Size: =8
-            Text: ="Log Out"
-            Width: =70
-            Y: =743
-      - Rectangle2_7:
-          Control: Rectangle
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(255, 196, 0, 1)
-            Height: =72
-            Width: =4
-            Y: =355
       - BGPopup_5:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(0, 18, 107, 0.45)
+            Fill: =RGBA(8, 14, 40, 0.55)
             Height: =768
             Visible: =showOPSDdetail
             Width: =1366
       - BGDetails_5:
-          Control: Rectangle
+          Control: GroupContainer
+          Variant: ManualLayout
           Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
+            BorderThickness: =0
+            DropShadow: =DropShadow.Bold
             Fill: =RGBA(255, 255, 255, 1)
             Height: =674
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
             Visible: =showOPSDdetail
             Width: =1223
             X: =81
             Y: =55
+          Children: []
       - BGJudulDetails_5:
-          Control: Rectangle
+          Control: GroupContainer
+          Variant: ManualLayout
           Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
+            BorderThickness: =0
+            DropShadow: =DropShadow.None
             Fill: =RGBA(0, 18, 107, 1)
             Height: =44
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
             Visible: =showOPSDdetail
             Width: =1188
             X: =97
             Y: =69
+          Children: []
       - JudulDetails_4:
           Control: Label
           Properties:
@@ -1612,30 +1862,44 @@ Screens:
           Control: Rectangle
           Properties:
             BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(0, 18, 107, 0.45)
+            Fill: =RGBA(8, 14, 40, 0.55)
             Height: =768
             Visible: =showCertificateOPSD
             Width: =1366
       - BGDetails_6:
-          Control: Rectangle
+          Control: GroupContainer
+          Variant: ManualLayout
           Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
+            BorderThickness: =0
+            DropShadow: =DropShadow.Bold
             Fill: =RGBA(255, 255, 255, 1)
             Height: =674
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
             Visible: =showCertificateOPSD
             Width: =1223
             X: =81
             Y: =55
+          Children: []
       - BGJudulDetails_6:
-          Control: Rectangle
+          Control: GroupContainer
+          Variant: ManualLayout
           Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
+            BorderThickness: =0
+            DropShadow: =DropShadow.None
             Fill: =RGBA(0, 18, 107, 1)
             Height: =44
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
             Visible: =showCertificateOPSD
             Width: =1188
             X: =97
             Y: =69
+          Children: []
       - Rectangle4_15:
           Control: Rectangle
           Properties:

@@ -12,365 +12,793 @@ Screens:
             Height: =768
             Image: ='Background WEC (3)'
             Width: =1366
-      - slb logo_2:
-          Control: Image
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Height: =120
-            Image: =SLB_Logo_Positive_RGB_General
-            PaddingBottom: =15
-            PaddingRight: =25
-            Width: =120
-            X: =1246
-      - Rectangle3_12:
+      - rectDashSideBg:
           Control: Rectangle
           Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
+            BorderThickness: =0
             Fill: =RGBA(0, 18, 107, 1)
             Height: =768
-            Width: =72
-      - TxtDashboard_8:
-          Control: Label
+            Width: =200
+            X: =0
+            Y: =0
+      - conDashSideBrand:
+          Control: GroupContainer
+          Variant: ManualLayout
           Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
-            DisplayMode: =DisplayMode.View
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =20
-            OnSelect: |-
-              =UpdateContext({opendashboard:true});
-              UpdateContext({openadduser:false});
-              UpdateContext({openaddlink:false});
-              UpdateContext({opensupport:false});
-              UpdateContext({linkdata: false});
-              Set(Mycolor,true);
-              Set(Mycolor1,false);
-              Set(Mycolor2,false);
-              Set(Mycolor3,false)
-            Size: =8
-            Text: ="Dashboard"
-            Width: =70
-            X: =1
-            Y: =144
-      - TxtSTD04_10:
-          Control: Label
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor2, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
-            DisplayMode: =DisplayMode.View
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =20
-            OnSelect: |-
-              =UpdateContext({opendashboard: true});
-              UpdateContext({openadduser: false});
-              UpdateContext({openaddlink: true});
-              UpdateContext({opensupport: false});
-              UpdateContext({linkdata: false});
-              Set(
-                  Mycolor,
-                  false
-              );
-              Set(
-                  Mycolor1,
-                  false
-              );
-              Set(
-                  Mycolor2,
-                  true
-              );
-              Set(
-                  Mycolor3,
-                  false
-              )
-            Size: =8
-            Text: ="STD-04"
-            Width: =70
-            X: =1
-            Y: =224
-      - TxtMyApproval_8:
-          Control: Label
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor1, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
-            DisplayMode: =DisplayMode.View
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =20
-            OnSelect: |-
-              =UpdateContext({opendashboard:false});
-              UpdateContext({openadduser:true});
-              UpdateContext({openaddlink:false});
-              UpdateContext({opensupport:false});
-              UpdateContext({linkdata: false});
-              Set(Mycolor,false);
-              Set(Mycolor1,true);
-              Set(Mycolor2,false);
-              Set(Mycolor3,false)
-            Size: =8
-            Text: ="MyApproval"
-            Width: =70
-            X: =1
-            Y: =384
-      - DashboardIcon_8:
+            BorderThickness: =0
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =60
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Width: =168
+            X: =16
+            Y: =16
+          Children: []
+      - imgDashSideLogo:
           Control: Image
           Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =52
+            Image: =SLB_Logo_Positive_RGB_General
+            ImagePosition: =ImagePosition.Fit
+            Width: =152
+            X: =24
+            Y: =20
+      - lblDashSideApp:
+          Control: Label
+          Properties:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 0.75)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =36
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: ="Certificate Digitalization System"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =168
+            Wrap: =true
+            X: =16
+            Y: =84
+      - lblDashSideMenu:
+          Control: Label
+          Properties:
+            Align: =Align.Left
+            Color: =RGBA(255, 255, 255, 0.5)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =18
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =8
+            Text: ="MENU"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =150
+            X: =24
+            Y: =136
+      - btnDashNavDashboard:
+          Control: Classic/Button
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            Color: =RGBA(255, 196, 0, 1)
+            Fill: =RGBA(255, 255, 255, 0.14)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 196, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.18)
+            OnSelect: =Navigate(Dashboard, ScreenTransition.None)
+            PaddingLeft: =56
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(255, 255, 255, 0.22)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =11
+            Text: ="Dashboard"
+            Tooltip: ="Dashboard"
+            Width: =176
+            X: =12
+            Y: =160
+      - imgDashNavDashboard:
+          Control: Image
+          Properties:
             Fill: =RGBA(255, 255, 255, 1)
-            Height: =46
+            Height: =30
             HoverFill: =RGBA(255, 236, 179, 1)
             Image: =home
-            OnSelect: =Navigate(Dashboard)
-            PaddingBottom: =7
-            PaddingLeft: =7
-            PaddingRight: =7
-            PaddingTop: =7
-            RadiusBottomLeft: =12
-            RadiusBottomRight: =12
-            RadiusTopLeft: =12
-            RadiusTopRight: =12
-            Width: =46
-            X: =13
-            Y: =96
-      - ApprovalIcon_8:
+            OnSelect: =Navigate(Dashboard, ScreenTransition.None)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =30
+            X: =28
+            Y: =167
+      - rectDashNavActive:
+          Control: Rectangle
+          Properties:
+            BorderThickness: =0
+            Fill: =RGBA(255, 196, 0, 1)
+            Height: =24
+            Width: =4
+            X: =12
+            Y: =170
+      - btnDashNavSTD:
+          Control: Classic/Button
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 0.85)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.08)
+            OnSelect: =Navigate(AllRecordStd04, ScreenTransition.None)
+            PaddingLeft: =56
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(255, 255, 255, 0.22)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =11
+            Text: ="STD-04 Records"
+            Tooltip: ="STD-04 Records"
+            Width: =176
+            X: =12
+            Y: =212
+      - imgDashNavSTD:
           Control: Image
           Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(255, 255, 255, 1)
-            Height: =46
-            HoverFill: =RGBA(255, 236, 179, 1)
-            Image: =approval
-            OnSelect: =Navigate(MyApprovalSTD04)
-            PaddingBottom: =7
-            PaddingLeft: =7
-            PaddingRight: =7
-            PaddingTop: =7
-            RadiusBottomLeft: =12
-            RadiusBottomRight: =12
-            RadiusTopLeft: =12
-            RadiusTopRight: =12
-            Width: =46
-            X: =13
-            Y: =336
-      - STD04Icon_10:
-          Control: Image
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =46
+            Height: =30
             HoverFill: =RGBA(255, 236, 179, 1)
             Image: =valve
-            OnSelect: =Navigate(AllRecordStd04)
-            PaddingBottom: =7
-            PaddingLeft: =7
-            PaddingRight: =7
-            PaddingTop: =7
-            RadiusBottomLeft: =12
-            RadiusBottomRight: =12
-            RadiusTopLeft: =12
-            RadiusTopRight: =12
-            Width: =46
-            X: =13
-            Y: =176
-      - OPSDIcon_10:
+            OnSelect: =Navigate(AllRecordStd04, ScreenTransition.None)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =30
+            X: =28
+            Y: =219
+      - btnDashNavOPSD:
+          Control: Classic/Button
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 0.85)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.08)
+            OnSelect: =Navigate(AllRecordOPSD, ScreenTransition.None)
+            PaddingLeft: =56
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(255, 255, 255, 0.22)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =11
+            Text: ="OPSD Records"
+            Tooltip: ="OPSD Records"
+            Width: =176
+            X: =12
+            Y: =264
+      - imgDashNavOPSD:
           Control: Image
           Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(255, 255, 255, 1)
-            Height: =46
+            Height: =30
             HoverFill: =RGBA(255, 236, 179, 1)
             Image: ='high-pressure'
-            OnSelect: =Navigate(AllRecordOPSD)
-            PaddingBottom: =7
-            PaddingLeft: =7
-            PaddingRight: =7
-            PaddingTop: =7
-            RadiusBottomLeft: =12
-            RadiusBottomRight: =12
-            RadiusTopLeft: =12
-            RadiusTopRight: =12
-            Width: =46
-            X: =13
-            Y: =256
-      - TxtOPSD_10:
-          Control: Label
+            OnSelect: =Navigate(AllRecordOPSD, ScreenTransition.None)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =30
+            X: =28
+            Y: =271
+      - btnDashNavApv:
+          Control: Classic/Button
           Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor2, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
-            DisplayMode: =DisplayMode.View
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 0.85)
+            Fill: =RGBA(0, 0, 0, 0)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Semibold
-            Height: =20
-            OnSelect: |-
-              =UpdateContext({opendashboard: true});
-              UpdateContext({openadduser: false});
-              UpdateContext({openaddlink: true});
-              UpdateContext({opensupport: false});
-              UpdateContext({linkdata: false});
-              Set(
-                  Mycolor,
-                  false
-              );
-              Set(
-                  Mycolor1,
-                  false
-              );
-              Set(
-                  Mycolor2,
-                  true
-              );
-              Set(
-                  Mycolor3,
-                  false
-              )
-            Size: =8
-            Text: ="OPSD"
-            Width: =70
-            X: =1
-            Y: =304
-      - LogOut_12:
+            Height: =44
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.08)
+            OnSelect: =Navigate(MyApprovalSTD04, ScreenTransition.None)
+            PaddingLeft: =56
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(255, 255, 255, 0.22)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =11
+            Text: ="My Approval"
+            Tooltip: ="My Approval"
+            Width: =176
+            X: =12
+            Y: =316
+      - imgDashNavApv:
+          Control: Image
+          Properties:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =30
+            HoverFill: =RGBA(255, 236, 179, 1)
+            Image: =approval
+            OnSelect: =Navigate(MyApprovalSTD04, ScreenTransition.None)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =30
+            X: =28
+            Y: =323
+      - rectDashSideDivider:
+          Control: Rectangle
+          Properties:
+            BorderThickness: =0
+            Fill: =RGBA(255, 255, 255, 0.15)
+            Height: =1
+            Width: =168
+            X: =16
+            Y: =628
+      - btnDashSideFeedback:
+          Control: Classic/Button
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 0.85)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 196, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.08)
+            OnSelect: '=UpdateContext({opensupport: true})'
+            PaddingLeft: =56
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(255, 255, 255, 0.16)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =11
+            Text: ="Feedback"
+            Tooltip: ="Feedback"
+            Width: =176
+            X: =12
+            Y: =640
+      - icoDashSideFeedback:
           Control: Classic/Icon
           Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =70
+            Color: =RGBA(255, 255, 255, 0.85)
+            Height: =24
             HoverColor: =RGBA(255, 196, 0, 1)
-            Icon: =Icon.BackArrow
-            OnSelect: =Navigate(LoginPage)
-            PaddingBottom: =20
-            PaddingLeft: =18
-            PaddingRight: =18
-            Width: =70
-            Y: =698
-      - TextDashboard_12:
+            Icon: =Icon.Support
+            OnSelect: '=UpdateContext({opensupport: true})'
+            Tooltip: ="Feedback"
+            Width: =24
+            X: =30
+            Y: =650
+      - btnDashSideLogOut:
+          Control: Classic/Button
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 0.85)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 196, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.08)
+            OnSelect: =Navigate(LoginPage, ScreenTransition.None)
+            PaddingLeft: =56
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(255, 255, 255, 0.16)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =11
+            Text: ="Log Out"
+            Tooltip: ="Log Out"
+            Width: =176
+            X: =12
+            Y: =692
+      - icoDashSideLogOut:
+          Control: Classic/Icon
+          Properties:
+            Color: =RGBA(255, 255, 255, 0.85)
+            Height: =24
+            HoverColor: =RGBA(255, 196, 0, 1)
+            Icon: =Icon.Leave
+            OnSelect: =Navigate(LoginPage, ScreenTransition.None)
+            Tooltip: ="Log Out"
+            Width: =24
+            X: =30
+            Y: =702
+      - lblDashSideVersion:
           Control: Label
           Properties:
             Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(255, 255, 255, 1)
-            DisplayMode: =DisplayMode.View
+            Color: =RGBA(255, 255, 255, 0.5)
             Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =25
-            OnSelect: |-
-              =UpdateContext({opendashboard:true});
-              UpdateContext({openadduser:false});
-              UpdateContext({openaddlink:false});
-              UpdateContext({opensupport:false});
-              UpdateContext({linkdata: false});
-              Set(Mycolor,true);
-              Set(Mycolor1,false);
-              Set(Mycolor2,false);
-              Set(Mycolor3,false)
+            FontWeight: =FontWeight.Normal
+            Height: =18
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
             Size: =8
-            Text: ="Log Out"
-            Width: =70
-            Y: =743
+            Text: ="Release Version 2.1.c"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =168
+            X: =16
+            Y: =744
+      - conDashHeader:
+          Control: GroupContainer
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =0
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 0.94)
+            Height: =72
+            RadiusBottomLeft: =16
+            RadiusBottomRight: =16
+            RadiusTopLeft: =16
+            RadiusTopRight: =16
+            Width: =1118
+            X: =224
+            Y: =16
+          Children: []
+      - lblDashTitle:
+          Control: Label
+          Properties:
+            Align: =Align.Left
+            Color: =RGBA(0, 18, 107, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =34
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: ="Dashboard"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =700
+            X: =248
+            Y: =24
+      - lblDashSubtitle:
+          Control: Label
+          Properties:
+            Align: =Align.Left
+            Color: =RGBA(96, 106, 130, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            Height: =20
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="ING TLM WCEF Certificate Digitalization System"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =700
+            X: =248
+            Y: =58
       - conDashHeroCard:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
-            DropShadow: =DropShadow.Semibold
-            Fill: =RGBA(255, 255, 255, 0.88)
-            Height: =320
-            RadiusBottomLeft: =24
-            RadiusBottomRight: =24
-            RadiusTopLeft: =24
-            RadiusTopRight: =24
-            Width: =1070
-            X: =183
-            Y: =200
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 0.92)
+            Height: =240
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Width: =1118
+            X: =224
+            Y: =108
       - Header_1:
           Control: Label
           Properties:
-            Align: =Align.Center
+            Align: =Align.Left
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(0, 18, 107, 1)
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
-            Height: =72
-            Size: =34
+            Height: =56
+            Size: =30
             Text: ="Hi " & User().FullName & " ! "
-            Width: =1030
-            X: =203
-            Y: =232
-      - IconSupport_5:
-          Control: Classic/Icon
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor3, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
-            Fill: =If(Mycolor3, RGBA(255, 255, 255, 0.15), RGBA(0, 0, 0, 0))
-            Height: =70
-            HoverColor: =RGBA(255, 196, 0, 1)
-            Icon: =Icon.Support
-            OnSelect: |-
-              =UpdateContext({opendashboard:true});
-              UpdateContext({openadduser:false});
-              UpdateContext({openaddlink:false});
-              UpdateContext({opensupport:true});
-              Set(Mycolor,false);
-              Set(Mycolor1,false);
-              Set(Mycolor2,false);
-              Set(Mycolor3,true)
-            PaddingBottom: =20
-            PaddingLeft: =18
-            PaddingRight: =18
-            Width: =70
-            Y: =628
-      - TextFeedback_5:
-          Control: Label
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =If(Mycolor3, RGBA(255, 196, 0, 1), RGBA(255, 255, 255, 1))
-            DisplayMode: =DisplayMode.View
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =20
-            OnSelect: |-
-              =UpdateContext({opendashboard:true});
-              UpdateContext({openadduser:false});
-              UpdateContext({openaddlink:false});
-              UpdateContext({opensupport:true});
-              UpdateContext({linkdata: false});
-              Set(Mycolor,false);
-              Set(Mycolor1,false);
-              Set(Mycolor2,false);
-              Set(Mycolor3,true)
-            Size: =8
-            Text: ="Feedback"
-            Width: =70
-            X: =1
-            Y: =673
+            Width: =1038
+            X: =264
+            Y: =136
       - rectDashAccent:
           Control: Rectangle
           Properties:
             Fill: =RGBA(255, 196, 0, 1)
             Height: =4
             Width: =80
-            X: =678
-            Y: =312
+            X: =264
+            Y: =198
       - Header_3:
           Control: Label
           Properties:
-            Align: =Align.Center
+            Align: =Align.Left
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(32, 40, 70, 1)
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
-            Height: =150
-            Size: =26
+            Height: =110
+            Size: =20
             Text: |-
               ="Welcome to
               ⁠ING TLM WCEF Certificate Digitalization System"
-            Width: =1030
-            X: =203
-            Y: =330
+            VerticalAlign: =VerticalAlign.Top
+            Width: =1038
+            X: =264
+            Y: =214
+      - Header_4:
+          Control: Label
+          Properties:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(32, 40, 70, 0.85)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =22
+            Italic: =true
+            Size: =10
+            Text: |-
+              ="Release Version : 2.1.c"
+            Width: =1118
+            X: =224
+            Y: =740
+      - conDashQuickStd:
+          Control: GroupContainer
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =0
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 0.94)
+            Height: =200
+            RadiusBottomLeft: =18
+            RadiusBottomRight: =18
+            RadiusTopLeft: =18
+            RadiusTopRight: =18
+            Width: =358
+            X: =224
+            Y: =372
+          Children: []
+      - imgDashQuickStd:
+          Control: Image
+          Properties:
+            Fill: =RGBA(232, 238, 252, 1)
+            Height: =52
+            HoverFill: =RGBA(255, 236, 179, 1)
+            Image: =valve
+            OnSelect: =Navigate(AllRecordStd04, ScreenTransition.None)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            RadiusBottomLeft: =14
+            RadiusBottomRight: =14
+            RadiusTopLeft: =14
+            RadiusTopRight: =14
+            Width: =52
+            X: =248
+            Y: =396
+      - lblDashQuickStdTitle:
+          Control: Label
+          Properties:
+            Align: =Align.Left
+            Color: =RGBA(0, 18, 107, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: ="STD-04 Records"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =310
+            X: =248
+            Y: =460
+      - lblDashQuickStdDesc:
+          Control: Label
+          Properties:
+            Align: =Align.Left
+            Color: =RGBA(96, 106, 130, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Pressure gauge, PRV and body inspection certificates."
+            VerticalAlign: =VerticalAlign.Top
+            Width: =310
+            Wrap: =true
+            X: =248
+            Y: =488
+      - btnDashQuickStd:
+          Control: Classic/Button
+          Properties:
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =32
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 40, 170, 1)
+            OnSelect: =Navigate(AllRecordStd04, ScreenTransition.None)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 10, 70, 1)
+            RadiusBottomLeft: =16
+            RadiusBottomRight: =16
+            RadiusTopLeft: =16
+            RadiusTopRight: =16
+            Size: =10
+            Text: ="Open  →"
+            Width: =110
+            X: =248
+            Y: =524
+      - conDashQuickOpsd:
+          Control: GroupContainer
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =0
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 0.94)
+            Height: =200
+            RadiusBottomLeft: =18
+            RadiusBottomRight: =18
+            RadiusTopLeft: =18
+            RadiusTopRight: =18
+            Width: =358
+            X: =604
+            Y: =372
+          Children: []
+      - imgDashQuickOpsd:
+          Control: Image
+          Properties:
+            Fill: =RGBA(232, 238, 252, 1)
+            Height: =52
+            HoverFill: =RGBA(255, 236, 179, 1)
+            Image: ='high-pressure'
+            OnSelect: =Navigate(AllRecordOPSD, ScreenTransition.None)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            RadiusBottomLeft: =14
+            RadiusBottomRight: =14
+            RadiusTopLeft: =14
+            RadiusTopRight: =14
+            Width: =52
+            X: =628
+            Y: =396
+      - lblDashQuickOpsdTitle:
+          Control: Label
+          Properties:
+            Align: =Align.Left
+            Color: =RGBA(0, 18, 107, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: ="OPSD Records"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =310
+            X: =628
+            Y: =460
+      - lblDashQuickOpsdDesc:
+          Control: Label
+          Properties:
+            Align: =Align.Left
+            Color: =RGBA(96, 106, 130, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Over pressure shutdown verification records."
+            VerticalAlign: =VerticalAlign.Top
+            Width: =310
+            Wrap: =true
+            X: =628
+            Y: =488
+      - btnDashQuickOpsd:
+          Control: Classic/Button
+          Properties:
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =32
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 40, 170, 1)
+            OnSelect: =Navigate(AllRecordOPSD, ScreenTransition.None)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 10, 70, 1)
+            RadiusBottomLeft: =16
+            RadiusBottomRight: =16
+            RadiusTopLeft: =16
+            RadiusTopRight: =16
+            Size: =10
+            Text: ="Open  →"
+            Width: =110
+            X: =628
+            Y: =524
+      - conDashQuickApv:
+          Control: GroupContainer
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =0
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 0.94)
+            Height: =200
+            RadiusBottomLeft: =18
+            RadiusBottomRight: =18
+            RadiusTopLeft: =18
+            RadiusTopRight: =18
+            Width: =358
+            X: =984
+            Y: =372
+          Children: []
+      - imgDashQuickApv:
+          Control: Image
+          Properties:
+            Fill: =RGBA(232, 238, 252, 1)
+            Height: =52
+            HoverFill: =RGBA(255, 236, 179, 1)
+            Image: =approval
+            OnSelect: =Navigate(MyApprovalSTD04, ScreenTransition.None)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            RadiusBottomLeft: =14
+            RadiusBottomRight: =14
+            RadiusTopLeft: =14
+            RadiusTopRight: =14
+            Width: =52
+            X: =1008
+            Y: =396
+      - lblDashQuickApvTitle:
+          Control: Label
+          Properties:
+            Align: =Align.Left
+            Color: =RGBA(0, 18, 107, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: ="My Approval"
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =310
+            X: =1008
+            Y: =460
+      - lblDashQuickApvDesc:
+          Control: Label
+          Properties:
+            Align: =Align.Left
+            Color: =RGBA(96, 106, 130, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Certificates waiting for your MSV verification."
+            VerticalAlign: =VerticalAlign.Top
+            Width: =310
+            Wrap: =true
+            X: =1008
+            Y: =488
+      - btnDashQuickApv:
+          Control: Classic/Button
+          Properties:
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =32
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 40, 170, 1)
+            OnSelect: =Navigate(MyApprovalSTD04, ScreenTransition.None)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 10, 70, 1)
+            RadiusBottomLeft: =16
+            RadiusBottomRight: =16
+            RadiusTopLeft: =16
+            RadiusTopRight: =16
+            Size: =10
+            Text: ="Open  →"
+            Width: =110
+            X: =1008
+            Y: =524
       - FeedbackSupport_2:
           Control: GroupContainer
           Variant: ManualLayout
@@ -528,27 +956,3 @@ Screens:
                   Width: =913
                   X: =231
                   Y: =352
-      - Rectangle2_9:
-          Control: Rectangle
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(255, 196, 0, 1)
-            Height: =70
-            Width: =4
-            Y: =92
-      - Header_4:
-          Control: Label
-          Properties:
-            Align: =Align.Right
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(0, 18, 107, 1)
-            Font: =Font.Lato
-            FontWeight: =FontWeight.Semibold
-            Height: =25
-            Italic: =true
-            Size: =10
-            Text: |-
-              ="Release Version : 2.1.c   "
-            Width: =1296
-            X: =70
-            Y: =743

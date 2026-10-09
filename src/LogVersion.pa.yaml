@@ -19,25 +19,41 @@ Screens:
             Text: ="Log Version"
             Width: =Parent.Width
             Y: =16
+      - conLogVerCard:
+          Control: GroupContainer
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =0
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =590
+            RadiusBottomLeft: =18
+            RadiusBottomRight: =18
+            RadiusTopLeft: =18
+            RadiusTopRight: =18
+            Width: =1318
+            X: =24
+            Y: =104
+          Children: []
       - Login to your account_1:
           Control: Label
           Properties:
             AutoHeight: =true
             BorderColor: =RGBA(0, 18, 107, 1)
             BorderStyle: =BorderStyle.None
-            Color: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(32, 40, 70, 1)
             Font: =Font.'Lato Light'
             FontWeight: =FontWeight.Semibold
-            Height: =609
-            Size: =15
+            Height: =540
+            Size: =14
             Text: |-
               ="Ver 2.0 - Feb 24
                        Add a search feature, OPSD Verification Data
               Ver 1.0 - Nov 23
                        Release Application"
-            Width: =1300
-            X: =35
-            Y: =96
+            Width: =1238
+            X: =64
+            Y: =128
       - Login as Admin_1:
           Control: Classic/Button
           Properties:
@@ -49,7 +65,7 @@ Screens:
             Fill: =RGBA(0, 18, 107, 1)
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
-            Height: =36
+            Height: =40
             HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(0, 40, 170, 1)
@@ -69,9 +85,9 @@ Screens:
             Size: =14
             Text: ="Close"
             Tooltip: =
-            Width: =110
-            X: =1240
-            Y: =716
+            Width: =128
+            X: =1214
+            Y: =708
       - rectLogVerAccent:
           Control: Rectangle
           Properties:
