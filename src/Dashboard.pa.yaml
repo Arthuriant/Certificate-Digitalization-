@@ -18,25 +18,11 @@ Screens:
             Fill: =RGBA(0, 18, 107, 1)
             Height: =768
             Width: =200
-      - conDashSideBrand:
-          Control: GroupContainer
-          Variant: ManualLayout
-          Properties:
-            DropShadow: =DropShadow.None
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =60
-            RadiusBottomLeft: =12
-            RadiusBottomRight: =12
-            RadiusTopLeft: =12
-            RadiusTopRight: =12
-            Width: =168
-            X: =16
-            Y: =16
       - imgDashSideLogo:
           Control: Image
           Properties:
             Height: =52
-            Image: =SLB_Logo_Positive_RGB_General
+            Image: =slb_white
             Width: =152
             X: =24
             Y: =20
