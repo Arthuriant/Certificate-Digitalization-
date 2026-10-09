@@ -506,10 +506,10 @@ Screens:
                   BorderColor: =RGBA(0, 18, 107, 0.25)
                   BorderThickness: =1
                   Color: =RGBA(255, 255, 255, 1)
-                  Fill: =If(ThisItem.IsSelected, RGBA(0, 18, 107, 1), RGBA(255, 255, 255, 1))
+                  Fill: =If(ThisItem.Verification = TabVerif_1.Selected.Verification, RGBA(0, 18, 107, 1), RGBA(255, 255, 255, 1))
                   Height: =36
                   HoverBorderColor: =RGBA(0, 18, 107, 0.5)
-                  HoverFill: =If(ThisItem.IsSelected, RGBA(0, 18, 107, 1), RGBA(232, 238, 252, 1))
+                  HoverFill: =If(ThisItem.Verification = TabVerif_1.Selected.Verification, RGBA(0, 18, 107, 1), RGBA(232, 238, 252, 1))
                   OnSelect: =Select(Parent)
                   PressedBorderColor: =RGBA(0, 18, 107, 1)
                   PressedFill: =RGBA(0, 18, 107, 1)
@@ -523,7 +523,7 @@ Screens:
                 Control: Label
                 Properties:
                   Align: =Align.Center
-                  Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(0, 18, 107, 1))
+                  Color: =If(ThisItem.Verification = TabVerif_1.Selected.Verification, RGBA(255, 255, 255, 1), RGBA(0, 18, 107, 1))
                   Font: =Font.'Open Sans'
                   FontWeight: =FontWeight.Bold
                   Height: =36
