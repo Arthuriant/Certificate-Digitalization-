@@ -23,8 +23,6 @@ Screens:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
-            BorderThickness: =0
-            DropShadow: =DropShadow.Light
             Fill: =RGBA(255, 255, 255, 1)
             Height: =590
             RadiusBottomLeft: =18
@@ -34,7 +32,6 @@ Screens:
             Width: =1318
             X: =24
             Y: =104
-          Children: []
       - Login to your account_1:
           Control: Label
           Properties:
@@ -65,7 +62,6 @@ Screens:
             Fill: =RGBA(0, 18, 107, 1)
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
-            Height: =40
             HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(0, 40, 170, 1)

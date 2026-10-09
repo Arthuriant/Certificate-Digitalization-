@@ -15,17 +15,13 @@ Screens:
       - rectDashSideBg:
           Control: Rectangle
           Properties:
-            BorderThickness: =0
             Fill: =RGBA(0, 18, 107, 1)
             Height: =768
             Width: =200
-            X: =0
-            Y: =0
       - conDashSideBrand:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
-            BorderThickness: =0
             DropShadow: =DropShadow.None
             Fill: =RGBA(255, 255, 255, 1)
             Height: =60
@@ -36,13 +32,11 @@ Screens:
             Width: =168
             X: =16
             Y: =16
-          Children: []
       - imgDashSideLogo:
           Control: Image
           Properties:
             Height: =52
             Image: =SLB_Logo_Positive_RGB_General
-            ImagePosition: =ImagePosition.Fit
             Width: =152
             X: =24
             Y: =20
@@ -60,15 +54,12 @@ Screens:
             PaddingTop: =0
             Size: =9
             Text: ="Certificate Digitalization System"
-            VerticalAlign: =VerticalAlign.Middle
             Width: =168
-            Wrap: =true
             X: =16
             Y: =84
       - lblDashSideMenu:
           Control: Label
           Properties:
-            Align: =Align.Left
             Color: =RGBA(255, 255, 255, 0.5)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
@@ -79,8 +70,6 @@ Screens:
             PaddingTop: =0
             Size: =8
             Text: ="MENU"
-            VerticalAlign: =VerticalAlign.Middle
-            Width: =150
             X: =24
             Y: =136
       - btnDashNavDashboard:
@@ -102,10 +91,6 @@ Screens:
             PressedBorderColor: =RGBA(0, 0, 0, 0)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(255, 255, 255, 0.22)
-            RadiusBottomLeft: =10
-            RadiusBottomRight: =10
-            RadiusTopLeft: =10
-            RadiusTopRight: =10
             Size: =11
             Text: ="Dashboard"
             Tooltip: ="Dashboard"
@@ -134,7 +119,6 @@ Screens:
       - rectDashNavActive:
           Control: Rectangle
           Properties:
-            BorderThickness: =0
             Fill: =RGBA(255, 196, 0, 1)
             Height: =24
             Width: =4
@@ -149,7 +133,6 @@ Screens:
             Color: =RGBA(255, 255, 255, 0.85)
             Fill: =RGBA(0, 0, 0, 0)
             Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
             Height: =44
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
@@ -159,10 +142,6 @@ Screens:
             PressedBorderColor: =RGBA(0, 0, 0, 0)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(255, 255, 255, 0.22)
-            RadiusBottomLeft: =10
-            RadiusBottomRight: =10
-            RadiusTopLeft: =10
-            RadiusTopRight: =10
             Size: =11
             Text: ="STD-04 Records"
             Tooltip: ="STD-04 Records"
@@ -197,7 +176,6 @@ Screens:
             Color: =RGBA(255, 255, 255, 0.85)
             Fill: =RGBA(0, 0, 0, 0)
             Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
             Height: =44
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
@@ -207,10 +185,6 @@ Screens:
             PressedBorderColor: =RGBA(0, 0, 0, 0)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(255, 255, 255, 0.22)
-            RadiusBottomLeft: =10
-            RadiusBottomRight: =10
-            RadiusTopLeft: =10
-            RadiusTopRight: =10
             Size: =11
             Text: ="OPSD Records"
             Tooltip: ="OPSD Records"
@@ -245,7 +219,6 @@ Screens:
             Color: =RGBA(255, 255, 255, 0.85)
             Fill: =RGBA(0, 0, 0, 0)
             Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
             Height: =44
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
@@ -255,10 +228,6 @@ Screens:
             PressedBorderColor: =RGBA(0, 0, 0, 0)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(255, 255, 255, 0.22)
-            RadiusBottomLeft: =10
-            RadiusBottomRight: =10
-            RadiusTopLeft: =10
-            RadiusTopRight: =10
             Size: =11
             Text: ="My Approval"
             Tooltip: ="My Approval"
@@ -287,7 +256,6 @@ Screens:
       - rectDashSideDivider:
           Control: Rectangle
           Properties:
-            BorderThickness: =0
             Fill: =RGBA(255, 255, 255, 0.15)
             Height: =1
             Width: =168
@@ -302,20 +270,16 @@ Screens:
             Color: =RGBA(255, 255, 255, 0.85)
             Fill: =RGBA(0, 0, 0, 0)
             Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
             Height: =44
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 196, 0, 1)
             HoverFill: =RGBA(255, 255, 255, 0.08)
-            OnSelect: '=UpdateContext({opensupport: true})'
+            OnSelect: |-
+              =UpdateContext({opensupport: true})
             PaddingLeft: =56
             PressedBorderColor: =RGBA(0, 0, 0, 0)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(255, 255, 255, 0.16)
-            RadiusBottomLeft: =10
-            RadiusBottomRight: =10
-            RadiusTopLeft: =10
-            RadiusTopRight: =10
             Size: =11
             Text: ="Feedback"
             Tooltip: ="Feedback"
@@ -329,7 +293,8 @@ Screens:
             Height: =24
             HoverColor: =RGBA(255, 196, 0, 1)
             Icon: =Icon.Support
-            OnSelect: '=UpdateContext({opensupport: true})'
+            OnSelect: |-
+              =UpdateContext({opensupport: true})
             Tooltip: ="Feedback"
             Width: =24
             X: =30
@@ -343,7 +308,6 @@ Screens:
             Color: =RGBA(255, 255, 255, 0.85)
             Fill: =RGBA(0, 0, 0, 0)
             Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
             Height: =44
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 196, 0, 1)
@@ -353,10 +317,6 @@ Screens:
             PressedBorderColor: =RGBA(0, 0, 0, 0)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(255, 255, 255, 0.16)
-            RadiusBottomLeft: =10
-            RadiusBottomRight: =10
-            RadiusTopLeft: =10
-            RadiusTopRight: =10
             Size: =11
             Text: ="Log Out"
             Tooltip: ="Log Out"
@@ -381,7 +341,6 @@ Screens:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 0.5)
             Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Normal
             Height: =18
             PaddingBottom: =0
             PaddingLeft: =0
@@ -389,7 +348,6 @@ Screens:
             PaddingTop: =0
             Size: =8
             Text: ="Release Version 2.1.c"
-            VerticalAlign: =VerticalAlign.Middle
             Width: =168
             X: =16
             Y: =744
@@ -397,8 +355,6 @@ Screens:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
-            BorderThickness: =0
-            DropShadow: =DropShadow.Light
             Fill: =RGBA(255, 255, 255, 0.94)
             Height: =72
             RadiusBottomLeft: =16
@@ -408,11 +364,9 @@ Screens:
             Width: =1118
             X: =224
             Y: =16
-          Children: []
       - lblDashTitle:
           Control: Label
           Properties:
-            Align: =Align.Left
             Color: =RGBA(0, 18, 107, 1)
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
@@ -423,17 +377,14 @@ Screens:
             PaddingTop: =0
             Size: =20
             Text: ="Dashboard"
-            VerticalAlign: =VerticalAlign.Middle
             Width: =700
             X: =248
             Y: =24
       - lblDashSubtitle:
           Control: Label
           Properties:
-            Align: =Align.Left
             Color: =RGBA(96, 106, 130, 1)
             Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Normal
             Height: =20
             PaddingBottom: =0
             PaddingLeft: =0
@@ -441,7 +392,6 @@ Screens:
             PaddingTop: =0
             Size: =10
             Text: ="ING TLM WCEF Certificate Digitalization System"
-            VerticalAlign: =VerticalAlign.Middle
             Width: =700
             X: =248
             Y: =58
@@ -449,7 +399,6 @@ Screens:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
-            DropShadow: =DropShadow.Light
             Fill: =RGBA(255, 255, 255, 0.92)
             Height: =240
             RadiusBottomLeft: =20
@@ -462,7 +411,6 @@ Screens:
       - Header_1:
           Control: Label
           Properties:
-            Align: =Align.Left
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(0, 18, 107, 1)
             Font: =Font.Lato
@@ -484,7 +432,6 @@ Screens:
       - Header_3:
           Control: Label
           Properties:
-            Align: =Align.Left
             BorderColor: =RGBA(0, 18, 107, 1)
             Color: =RGBA(32, 40, 70, 1)
             Font: =Font.Lato
@@ -518,10 +465,7 @@ Screens:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
-            BorderThickness: =0
-            DropShadow: =DropShadow.Light
             Fill: =RGBA(255, 255, 255, 0.94)
-            Height: =200
             RadiusBottomLeft: =18
             RadiusBottomRight: =18
             RadiusTopLeft: =18
@@ -529,7 +473,6 @@ Screens:
             Width: =358
             X: =224
             Y: =372
-          Children: []
       - imgDashQuickStd:
           Control: Image
           Properties:
@@ -552,7 +495,6 @@ Screens:
       - lblDashQuickStdTitle:
           Control: Label
           Properties:
-            Align: =Align.Left
             Color: =RGBA(0, 18, 107, 1)
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
@@ -563,17 +505,14 @@ Screens:
             PaddingTop: =0
             Size: =15
             Text: ="STD-04 Records"
-            VerticalAlign: =VerticalAlign.Middle
             Width: =310
             X: =248
             Y: =460
       - lblDashQuickStdDesc:
           Control: Label
           Properties:
-            Align: =Align.Left
             Color: =RGBA(96, 106, 130, 1)
             Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Normal
             Height: =36
             PaddingBottom: =0
             PaddingLeft: =0
@@ -583,7 +522,6 @@ Screens:
             Text: ="Pressure gauge, PRV and body inspection certificates."
             VerticalAlign: =VerticalAlign.Top
             Width: =310
-            Wrap: =true
             X: =248
             Y: =488
       - btnDashQuickStd:
@@ -593,7 +531,6 @@ Screens:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(0, 18, 107, 1)
             Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
             Height: =32
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(0, 40, 170, 1)
@@ -613,10 +550,7 @@ Screens:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
-            BorderThickness: =0
-            DropShadow: =DropShadow.Light
             Fill: =RGBA(255, 255, 255, 0.94)
-            Height: =200
             RadiusBottomLeft: =18
             RadiusBottomRight: =18
             RadiusTopLeft: =18
@@ -624,7 +558,6 @@ Screens:
             Width: =358
             X: =604
             Y: =372
-          Children: []
       - imgDashQuickOpsd:
           Control: Image
           Properties:
@@ -647,7 +580,6 @@ Screens:
       - lblDashQuickOpsdTitle:
           Control: Label
           Properties:
-            Align: =Align.Left
             Color: =RGBA(0, 18, 107, 1)
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
@@ -658,17 +590,14 @@ Screens:
             PaddingTop: =0
             Size: =15
             Text: ="OPSD Records"
-            VerticalAlign: =VerticalAlign.Middle
             Width: =310
             X: =628
             Y: =460
       - lblDashQuickOpsdDesc:
           Control: Label
           Properties:
-            Align: =Align.Left
             Color: =RGBA(96, 106, 130, 1)
             Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Normal
             Height: =36
             PaddingBottom: =0
             PaddingLeft: =0
@@ -678,7 +607,6 @@ Screens:
             Text: ="Over pressure shutdown verification records."
             VerticalAlign: =VerticalAlign.Top
             Width: =310
-            Wrap: =true
             X: =628
             Y: =488
       - btnDashQuickOpsd:
@@ -688,7 +616,6 @@ Screens:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(0, 18, 107, 1)
             Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
             Height: =32
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(0, 40, 170, 1)
@@ -708,10 +635,7 @@ Screens:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
-            BorderThickness: =0
-            DropShadow: =DropShadow.Light
             Fill: =RGBA(255, 255, 255, 0.94)
-            Height: =200
             RadiusBottomLeft: =18
             RadiusBottomRight: =18
             RadiusTopLeft: =18
@@ -719,7 +643,6 @@ Screens:
             Width: =358
             X: =984
             Y: =372
-          Children: []
       - imgDashQuickApv:
           Control: Image
           Properties:
@@ -742,7 +665,6 @@ Screens:
       - lblDashQuickApvTitle:
           Control: Label
           Properties:
-            Align: =Align.Left
             Color: =RGBA(0, 18, 107, 1)
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
@@ -753,17 +675,14 @@ Screens:
             PaddingTop: =0
             Size: =15
             Text: ="My Approval"
-            VerticalAlign: =VerticalAlign.Middle
             Width: =310
             X: =1008
             Y: =460
       - lblDashQuickApvDesc:
           Control: Label
           Properties:
-            Align: =Align.Left
             Color: =RGBA(96, 106, 130, 1)
             Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Normal
             Height: =36
             PaddingBottom: =0
             PaddingLeft: =0
@@ -773,7 +692,6 @@ Screens:
             Text: ="Certificates waiting for your MSV verification."
             VerticalAlign: =VerticalAlign.Top
             Width: =310
-            Wrap: =true
             X: =1008
             Y: =488
       - btnDashQuickApv:
@@ -783,7 +701,6 @@ Screens:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(0, 18, 107, 1)
             Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
             Height: =32
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(0, 40, 170, 1)
