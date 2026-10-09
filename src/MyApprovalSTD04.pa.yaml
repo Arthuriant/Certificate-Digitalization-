@@ -1110,7 +1110,7 @@ Screens:
             Height: =768
             Visible: =showPRVDetail
             Width: =1366
-      - BGDetails_3:
+      - conPopBody_3:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
@@ -1125,7 +1125,7 @@ Screens:
             Width: =1223
             X: =81
             Y: =55
-      - BGJudulDetails_3:
+      - conPopHead_3:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
@@ -1699,7 +1699,7 @@ Screens:
             Height: =768
             Visible: =showPressureGaugeDetail
             Width: =1366
-      - BGDetails:
+      - conPopBody:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
@@ -1714,7 +1714,7 @@ Screens:
             Width: =1223
             X: =81
             Y: =55
-      - BGJudulDetails:
+      - conPopHead:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
@@ -2357,7 +2357,7 @@ Screens:
             Height: =768
             Visible: =showBodyDetail
             Width: =1366
-      - BGDetails_12:
+      - conPopBody_12:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
@@ -2372,7 +2372,7 @@ Screens:
             Width: =1223
             X: =81
             Y: =55
-      - BGJudulDetails_12:
+      - conPopHead_12:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:

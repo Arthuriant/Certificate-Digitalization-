@@ -904,7 +904,7 @@ Screens:
             Height: =768
             Visible: =detailOPSD
             Width: =1366
-      - BGDetails_10:
+      - conPopBody_10:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
@@ -919,7 +919,7 @@ Screens:
             Width: =1223
             X: =81
             Y: =55
-      - BGJudulDetails_10:
+      - conPopHead_10:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
@@ -1560,7 +1560,7 @@ Screens:
             Height: =768
             Visible: =certOPSD
             Width: =1366
-      - BGDetails_11:
+      - conPopBody_11:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
@@ -1575,7 +1575,7 @@ Screens:
             Width: =1223
             X: =81
             Y: =55
-      - BGJudulDetails_11:
+      - conPopHead_11:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:

@@ -440,7 +440,6 @@ Screens:
                   TemplatePadding: =0
                   TemplateSize: =170
                   Width: =780
-                  Y: =0
                 Children:
                   - Button3_2:
                       Control: Classic/Button
@@ -1098,7 +1097,7 @@ Screens:
             Height: =768
             Visible: =showPGPU
             Width: =1366
-      - BGDetails_1:
+      - conPopBody_1:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
@@ -1113,7 +1112,7 @@ Screens:
             Width: =1223
             X: =81
             Y: =55
-      - BGJudulDetails_1:
+      - conPopHead_1:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
@@ -1748,7 +1747,7 @@ Screens:
             Width: =1147
             X: =121
             Y: =203
-      - BGDetails_7:
+      - conPopBody_7:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
@@ -1763,7 +1762,7 @@ Screens:
             Width: =1223
             X: =81
             Y: =55
-      - BGJudulDetails_7:
+      - conPopHead_7:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
@@ -1920,7 +1919,7 @@ Screens:
             Height: =768
             Visible: =showPRVPU
             Width: =1366
-      - BGDetails_8:
+      - conPopBody_8:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
@@ -1935,7 +1934,7 @@ Screens:
             Width: =1223
             X: =81
             Y: =55
-      - BGJudulDetails_8:
+      - conPopHead_8:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
@@ -2509,7 +2508,7 @@ Screens:
             Height: =768
             Visible: =showBodyPU
             Width: =1366
-      - BGDetails_9:
+      - conPopBody_9:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
@@ -2524,7 +2523,7 @@ Screens:
             Width: =1223
             X: =81
             Y: =55
-      - BGJudulDetails_9:
+      - conPopHead_9:
           Control: GroupContainer
           Variant: ManualLayout
           Properties:
